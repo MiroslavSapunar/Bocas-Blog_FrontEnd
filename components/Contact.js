@@ -40,7 +40,7 @@ function ContactComponent() {
 
                     <div className="row">
                         <div className="col-12">
-                            <input type="submit" value="Deshabilidato" className="btn btn-dark py-3 px-5" disabled />
+                            <input type="submit" value="Deshabilitado" className="btn btn-dark py-3 px-5" disabled />
                         </div>
                     </div>
 
