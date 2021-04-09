@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 
 function Card({ post }) {
     return (
-        <div className="card"  >
+        <div className="card py-1" style={{ border: "0px" }} >
             <div className="card-body p-0" >
                 <div className="col align-items-stretch">
                     <div className="row justify-content-around"
@@ -28,7 +28,6 @@ function Card({ post }) {
                             <p className="card-text">{post.resumen}</p>
                         </div>
                     </div>
-                    <div className="row" style={{ height: "1.25rem", backgroundColor: `rgb(65, 110, 75, 1)` }}></div>
                 </div>
             </div>
         </div>
@@ -37,18 +36,15 @@ function Card({ post }) {
 
 function PostsComponent({ posts }) {
     return (
-        <div className="container-fluid px-0">
-            <div className="row justify-content-center mx-0 px-0">
-                <div className="row w-75">
-                    <div className="col p-5">
-                        <h1>Posts</h1>
 
-                        {posts.map((p, i) =>
-                            <Card post={p} key={i} />
-                        )
-                        }
-                    </div>
-                </div>
+        <div className="row" style={{ width: "80%" }} >
+            <div className="col px-0 py-4">
+                <h1>Posts</h1>
+
+                {posts.map((p, i) =>
+                    <Card post={p} key={i} />
+                )
+                }
             </div>
         </div>
 

@@ -82,15 +82,12 @@ function Body({ home }) {
 
 export default function Home({ posts, home }) {
     return (
-        <div className="container-fluid px-0">
-            <div className="row justify-content-center mx-0 px-0">
 
-                <div className="row" style={{ width: "80%" }} >
-                    <div className="col px-0 py-4">
-                        <Carusel posts={posts} />
-                        <Body home={home} />
-                    </div>
-                </div>
+
+        <div className="row" style={{ width: "80%" }} >
+            <div className="col px-0 py-4">
+                <Carusel posts={posts} />
+                <Body home={home} />
             </div>
         </div>
     )

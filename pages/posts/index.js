@@ -3,9 +3,9 @@ import postsJson from '../../public/posts.json'
 
 export default function Posts({ posts, params }) {
     return (
-        <>
-            <PostsComponent posts={posts} />
-        </>
+
+        <PostsComponent posts={posts} />
+
     )
 }
 
