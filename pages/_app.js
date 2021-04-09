@@ -1,12 +1,19 @@
-import { ApolloProvider } from '@apollo/client/react';
-import { client } from '../lib/apollo'
+//import { ApolloProvider } from '@apollo/client/react';
+//import { client } from '../lib/apollo'
+import Layout from '../components/Layout';
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ApolloProvider client={client}>
+    <Layout>
       <Component {...pageProps} />
-    </ApolloProvider>
+      {/* <ApolloProvider client={client}>
+    </ApolloProvider> */}
+    </Layout>
   )
 }
 

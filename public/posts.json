@@ -1,0 +1,52 @@
+[
+    {
+        "titulo": "Post N 1",
+        "autor": "Miroslav",
+        "resumen": "Lorem ipsum dolor sit amet 1",
+        "contenido": "Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!",
+        "url": "post-n-1",
+        "fecha": "2021-05-01",
+        "categoria": "nutricion",
+        "imagen": "food1.jpg"
+    },
+    {
+        "titulo": "Post N 2",
+        "autor": "Agustin",
+        "resumen": "Lorem ipsum dolor sit amet 2",
+        "contenido": "Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!",
+        "url": "post-n-2",
+        "fecha": "2021-05-02",
+        "categoria": "habitos",
+        "imagen": "food2.jpg"
+    },
+    {
+        "titulo": "Post N 3",
+        "autor": "Miroslav",
+        "resumen": "Lorem ipsum dolor sit amet 3",
+        "contenido": "Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!",
+        "url": "post-n-3",
+        "fecha": "2021-05-03",
+        "categoria": "mercadobocas",
+        "imagen": "food3.jpg"
+    },
+    {
+        "titulo": "Post N 4",
+        "autor": "Miroslav",
+        "resumen": "Lorem ipsum dolor sit amet 4",
+        "contenido": "Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!",
+        "url": "post-n-4",
+        "fecha": "2021-05-04",
+        "categoria": "noticias",
+        "imagen": "food4.jpg"
+    },
+    {
+        "titulo": "Post N 5",
+        "autor": "Agustin",
+        "resumen": "Lorem ipsum dolor sit amet 5",
+        "contenido": "Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!",
+        "url": "post-n-5",
+        "fecha": "2021-05-05",
+        "categoria": "nutricion",
+        "imagen": "food5.jpg"
+    }
+]
