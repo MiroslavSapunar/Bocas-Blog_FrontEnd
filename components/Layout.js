@@ -12,14 +12,14 @@ function NavBar() {
                         <div className="col px-0">
                             <Link href="/">
                                 <a href="/">
-                                    <img src="bocas.png" style={{ width: "250px", height: "auto" }} />
+                                    <img src="bocas.png" style={{ width: "250px", height: "auto" }} alt={"bocas-mercado-consciente"} />
                                 </a>
                             </Link>
                         </div>
 
                         <div className="col-2 px-0">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
                             </button>
                         </div>
                     </div>
@@ -73,15 +73,15 @@ function NavBar() {
                         </ul>
 
                         <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
-                            <i className="fab fa-whatsapp-square" style={{ color: `rgb(65, 110, 75, 1)`, paddingLeft: "1rem", height: "1.5rem", width: "auto" }}></i>
+                            <i className="fab fa-whatsapp-square" style={{ color: `rgb(65, 110, 75, 1)`, paddingLeft: "1rem", height: "1.5rem", width: "auto" }} alt={"bocas-mercado-whatsapp"}></i>
                         </a>
 
                         <a href="https://www.instagram.com/bocasmercado/">
-                            <i className="fab fa-instagram-square" style={{ color: `rgb(65, 110, 75, 1)`, paddingLeft: "1rem", height: "1.5rem", width: "auto" }}></i>
+                            <i className="fab fa-instagram-square" style={{ color: `rgb(65, 110, 75, 1)`, paddingLeft: "1rem", height: "1.5rem", width: "auto" }} alt={"bocas-mercado-instagram"}></i>
                         </a>
 
                         <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
-                            <i className="fab fa-facebook-square" style={{ color: `rgb(65, 110, 75, 1)`, paddingLeft: "1rem", height: "1.5rem", width: "auto" }}></i>
+                            <i className="fab fa-facebook-square" style={{ color: `rgb(65, 110, 75, 1)`, paddingLeft: "1rem", height: "1.5rem", width: "auto" }} alt={"bocas-mercado-facebook"}></i>
                         </a>
                     </div>
                 </div>
@@ -149,7 +149,9 @@ export default function Layout({ children }) {
                     <NavBar />
                 </header>
                 <main >
-                    {children}
+                    <article>
+                        {children}
+                    </article>
                 </main>
                 <footer>
                     <Footer />

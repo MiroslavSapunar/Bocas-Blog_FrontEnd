@@ -15,6 +15,7 @@ function Card({ post }) {
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
                             }}
+                            alt={"imagen-post-selecion-editor"}
                         >
 
                             <div className="col"></div>
@@ -57,12 +58,12 @@ function Carusel({ posts }) {
                 })
                 }
             </div>
-            <a className="carousel-control-prev" href="#Carousel" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <a className="carousel-control-prev" href="#Carousel" role="button" data-slide="prev" style={{ filter: `invert(100%)`, left: "-6rem" }}>
+                <span className="carousel-control-prev-icon" aria-hidden="true"  ></span>
                 <span className="sr-only">Previous</span>
             </a>
-            <a className="carousel-control-next" href="#Carousel" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <a className="carousel-control-next" href="#Carousel" role="button" data-slide="next" style={{ filter: `invert(100%)`, right: "-6rem" }}>
+                <span className="carousel-control-next-icon" aria-hidden="true" ></span>
                 <span className="sr-only">Next</span>
             </a>
 

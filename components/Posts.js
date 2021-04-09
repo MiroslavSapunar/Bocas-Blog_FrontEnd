@@ -38,14 +38,18 @@ function Card({ post }) {
 
 function PostsComponent({ posts }) {
     return (
-        <div className="row w-75">
-            <div className="col p-5">
-                <h1>Posts</h1>
+        <div className="container-fluid px-0">
+            <div className="row justify-content-center mx-0 px-0">
+                <div className="row w-75">
+                    <div className="col p-5">
+                        <h1>Posts</h1>
 
-                {posts.map((p, i) =>
-                    <Card post={p} key={i} />
-                )
-                }
+                        {posts.map((p, i) =>
+                            <Card post={p} key={i} />
+                        )
+                        }
+                    </div>
+                </div>
             </div>
         </div>
 
