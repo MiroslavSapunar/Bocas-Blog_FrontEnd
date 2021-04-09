@@ -16,7 +16,6 @@ function Card({ post }) {
                             height: "14rem"
                         }}
                     >
-
                         <div className="col"></div>
                         <div className="col-6" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${post.url}`}>

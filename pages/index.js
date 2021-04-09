@@ -1,6 +1,5 @@
 //import { gql } from '@apollo/client'
 //import { client } from '../lib/apollo'
-
 import Home from '../components/Home'
 import styles from '../styles/Home.module.css'
 
@@ -20,10 +19,7 @@ export default function Root({ posts }) {
 }
 
 export async function getStaticProps(contex) {
-
   const resPosts = postsJson
-  console.log(resPosts)
-
   return {
     props: {
       posts: resPosts

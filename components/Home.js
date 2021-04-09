@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 
 function Card({ post }) {
     return (
-        <div className="card"  >
+        <div className="card" style={{ border: "0px" }} >
             <div className="card-body p-0" >
                 <div className="row justify-content-center">
                     <div className="col align-items-stretch">
@@ -14,6 +14,7 @@ function Card({ post }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
+                                height: "20rem"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         >
@@ -58,16 +59,16 @@ function Carusel({ posts }) {
                 })
                 }
             </div>
-            <a className="carousel-control-prev" href="#Carousel" role="button" data-slide="prev" style={{ filter: `invert(100%)`, left: "-6rem" }}>
+            <a className="carousel-control-prev" href="#Carousel" role="button" data-slide="prev" style={{ filter: `invert(100%)`, width: "3%" }}>
                 <span className="carousel-control-prev-icon" aria-hidden="true"  ></span>
                 <span className="sr-only">Previous</span>
-            </a>
-            <a className="carousel-control-next" href="#Carousel" role="button" data-slide="next" style={{ filter: `invert(100%)`, right: "-6rem" }}>
+            </a >
+            <a className="carousel-control-next" href="#Carousel" role="button" data-slide="next" style={{ filter: `invert(100%)`, width: "3%" }}>
                 <span className="carousel-control-next-icon" aria-hidden="true" ></span>
                 <span className="sr-only">Next</span>
             </a>
 
-        </div>
+        </div >
     )
 }
 
@@ -84,9 +85,8 @@ export default function Home({ posts, home }) {
         <div className="container-fluid px-0">
             <div className="row justify-content-center mx-0 px-0">
 
-                <div className="row w-75" >
-                    <div className="col px-0">
-                        <h1>Novedades ;)</h1>
+                <div className="row" style={{ width: "80%" }} >
+                    <div className="col px-0 py-4">
                         <Carusel posts={posts} />
                         <Body home={home} />
                     </div>

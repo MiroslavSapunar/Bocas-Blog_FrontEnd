@@ -5,7 +5,7 @@ import Link from 'next/link'
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-center align-items-center px-0">
-            <div className="row w-75 align-items-center justify-content-center" style={{ minHeight: "5rem" }}>
+            <div className="row align-items-center justify-content-center" style={{ width:"80%", minHeight: "5rem" }}>
 
                 <div className="col-md-12 col-lg-8">
                     <div className="row align-items-center justify-content-around">
@@ -94,7 +94,7 @@ function NavBar() {
 function Footer() {
     return (
         <nav className="navbar sticky-bottom navbar-light bg-light justify-content-center px-0">
-            <div className="row w-75 align-items-center justify-content-between py-4">
+            <div className="row align-items-center justify-content-between py-4" style={{ width: "80%"}}>
                 <div className="col-12 col-lg-6">
                     <div className="row align-items-center justify-content-start px-0">
                         <h5>¡Subcribite a nuestro Newsletter!</h5>
