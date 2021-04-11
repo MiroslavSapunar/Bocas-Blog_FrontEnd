@@ -129,7 +129,7 @@ function Footer() {
             <div className="row align-items-center justify-content-between py-4" style={{ width: "80%" }}>
                 <div className="col-12 col-lg-6">
                     <div className="row align-items-center justify-content-start px-0">
-                        <h5>¡Subcribite a nuestro Newsletter!</h5>
+                        <h5>¡Subscribite a nuestro Newsletter!</h5>
                         <p>Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!</p>
                     </div>
                 </div>
@@ -159,9 +159,7 @@ export default function Layout({ children }) {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet" />
-
+                <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
                 <meta lang="en" />
 
                 <title>Bocas Blog | Alimentacion Consciente</title>

@@ -85,14 +85,14 @@ function Info({ noticia }) {
             <div className="card-body p-0" >
                 <div className="row align-items-center p-0 mx-0">
 
-                    <div className="col-3 align-items-center ">
+                    <div className="col-lg-3  d-none d-lg-block align-items-center ">
                         <div className="row justify-content-around"
                             style={{
                                 backgroundImage: `url(/${noticia.imagen})`,
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "8rem",
+                                height: "12rem",
                                 width: "8rem"
                             }}
                             alt={"imagen-post-selecion-editor"}
@@ -100,7 +100,7 @@ function Info({ noticia }) {
                         </div>
                     </div>
 
-                    <div className="col px-4">
+                    <div className="col-lg-8 px-4">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.url}`}>
@@ -130,7 +130,7 @@ function Body({ noticias, trending }) {
         <div className="row justify-content-center align-items-start px-0 py-4 mx-0">
             <div className="col-12 col-lg-6 px-0 py-4 alig-items-start">
                 <div className="row mx-0">
-                    <h4>Noticias</h4>
+                    <h4 style={{ textDecoration: "underline" }}>Noticias</h4>
                 </div>
                 {
                     noticias.map((noticia, i) =>
@@ -143,7 +143,7 @@ function Body({ noticias, trending }) {
             </div>
             <div className="col-12 col-lg-6 px-0 py-4 alig-items-start">
                 <div className="row mx-0">
-                    <h4>Trending</h4>
+                    <h4 style={{ textDecoration: "underline" }}>Trending</h4>
                 </div>
                 {
                     trending.map((trend, i) =>
