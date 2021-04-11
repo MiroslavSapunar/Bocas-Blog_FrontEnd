@@ -25,7 +25,7 @@ function NavBar() {
                 <div className="col-sm-12 col-md-8 col-lg-4 mx-0 px-0">
                     <div className="row justify-content-between align-items-center px-0 mx-0">
 
-                        <a className="nav-link" href="https://bocas.com.ar/" style={{ fontWeight: "normal" }}>MERCADO</a>
+                        <a className="nav-link" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500" }}>MERCADO</a>
 
                         <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
                             <i className="fab fa-whatsapp" style={{ color: `rgb(65, 110, 75, 1)`, height: "1.5rem", width: "1.5rem" }} alt={"bocas-mercado-whatsapp"}></i>
@@ -50,30 +50,67 @@ function NavBar() {
 
                                 <Link href="/posts">
                                     <li className="nav-item mx-2">
-                                        <a className="nav-link" href="/posts">Posts</a>
+                                        <a className="nav-link" href="/posts"
+                                            style={{
+                                                color: "black",
+                                                fontFamily: "B612 Mono",
+                                                textTransform: "uppercase",
+                                                fontSize: "0.8rem",
+                                                letterSpacing: "0.05rem",
+                                                fontWeight: "400"
+                                            }}
+                                        >POSTS</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/posts?nutricion">
                                     <li className="nav-item mx-2">
-                                        <a className="nav-link" href="/posts?nutricion">Nutricion</a>
+                                        <a className="nav-link" href="/posts?nutricion" style={{
+                                            color: "black",
+                                            fontFamily: "B612 Mono",
+                                            textTransform: "uppercase",
+                                            fontSize: "0.8rem",
+                                            letterSpacing: "0.05rem",
+                                            fontWeight: "400"
+                                        }}>NUTRICION</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/posts?ejercicio">
                                     <li className="nav-item mx-2">
-                                        <a className="nav-link" href="/posts?ejercicio">Ejercicio</a>
+                                        <a className="nav-link" href="/posts?ejercicio" style={{
+                                            color: "black",
+                                            fontFamily: "B612 Mono",
+                                            textTransform: "uppercase",
+                                            fontSize: "0.8rem",
+                                            letterSpacing: "0.05rem",
+                                            fontWeight: "400"
+                                        }}>EJERCICIO</a>
                                     </li>
                                 </Link>
                                 <Link href="/posts?habitos">
                                     <li className="nav-item mx-2">
-                                        <a className="nav-link" href="/posts?habitos">Habitos</a>
+                                        <a className="nav-link" href="/posts?habitos" style={{
+                                            color: "black",
+                                            fontFamily: "B612 Mono",
+                                            textTransform: "uppercase",
+                                            fontSize: "0.8rem",
+                                            letterSpacing: "0.05rem",
+                                            fontWeight: "400"
+                                        }}>HABITOS</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/contacto">
                                     <li className="nav-item mx-2">
-                                        <a className="nav-link" href="/contacto">Contacto</a>
+                                        <a className="nav-link" href="/contacto" style={{
+                                            color: "black",
+                                            fontFamily: "B612 Mono",
+                                            textTransform: "uppercase",
+                                            fontSize: "0.8rem",
+                                            letterSpacing: "0.05rem",
+                                            fontWeight: "400"
+                                        }}>CONTACTO</a>
                                     </li>
                                 </Link>
                             </div>
@@ -121,9 +158,12 @@ export default function Layout({ children }) {
             <Head lang="es">
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet" />
+                <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css" />
+                <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css" />
+
                 <meta lang="en" />
 
                 <title>Bocas Blog | Alimentacion Consciente</title>
@@ -159,8 +199,6 @@ export default function Layout({ children }) {
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
-
-
             </body>
         </>
     )

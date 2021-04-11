@@ -2,7 +2,6 @@ import Link from 'next/link'
 import postsJson from '../../public/posts.json'
 
 function Post({ post }) {
-    console.log(post.contenido)
     return (
         <div className="container-fluid px-0">
             <div
