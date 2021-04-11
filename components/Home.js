@@ -110,7 +110,7 @@ function Info({ noticia }) {
                             </Link>
                         </div>
                         <div className="row">
-                            <p className="card-text" style={{fontSize: ".65rem"}}>{noticia.resumen}</p>
+                            <p className="card-text" style={{ fontSize: ".65rem" }}>{noticia.resumen}</p>
                         </div>
                         <div className="row">
                             <p className="card-text">{noticia.fecha_display + ` por ` + noticia.autor}</p>
@@ -130,7 +130,7 @@ function Body({ noticias, trending }) {
         <div className="row justify-content-center align-items-start px-0 py-4 mx-0">
             <div className="col-12 col-lg-6 px-0 py-4 alig-items-start">
                 <div className="row mx-0">
-                    <h4 style={{ textDecoration: "underline" }}>Noticias</h4>
+                    <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Noticias</h4>
                 </div>
                 {
                     noticias.map((noticia, i) =>
@@ -143,7 +143,7 @@ function Body({ noticias, trending }) {
             </div>
             <div className="col-12 col-lg-6 px-0 py-4 alig-items-start">
                 <div className="row mx-0">
-                    <h4 style={{ textDecoration: "underline" }}>Trending</h4>
+                    <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Trending</h4>
                 </div>
                 {
                     trending.map((trend, i) =>
