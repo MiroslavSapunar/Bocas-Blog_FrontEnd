@@ -85,7 +85,7 @@ function Info({ noticia }) {
             <div className="card-body p-0" >
                 <div className="row align-items-center p-0 mx-0">
 
-                    <div className="col-lg-3  d-none d-lg-block align-items-center ">
+                    <div className="col-md-3  d-none d-md-block align-items-center ">
                         <div className="row justify-content-around"
                             style={{
                                 backgroundImage: `url(/${noticia.imagen})`,
@@ -100,7 +100,7 @@ function Info({ noticia }) {
                         </div>
                     </div>
 
-                    <div className="col-lg-8 px-4">
+                    <div className="col-md-8 px-4">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.url}`}>
