@@ -81,26 +81,26 @@ function Carusel({ posts }) {
 
 function Info({ noticia }) {
     return (
-        <div className="card py-2" style={{ border: "1px" }} >
+        <div className="card align-items-center py-2" style={{ border: "1px" }} >
             <div className="card-body p-0" >
-                <div className="row p-0 mx-0">
+                <div className="row align-items-center p-0 mx-0">
 
-                    <div className="col-2">
+                    <div className="col-3 align-items-center ">
                         <div className="row justify-content-around"
                             style={{
                                 backgroundImage: `url(/${noticia.imagen})`,
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "5rem",
-                                width: "5rem"
+                                height: "8rem",
+                                width: "8rem"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         >
                         </div>
                     </div>
 
-                    <div className="col">
+                    <div className="col px-4">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.url}`}>
@@ -108,6 +108,9 @@ function Info({ noticia }) {
                                     <h6 className="card-title">{noticia.titulo}</h6>
                                 </a>
                             </Link>
+                        </div>
+                        <div className="row">
+                            <p className="card-text" style={{fontSize: ".65rem"}}>{noticia.resumen}</p>
                         </div>
                         <div className="row">
                             <p className="card-text">{noticia.fecha_display + ` por ` + noticia.autor}</p>
