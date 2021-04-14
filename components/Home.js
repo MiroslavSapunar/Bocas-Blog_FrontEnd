@@ -57,7 +57,7 @@ function Carusel({ posts }) {
     return (
         <>
             <div id="Carousel" className="carousel slide carousel-fade " ride="true" data-ride="carousel" >
-                <ol class="carousel-indicators" style={{ bottom: "-7rem" }}>
+                <ol class="carousel-indicators" style={{ bottom: "-6rem" }}>
 
                     {posts.map((post, i) => {
                         if (i == 0) {
