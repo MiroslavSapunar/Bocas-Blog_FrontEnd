@@ -56,18 +56,18 @@ function Card({ post }) {
 function Carusel({ posts }) {
     return (
         <>
-            <div id="Carousel" className="carousel slide w-100" ride="true" data-ride="carousel" >
-                <ol class="carousel-indicators">
+            <div id="Carousel" className="carousel slide carousel-fade " ride="true" data-ride="carousel" >
+                <ol class="carousel-indicators" style={{ bottom: "-7rem" }}>
 
                     {posts.map((post, i) => {
                         if (i == 0) {
                             return (
 
-                                <li data-target="#Carousel" data-slide-to={i} key={i} class="active"></li>
+                                <li style={{ backgroundColor: "black" }} data-target="#Carousel" data-slide-to={i} key={i} class="active"></li>
                             )
                         } else {
                             return (
-                                <li data-target="#Carousel" data-slide-to={i} key={i}></li>
+                                <li style={{ backgroundColor: "black" }} data-target="#Carousel" data-slide-to={i} key={i}></li>
                             )
                         }
                     })
@@ -91,11 +91,11 @@ function Carusel({ posts }) {
                     })
                     }
                 </div>
-                <a className="carousel-control-prev" href="#Carousel" role="button" data-slide="prev" style={{ filter: `invert(100%)`, width: "3%" }}>
+                <a className="carousel-control-prev" href="#Carousel" role="button" data-slide="prev" style={{ filter: `invert(100%)`, width: "3%", left: "-2rem" }}>
                     <span className="carousel-control-prev-icon" aria-hidden="true"  ></span>
                     <span className="sr-only">Previous</span>
                 </a >
-                <a className="carousel-control-next" href="#Carousel" role="button" data-slide="next" style={{ filter: `invert(100%)`, width: "3%" }}>
+                <a className="carousel-control-next" href="#Carousel" role="button" data-slide="next" style={{ filter: `invert(100%)`, width: "3%", right: "-2rem" }}>
                     <span className="carousel-control-next-icon" aria-hidden="true" ></span>
                     <span className="sr-only">Next</span>
                 </a>
@@ -215,7 +215,7 @@ export default function Home({ posts, home }) {
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
                 <Carusel posts={posts.filter(p => p.seleccion_editor)} />
-                <div style={{ height: "10rem" }}></div>
+                <div style={{ height: "5rem" }}></div>
                 <Body noticias={posts.slice(3, 4)} trending={posts.slice(1, 4)} />
             </div>
         </div>
