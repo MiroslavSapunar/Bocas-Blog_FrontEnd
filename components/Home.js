@@ -159,7 +159,7 @@ function Trent({ key, trend }) {
 
                     <div className="col-3  align-items-center">
                         <h4>
-                            {`${key}`}
+                            {key}
                         </h4>
                     </div>
 
@@ -196,9 +196,9 @@ function Body({ noticias, trending }) {
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Noticias</h4>
                 </div>
                 {
-                    noticias.map((noticia, i) =>
+                    noticias.map((noticia, k) =>
 
-                        <Info key={i + 1} noticia={noticia} />
+                        <Info key={k + 1} noticia={noticia} />
 
                     )
                 }
@@ -209,9 +209,9 @@ function Body({ noticias, trending }) {
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Trending</h4>
                 </div>
                 {
-                    trending.map((trend, i) =>
+                    trending.map((trend, k) =>
 
-                        <Trent key={i + 1} trend={trend} />
+                        <Trent key={k + 1} trend={trend} />
 
                     )
                 }
