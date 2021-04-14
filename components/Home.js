@@ -15,14 +15,14 @@ function Card({ post }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "21.5rem",
+                                height: "20rem",
                                 margin: "0px"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         ></div>
                     </div>
 
-                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black", height: "21.5rem" }}>
+                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black", maxHeight: "20rem" }}>
                         {/* <h5 style={{ color: "gray", fontWeight: "400", fontFamily: "Roboto Slab"}}>DESTACADA</h5>
                         */}
 
@@ -56,8 +56,8 @@ function Card({ post }) {
 function Carusel({ posts }) {
     return (
         <>
-            <div id="Carousel" className="carousel slide carousel-fade " ride="true" data-ride="carousel" >
-                <ol class="carousel-indicators" style={{ bottom: "-6rem" }}>
+            <div id="Carousel" className="carousel slide carousel-fade py-5" ride="true" data-ride="carousel" >
+                <ol class="carousel-indicators" style={{ bottom: "-3rem" }}>
 
                     {posts.map((post, i) => {
                         if (i == 0) {
@@ -126,7 +126,7 @@ function Info({ noticia }) {
                         </div>
                     </div>
 
-                    <div className="col-md-8 px-4">
+                    <div className="col-12 col-md-8 px-4">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.url}`}>
@@ -155,8 +155,12 @@ function Trent({ trend }) {
     return (
         <div className="card align-items-center py-2" style={{ border: "1px" }} >
             <div className="card-body p-0" >
-                <div className="row align-items-center p-0 mx-0">
-                    <div className="col-md-8 px-4">
+                <div className="row justify-content-start p-0 mx-0">
+                    <div className="col-2">
+
+                    </div>
+
+                    <div className="col-10 align-items-center px-2">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${trend.url}`}>
@@ -165,12 +169,15 @@ function Trent({ trend }) {
                                 </a>
                             </Link>
                         </div>
+
                         <div className="row">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${trend.autor}`}>{trend.autor}</a> en <a href={`/posts?categoria=${trend.categorias[0]}`}>{trend.categorias[0]}</a></span>
                         </div>
+
                         <div className="row">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{trend.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -215,7 +222,7 @@ export default function Home({ posts, home }) {
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
                 <Carusel posts={posts.filter(p => p.seleccion_editor)} />
-                <div style={{ height: "5rem" }}></div>
+                <div style={{ height: "1rem" }}></div>
                 <Body noticias={posts.slice(3, 4)} trending={posts.slice(1, 4)} />
             </div>
         </div>
