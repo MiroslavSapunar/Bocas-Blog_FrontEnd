@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function NavBar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0">
+        <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{borderBottom: "1px solid rgb(233, 233, 234)"}}>
             <div className="row align-items-center justify-content-between mx-0 px-0" style={{ width: "80%", minHeight: "10rem" }}>
 
                 <div className=" col-12 col-lg-8 mx-0 px-0">

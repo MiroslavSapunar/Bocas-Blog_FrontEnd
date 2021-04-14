@@ -21,7 +21,7 @@ function Card({ post }) {
                         >
                         </div>
                     </div>
-                    <div className="col-12 col-lg-6 px-5 py-4" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
+                    <div className="col-12 col-lg-6 px-5 py-4"  style= {{backgroundColor: "#f8f9fa", color: "black"}}>
                         {/* <h5 style={{ color: "gray", fontWeight: "400", fontFamily: "Roboto Slab"}}>DESTACADA</h5>
                         */}
                         <Link href={`/posts/${post.url}`}>
