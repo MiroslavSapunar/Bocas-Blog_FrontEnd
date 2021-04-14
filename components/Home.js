@@ -7,7 +7,7 @@ function Card({ post }) {
         <div className="card" style={{ border: "0px" }} >
             <div className="card-body p-0" >
                 <div className="row justify-content-center">
-                    <div className="col-12 col-lg-6">
+                    <div className="col-12 col-lg-6 align-items-stretch">
 
                         <div className="row justify-content-around"
                             style={{
@@ -15,24 +15,29 @@ function Card({ post }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "20rem"
+                                height: "22rem"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         >
                         </div>
                     </div>
-                    <div className="col-12 col-lg-6" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
-                        <h5 style={{ color: "gray" }}>Seleccion del Editor</h5>
+                    <div className="col-12 col-lg-6 px-5 py-4" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
+                        {/* <h5 style={{ color: "gray", fontWeight: "400", fontFamily: "Roboto Slab"}}>DESTACADA</h5>
+                        */}
                         <Link href={`/posts/${post.url}`}>
                             <a href={`/posts/${post.url}`} style={{ textDecoration: "none" }}>
-                                <h4 className="card-title">{post.titulo}</h4>
+                                <h4 className="card-title" style={{ fontSize: " 1.5rem", fontWeight: "500" }}>{post.titulo}</h4>
                             </a>
                         </Link>
-                        <p className="card-text" style={{ color: "gray", fontWeight: "500" }}>{post.resumen}</p>
+                        <p className="card-text" style={{ color: "gray", fontWeight: "400", lineHeight: "1.5em", paddingBottom:"0.5" }}>{post.resumen}</p>
                         <div className="row">
                             <div className="col">
-                                <p className="card-text" style={{ color: "grey" }}>{post.fecha_display + ` por ` + post.autor}</p>
-                                <p className="card-text" style={{ fontWeight: "bolder" }}>{post.categorias.join(", ")}</p>
+                                <div className="row mx-0 px-0">
+                                    <p className="card-text" style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{`${post.fecha_display} `}</p>
+                                    <p className="card-text" style={{ color: "gray", fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{` - `}</p>
+                                    <p className="card-text" style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{` ${post.autor} `}</p>
+                                </div>
+                                <p className="card-text" style={{ color: "gray", fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{post.categorias.join(", ")}</p>
                             </div>
 
                         </div>

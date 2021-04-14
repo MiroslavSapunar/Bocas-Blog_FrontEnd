@@ -53,7 +53,7 @@ function NavBar() {
                                         <a className="nav-link" href="/posts"
                                             style={{
                                                 color: "black",
-                                                fontFamily: "B612 Mono",
+                                                fontFamily: "Roboto Slab",
                                                 textTransform: "uppercase",
                                                 fontSize: "0.8rem",
                                                 letterSpacing: "0.05rem",
@@ -67,7 +67,7 @@ function NavBar() {
                                     <li className="nav-item mx-2">
                                         <a className="nav-link" href="/posts?nutricion" style={{
                                             color: "black",
-                                            fontFamily: "B612 Mono",
+                                            fontFamily: "Roboto Slab",
                                             textTransform: "uppercase",
                                             fontSize: "0.8rem",
                                             letterSpacing: "0.05rem",
@@ -80,7 +80,7 @@ function NavBar() {
                                     <li className="nav-item mx-2">
                                         <a className="nav-link" href="/posts?ejercicio" style={{
                                             color: "black",
-                                            fontFamily: "B612 Mono",
+                                            fontFamily: "Roboto Slab",
                                             textTransform: "uppercase",
                                             fontSize: "0.8rem",
                                             letterSpacing: "0.05rem",
@@ -92,7 +92,7 @@ function NavBar() {
                                     <li className="nav-item mx-2">
                                         <a className="nav-link" href="/posts?habitos" style={{
                                             color: "black",
-                                            fontFamily: "B612 Mono",
+                                            fontFamily: "Roboto Slab",
                                             textTransform: "uppercase",
                                             fontSize: "0.8rem",
                                             letterSpacing: "0.05rem",
@@ -105,7 +105,7 @@ function NavBar() {
                                     <li className="nav-item mx-2">
                                         <a className="nav-link" href="/contacto" style={{
                                             color: "black",
-                                            fontFamily: "B612 Mono",
+                                            fontFamily: "Roboto Slab",
                                             textTransform: "uppercase",
                                             fontSize: "0.8rem",
                                             letterSpacing: "0.05rem",
@@ -159,8 +159,7 @@ export default function Layout({ children }) {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
-                <meta lang="en" />
+                <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Montserrat:wght@200;300;400;500;600;700&&family=Roboto+Slab:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
                 <title>Bocas Blog | Alimentacion Consciente</title>
                 <meta name="description" content="Blog Online de Bocas" />
