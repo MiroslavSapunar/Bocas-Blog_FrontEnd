@@ -7,7 +7,7 @@ function Card({ post }) {
         <div className="card" style={{ border: "0px" }} >
             <div className="card-body p-0" >
                 <div className="row justify-content-center">
-                    <div className="col-12 col-lg-6 align-items-stretch">
+                    <div className="col-12 col-lg-6" style={{ padding: "0px" }}>
 
                         <div className="row justify-content-around"
                             style={{
@@ -15,36 +15,40 @@ function Card({ post }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "22rem"
+                                height: "21.5rem"
                             }}
                             alt={"imagen-post-selecion-editor"}
-                        >
-                        </div>
+                        ></div>
                     </div>
-                    <div className="col-12 col-lg-6 px-5 py-4"  style= {{backgroundColor: "#f8f9fa", color: "black"}}>
+
+                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black" }}>
                         {/* <h5 style={{ color: "gray", fontWeight: "400", fontFamily: "Roboto Slab"}}>DESTACADA</h5>
                         */}
-                        <Link href={`/posts/${post.url}`}>
-                            <a href={`/posts/${post.url}`} style={{ textDecoration: "none" }}>
-                                <h4 className="card-title" style={{ fontSize: " 1.5rem", fontWeight: "500" }}>{post.titulo}</h4>
-                            </a>
-                        </Link>
-                        <p className="card-text" style={{ color: "gray", fontWeight: "400", lineHeight: "1.5em", paddingBottom:"0.5" }}>{post.resumen}</p>
-                        <div className="row">
-                            <div className="col">
-                                <div className="row mx-0 px-0">
-                                    <p className="card-text" style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{`${post.fecha_display} `}</p>
-                                    <p className="card-text" style={{ color: "gray", fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{` - `}</p>
-                                    <p className="card-text" style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{` ${post.autor} `}</p>
-                                </div>
-                                <p className="card-text" style={{ color: "gray", fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.7em" }}>{post.categorias.join(", ")}</p>
-                            </div>
 
+                        <div className="row">
+                            <Link href={`/posts/${post.url}`}>
+                                <a href={`/posts/${post.url}`} style={{ textDecoration: "none" }}>
+                                    <h4 className="card-title" style={{ fontSize: " 1.2rem", fontWeight: "500" }}>{post.titulo}</h4>
+                                </a>
+                            </Link>
                         </div>
+
+                        <div className="row">
+                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " .8rem", lineHeight: "1.5em", paddingBottom: "0.5" }}>{post.resumen}</p>
+                        </div>
+
+                        <div className="row">
+                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${post.autor}`}>{post.autor}</a> en <a href={`/posts?categoria=${post.categorias[0]}`}>{post.categorias[0]}</a></span>
+                        </div>
+                        <div className="row">
+                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{post.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
@@ -130,10 +134,37 @@ function Info({ noticia }) {
     )
 }
 
+function Trent({ trend }) {
+    return (
+        <div className="card align-items-center py-2" style={{ border: "1px" }} >
+            <div className="card-body p-0" >
+                <div className="row align-items-center p-0 mx-0">
+                    <div className="col-md-8 px-4">
+
+                        <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
+                            <Link href={`/posts/${trend.url}`}>
+                                <a href={`/posts/${trend.url}`} style={{ textDecoration: "none" }}>
+                                    <h6 className="card-title">{trend.titulo}</h6>
+                                </a>
+                            </Link>
+                        </div>
+                        <div className="row">
+                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${trend.autor}`}>{trend.autor}</a> en <a href={`/posts?categoria=${trend.categorias[0]}`}>{trend.categorias[0]}</a></span>
+                        </div>
+                        <div className="row">
+                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{trend.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 function Body({ noticias, trending }) {
     return (
         <div className="row justify-content-center align-items-start px-0 py-4 mx-0">
-            <div className="col-12 col-lg-6 px-0 py-4 alig-items-start">
+            <div className="col-12 col-lg-8 px-0 py-4 alig-items-start">
                 <div className="row mx-0">
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Noticias</h4>
                 </div>
@@ -146,14 +177,14 @@ function Body({ noticias, trending }) {
                 }
 
             </div>
-            <div className="col-12 col-lg-6 px-0 py-4 alig-items-start">
+            <div className="col-12 col-lg-4 px-0 py-4 alig-items-start">
                 <div className="row mx-0">
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Trending</h4>
                 </div>
                 {
                     trending.map((trend, i) =>
 
-                        <Info key={i + 1} noticia={trend} />
+                        <Trent key={i + 1} trend={trend} />
 
                     )
                 }
