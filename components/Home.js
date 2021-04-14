@@ -15,13 +15,14 @@ function Card({ post }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "21.5rem"
+                                height: "21.5rem",
+                                margin: "0px"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         ></div>
                     </div>
 
-                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black" }}>
+                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black", height: "21.5rem" }}>
                         {/* <h5 style={{ color: "gray", fontWeight: "400", fontFamily: "Roboto Slab"}}>DESTACADA</h5>
                         */}
 
@@ -56,6 +57,22 @@ function Carusel({ posts }) {
     return (
         <>
             <div id="Carousel" className="carousel slide w-100" ride="true" data-ride="carousel" >
+                <ol class="carousel-indicators">
+
+                    {posts.map((post, i) => {
+                        if (i == 0) {
+                            return (
+
+                                <li data-target="#Carousel" data-slide-to={i} key={i} class="active"></li>
+                            )
+                        } else {
+                            return (
+                                <li data-target="#Carousel" data-slide-to={i} key={i}></li>
+                            )
+                        }
+                    })
+                    }
+                </ol>
                 <div className="carousel-inner" >
                     {posts.map((post, i) => {
                         if (i == 0) {
@@ -101,8 +118,8 @@ function Info({ noticia }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "12rem",
-                                width: "8rem"
+                                height: "10rem",
+                                width: "10rem"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         >
@@ -119,13 +136,13 @@ function Info({ noticia }) {
                             </Link>
                         </div>
                         <div className="row">
-                            <p className="card-text" style={{ fontSize: ".65rem" }}>{noticia.resumen}</p>
+                            <p className="card-text" style={{ fontSize: ".65rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
                         </div>
                         <div className="row">
-                            <p className="card-text">{noticia.fecha_display + ` por ` + noticia.autor}</p>
+                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${noticia.autor}`}>{noticia.autor}</a> en <a href={`/posts?categoria=${noticia.categorias[0]}`}>{noticia.categorias[0]}</a></span>
                         </div>
                         <div className="row">
-                            <p className="card-text" style={{ fontWeight: "bolder", fontSize: "1rem" }}>{noticia.categorias.join(", ")}</p>
+                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{noticia.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
                         </div>
                     </div>
                 </div>
@@ -198,6 +215,7 @@ export default function Home({ posts, home }) {
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
                 <Carusel posts={posts.filter(p => p.seleccion_editor)} />
+                <div style={{ height: "10rem" }}></div>
                 <Body noticias={posts.slice(3, 4)} trending={posts.slice(1, 4)} />
             </div>
         </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function NavBar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{borderBottom: "1px solid rgb(233, 233, 234)"}}>
+        <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
             <div className="row align-items-center justify-content-between mx-0 px-0" style={{ width: "80%", minHeight: "10rem" }}>
 
                 <div className=" col-12 col-lg-8 mx-0 px-0">
@@ -49,10 +49,11 @@ function NavBar() {
                             <div className="row mx-0 my-1">
 
                                 <Link href="/posts">
-                                    <li className="nav-item mx-2">
+                                    <li className="nav-item">
                                         <a className="nav-link" href="/posts"
                                             style={{
                                                 color: "black",
+                                                paddingLeft: "0px",
                                                 fontFamily: "Roboto Slab",
                                                 textTransform: "uppercase",
                                                 fontSize: "0.8rem",
@@ -64,7 +65,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/posts?nutricion">
-                                    <li className="nav-item mx-2">
+                                    <li className="nav-item">
                                         <a className="nav-link" href="/posts?nutricion" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -77,7 +78,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/posts?ejercicio">
-                                    <li className="nav-item mx-2">
+                                    <li className="nav-item">
                                         <a className="nav-link" href="/posts?ejercicio" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -89,7 +90,7 @@ function NavBar() {
                                     </li>
                                 </Link>
                                 <Link href="/posts?habitos">
-                                    <li className="nav-item mx-2">
+                                    <li className="nav-item">
                                         <a className="nav-link" href="/posts?habitos" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -102,7 +103,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/contacto">
-                                    <li className="nav-item mx-2">
+                                    <li className="nav-item">
                                         <a className="nav-link" href="/contacto" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
