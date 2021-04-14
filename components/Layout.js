@@ -49,7 +49,7 @@ function NavBar() {
                             <div className="row mx-0 my-1">
 
                                 <Link href="/posts">
-                                    <li className="nav-item" style={{ paddingRight: "0.5rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
                                         <a className="nav-link" href="/posts"
                                             style={{
                                                 color: "black",
@@ -65,7 +65,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/posts?nutricion">
-                                    <li className="nav-item" style={{ paddingRight: "0.5rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
                                         <a className="nav-link" href="/posts?nutricion" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -78,7 +78,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/posts?ejercicio">
-                                    <li className="nav-item" style={{ paddingRight: "0.5rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
                                         <a className="nav-link" href="/posts?ejercicio" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -90,7 +90,7 @@ function NavBar() {
                                     </li>
                                 </Link>
                                 <Link href="/posts?habitos">
-                                    <li className="nav-item" style={{ paddingRight: "0.5rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
                                         <a className="nav-link" href="/posts?habitos" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -103,7 +103,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/contacto">
-                                    <li className="nav-item" style={{ paddingRight: "0.5rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
                                         <a className="nav-link" href="/contacto" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",

@@ -108,7 +108,7 @@ function Carusel({ posts }) {
 function Info({ noticia }) {
     return (
         <div className="card align-items-center py-2" style={{ border: "1px" }} >
-            <div className="card-body p-0" >
+            <div className="card-body w-100 p-0" >
                 <div className="row align-items-center p-0 mx-0">
 
                     <div className="col-md-3  d-none d-md-block align-items-center ">
@@ -126,7 +126,7 @@ function Info({ noticia }) {
                         </div>
                     </div>
 
-                    <div className="col-12 col-md-8 px-4">
+                    <div className="col-12 col-md-9 px-4">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.url}`}>
@@ -151,21 +151,24 @@ function Info({ noticia }) {
     )
 }
 
-function Trent({ trend }) {
+function Trent({ key, trend }) {
     return (
-        <div className="card align-items-center py-2" style={{ border: "1px" }} >
-            <div className="card-body p-0" >
+        <div className="card align-items-center justify-content-center py-2" style={{ border: "1px" }} >
+            <div className="card-body w-100 p-0" >
                 <div className="row justify-content-start p-0 mx-0">
-                    <div className="col-2">
 
+                    <div className="col-3  align-items-center">
+                        <h4>
+                            {`${key}`}
+                        </h4>
                     </div>
 
-                    <div className="col-10 align-items-center px-2">
+                    <div className="col-9 align-items-center">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${trend.url}`}>
                                 <a href={`/posts/${trend.url}`} style={{ textDecoration: "none" }}>
-                                    <h6 className="card-title">{trend.titulo}</h6>
+                                    <h6 className="card-title" style={{ fontSize: "0.85rem" }}>{trend.titulo}</h6>
                                 </a>
                             </Link>
                         </div>
@@ -189,7 +192,7 @@ function Body({ noticias, trending }) {
     return (
         <div className="row justify-content-center align-items-start px-0 py-4 mx-0">
             <div className="col-12 col-lg-8 px-0 py-4 alig-items-start">
-                <div className="row mx-0">
+                <div className="row justify-content-start mx-0">
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Noticias</h4>
                 </div>
                 {
@@ -201,8 +204,8 @@ function Body({ noticias, trending }) {
                 }
 
             </div>
-            <div className="col-12 col-lg-4 px-0 py-4 alig-items-start">
-                <div className="row mx-0">
+            <div className="col-12 col-lg-4 px-2 py-4 alig-items-start">
+                <div className="row justify-content-start mx-0">
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Trending</h4>
                 </div>
                 {
