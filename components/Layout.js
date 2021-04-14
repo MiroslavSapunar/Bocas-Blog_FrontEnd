@@ -28,15 +28,15 @@ function NavBar() {
                         <a className="nav-link" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500" }}>MERCADO</a>
 
                         <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
-                            <i className="fab fa-whatsapp" style={{ color: `rgb(65, 110, 75, 1)`, height: "1.5rem", width: "1.5rem" }} alt={"bocas-mercado-whatsapp"}></i>
+                            <i className="fab fa-whatsapp" style={{ color: `black`, height: "1rem", width: "1rem" }} alt={"bocas-mercado-whatsapp"}></i>
                         </a>
 
                         <a href="https://www.instagram.com/bocasmercado/">
-                            <i className="fab fa-instagram" style={{ color: `rgb(65, 110, 75, 1)`, height: "1.5rem", width: "1.5rem" }} alt={"bocas-mercado-instagram"}></i>
+                            <i className="fab fa-instagram" style={{ color: `black`, height: "1rem", width: "1rem" }} alt={"bocas-mercado-instagram"}></i>
                         </a>
 
                         <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
-                            <i className="fab fa-facebook-f" style={{ color: `rgb(65, 110, 75, 1)`, height: "1.5rem", width: "1.5rem" }} alt={"bocas-mercado-facebook"}></i>
+                            <i className="fab fa-facebook-f" style={{ color: `black`, height: "1rem", width: "1rem" }} alt={"bocas-mercado-facebook"}></i>
                         </a>
 
                     </div>
