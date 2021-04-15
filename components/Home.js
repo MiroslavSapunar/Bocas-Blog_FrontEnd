@@ -135,15 +135,19 @@ function Info({ noticia }) {
                                 </a>
                             </Link>
                         </div>
+
                         <div className="row">
-                            <p className="card-text" style={{ fontSize: ".65rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
+                            <p className="card-text" style={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
                         </div>
+
                         <div className="row">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${noticia.autor}`}>{noticia.autor}</a> en <a href={`/posts?categoria=${noticia.categorias[0]}`}>{noticia.categorias[0]}</a></span>
                         </div>
+
                         <div className="row">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{noticia.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -151,19 +155,20 @@ function Info({ noticia }) {
     )
 }
 
-function Trent({ key, trend }) {
+function Trend({ trend, index }) {
+
     return (
         <div className="card align-items-center justify-content-center py-2" style={{ border: "1px" }} >
             <div className="card-body w-100 p-0" >
                 <div className="row justify-content-start p-0 mx-0">
 
-                    <div className="col-3  align-items-center">
-                        <h4>
-                            {key}
-                        </h4>
+                    <div className="col-2  align-items-start p-0">
+                        <div style={{ textAlign: "start", height: "30px", width: "50px", fontWeight: "500", fontSize:"30px", lineHeight: "30px", color: "#ccc" }}>
+                            {`0${index}`}
+                        </div>
                     </div>
 
-                    <div className="col-9 align-items-center">
+                    <div className="col align-items-center">
 
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${trend.url}`}>
@@ -196,11 +201,7 @@ function Body({ noticias, trending }) {
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Noticias</h4>
                 </div>
                 {
-                    noticias.map((noticia, k) =>
-
-                        <Info key={k + 1} noticia={noticia} />
-
-                    )
+                    noticias.map((noticia, k) => <Info noticia={noticia} key={k} />)
                 }
 
             </div>
@@ -209,11 +210,7 @@ function Body({ noticias, trending }) {
                     <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Trending</h4>
                 </div>
                 {
-                    trending.map((trend, k) =>
-
-                        <Trent key={k + 1} trend={trend} />
-
-                    )
+                    trending.map((trend, k) => <Trend trend={trend} key={k} index={k + 1} />)
                 }
             </div>
         </div>
