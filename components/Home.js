@@ -7,8 +7,8 @@ function Card({ post }) {
         <div className="card" style={{ border: "0px" }} >
             <div className="card-body p-0" >
                 <div className="row justify-content-center">
+                   
                     <div className="col-12 col-lg-6" style={{ padding: "0px" }}>
-
                         <div className="row justify-content-around"
                             style={{
                                 backgroundImage: `url(/${post.imagen})`,
@@ -23,8 +23,6 @@ function Card({ post }) {
                     </div>
 
                     <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black", maxHeight: "20rem" }}>
-                        {/* <h5 style={{ color: "gray", fontWeight: "400", fontFamily: "Roboto Slab"}}>DESTACADA</h5>
-                        */}
 
                         <div className="row">
                             <Link href={`/posts/${post.url}`}>
@@ -35,14 +33,14 @@ function Card({ post }) {
                         </div>
 
                         <div className="row">
-                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " .8rem", lineHeight: "1.5em", paddingBottom: "0.5" }}>{post.resumen}</p>
+                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " .9rem", lineHeight: "1.5em", paddingBottom: "0.5" }}>{post.resumen}</p>
                         </div>
 
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${post.autor}`}>{post.autor}</a> en <a href={`/posts?categoria=${post.categorias[0]}`}>{post.categorias[0]}</a></span>
+                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${post.autor}`}>{post.autor}</a> en <a href={`/posts?categoria=${post.categorias[0]}`}>{post.categorias[0]}</a></span>
                         </div>
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{post.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
+                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} class="date-read m-0">{post.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
                         </div>
 
 
@@ -107,28 +105,29 @@ function Carusel({ posts }) {
 
 function Info({ noticia }) {
     return (
-        <div className="card align-items-center py-2" style={{ border: "1px" }} >
-            <div className="card-body w-100 p-0" >
-                <div className="row align-items-center p-0 mx-0">
+        <div className="card " style={{ border: "1px" }} >
+            <div className="card-body p-0" >
+                <div className="row justify-content-center p-0 mx-0 ">
 
-                    <div className="col-md-3  d-none d-md-block align-items-center ">
+                    <div className="col-md-3  d-none d-md-block align-items-center px-0 " syle={{ padding: "0px", minHeight:"11rem" }}>
                         <div className="row justify-content-around"
                             style={{
                                 backgroundImage: `url(/${noticia.imagen})`,
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "10rem",
-                                width: "10rem"
+                                height: "100%",
+                                
+                                margin:"0px"
                             }}
-                            alt={"imagen-post-selecion-editor"}
+                            alt={"imagen-post-noticia"}
                         >
                         </div>
                     </div>
 
-                    <div className="col-12 col-md-9 px-4">
+                    <div className="col-12 col-md-9" syle={{ padding:"1rem", minHeight: "11rem" }}>
 
-                        <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
+                        <div className="row px-0 mx-0" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.url}`}>
                                 <a href={`/posts/${noticia.url}`} style={{ textDecoration: "none" }}>
                                     <h6 className="card-title">{noticia.titulo}</h6>
@@ -136,16 +135,16 @@ function Info({ noticia }) {
                             </Link>
                         </div>
 
-                        <div className="row">
-                            <p className="card-text" style={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
+                        <div className="row px-0 mx-0">
+                            <p className="card-text" style={{ fontSize: "0.85rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
                         </div>
 
-                        <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${noticia.autor}`}>{noticia.autor}</a> en <a href={`/posts?categoria=${noticia.categorias[0]}`}>{noticia.categorias[0]}</a></span>
+                        <div className="row px-0 mx-0">
+                            <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "1.5em" }} class="d-block m-0"><a href={`/posts?nombre=${noticia.autor}`}>{noticia.autor}</a> en <a href={`/posts?categoria=${noticia.categorias[0]}`}>{noticia.categorias[0]}</a></span>
                         </div>
 
-                        <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} class="date-read m-0">{noticia.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
+                        <div className="row px-0 mx-0">
+                            <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "1.5em" }} class="date-read m-0">{noticia.fecha_display} <span class="mx-1">•</span> 3 min <span class="icon-star2"></span></span>
                         </div>
 
                     </div>
@@ -163,7 +162,7 @@ function Trend({ trend, index }) {
                 <div className="row justify-content-start p-0 mx-0">
 
                     <div className="col-2  align-items-start p-0">
-                        <div style={{ textAlign: "start", height: "30px", width: "50px", fontWeight: "500", fontSize:"30px", lineHeight: "30px", color: "#ccc" }}>
+                        <div style={{ textAlign: "start", height: "30px", width: "50px", fontWeight: "500", fontSize: "30px", lineHeight: "30px", color: "#ccc" }}>
                             {`0${index}`}
                         </div>
                     </div>
