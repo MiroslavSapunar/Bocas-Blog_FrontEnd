@@ -1,7 +1,7 @@
 function ContactComponent() {
     return (
 
-        <div className="row w-50 justify-content-center justify-self-center py-5" >
+        <div className="row w-75 justify-content-center justify-self-center py-5" >
             <div className="col-lg-12">
                 <div className="section-title mb-5">
                     <h2>Contacto</h2>

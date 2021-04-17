@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
@@ -11,7 +10,7 @@ function NavBar() {
                     <div className="row justify-content-between align-items-center mx-0 px-0">
                         <Link href="/">
                             <a href="/">
-                                <img src="bocas.png" style={{ width: "14rem", height: "auto" }} alt={"bocas-mercado-consciente"} />
+                                <img src="bocas.png" style={{ width: "12rem", height: "auto" }} alt={"bocas-mercado-consciente"} />
                             </a>
                         </Link>
 
@@ -49,7 +48,7 @@ function NavBar() {
                             <div className="row mx-0 my-1">
 
                                 <Link href="/posts">
-                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
                                         <a className="nav-link" href="/posts"
                                             style={{
                                                 color: "black",
@@ -65,7 +64,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/posts?nutricion">
-                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
                                         <a className="nav-link" href="/posts?nutricion" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -78,7 +77,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/posts?ejercicio">
-                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
                                         <a className="nav-link" href="/posts?ejercicio" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -90,7 +89,7 @@ function NavBar() {
                                     </li>
                                 </Link>
                                 <Link href="/posts?habitos">
-                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
                                         <a className="nav-link" href="/posts?habitos" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -103,7 +102,7 @@ function NavBar() {
                                 </Link>
 
                                 <Link href="/contacto">
-                                    <li className="nav-item" style={{ paddingRight: "1rem"}}>
+                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
                                         <a className="nav-link" href="/contacto" style={{
                                             color: "black",
                                             fontFamily: "Roboto Slab",
@@ -122,7 +121,6 @@ function NavBar() {
         </nav >
     )
 }
-
 
 function Footer() {
     return (
@@ -146,9 +144,6 @@ function Footer() {
                 </div>
 
             </div>
-            {/*             
-            <a class="navbar-brand" href="#">Fixed bottom</a> */}
-
         </nav>
     )
 }
@@ -157,10 +152,10 @@ export default function Layout({ children }) {
     return (
         <>
             <Head lang="es">
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Montserrat:wght@200;300;400;500;600;700&&family=Roboto+Slab:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat:wght@200;300;400;500;600;700&&family=Roboto+Slab:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
                 <title>Bocas Blog | Alimentacion Consciente</title>
                 <meta name="description" content="Blog Online de Bocas" />

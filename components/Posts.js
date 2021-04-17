@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import ReactMarkdown from 'react-markdown'
 
 function Card({ post }) {
     return (
@@ -15,7 +14,8 @@ function Card({ post }) {
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
-                                height: "20rem"
+                                height: "20rem",
+                                margin: "0px"
                             }}
                             alt={"imagen-post-selecion-editor"}
                         ></div>

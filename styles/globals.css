@@ -2,14 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif, 'B612 Mono', monospace, 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif, 'Roboto Slab', serif, 'Merienda', cursive;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }

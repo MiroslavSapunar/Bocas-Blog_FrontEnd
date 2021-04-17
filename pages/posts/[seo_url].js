@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import postsJson from '../../public/posts.json'
 
 function Post({ post }) {
