@@ -8,7 +8,7 @@ function Card({ post }) {
             <div className="card-body p-0" >
                 <div className="row justify-content-center">
 
-                    <div className="col-12 col-lg-6" style={{ padding: "0px" }}>
+                    <div className="col-12 col-lg-6" style={{ padding: "0px", maxHeight: "20rem" }}>
                         <div className={`row justify-content-around ${styles.imgDestacados}`}
                             style={{
                                 backgroundImage: `url(/${post.imagen})`
@@ -17,7 +17,7 @@ function Card({ post }) {
                         ></div>
                     </div>
 
-                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black", maxHeight: "20rem" }}>
+                    <div className="col-12 col-lg-6" style={{ padding: "50px", backgroundColor: "#f8f9fa", color: "black" }}>
 
                         <div className="row">
                             <Link href={`/posts/${post.url}`}>
