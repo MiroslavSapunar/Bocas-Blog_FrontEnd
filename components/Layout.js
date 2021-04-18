@@ -1,16 +1,18 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+import styles from './Layout.module.scss'
+
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
-            <div className="row align-items-center justify-content-between mx-0 px-0" style={{ width: "80%", minHeight: "10rem" }}>
+            <div className="row align-items-center justify-content-center mx-0 px-4 py-2" style={{width:"100%", minHeight: "5rem" }}>
 
-                <div className=" col-12 col-lg-8 mx-0 px-0">
-                    <div className="row justify-content-between align-items-center mx-0 px-0">
+                <div className="col-12 col-lg-3 mx-0 px-0">
+                    <div className="row justify-content-around align-items-center mx-0 px-0">
                         <Link href="/">
                             <a href="/">
-                                <img src="bocas.png" style={{ width: "12rem", height: "auto" }} alt={"bocas-mercado-consciente"} />
+                                <img src="bocas.png" className={`${styles.logo}`} alt={"bocas-mercado-consciente"} />
                             </a>
                         </Link>
 
@@ -21,102 +23,67 @@ function NavBar() {
 
                 </div>
 
-                <div className="col-sm-12 col-md-8 col-lg-4 mx-0 px-0">
-                    <div className="row justify-content-between align-items-center px-0 mx-0">
-
-                        <a className="nav-link" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500" }}>MERCADO</a>
-
-                        <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
-                            <i className="fab fa-whatsapp" style={{ color: `black`, height: "1rem", width: "1rem" }} alt={"bocas-mercado-whatsapp"}></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/bocasmercado/">
-                            <i className="fab fa-instagram" style={{ color: `black`, height: "1rem", width: "1rem" }} alt={"bocas-mercado-instagram"}></i>
-                        </a>
-
-                        <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
-                            <i className="fab fa-facebook-f" style={{ color: `black`, height: "1rem", width: "1rem" }} alt={"bocas-mercado-facebook"}></i>
-                        </a>
-
-                    </div>
-                </div>
-
-                <div className="col-12 mx-0 px-0">
+                <div className="col-10 col-lg-6 mx-0 px-0">
 
                     <div className="collapse navbar-collapse" id="navbarToggler">
-                        <ul className="navbar-nav mr-auto ">
-                            <div className="row mx-0 my-1">
+                        <ul className="navbar-nav mr-auto w-100">
+                            <div className="row w-100 justify-content-center mx-0 my-1">
 
                                 <Link href="/posts">
-                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
-                                        <a className="nav-link" href="/posts"
-                                            style={{
-                                                color: "black",
-                                                paddingLeft: "0px",
-                                                fontFamily: "Roboto Slab",
-                                                textTransform: "uppercase",
-                                                fontSize: "0.8rem",
-                                                letterSpacing: "0.05rem",
-                                                fontWeight: "400"
-                                            }}
-                                        >POSTS</a>
+                                    <li className={`nav-item ${styles.navItem}`}>
+                                        <a className={`nav-link ${styles.categoria}`} >POSTS</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/posts?nutricion">
-                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
-                                        <a className="nav-link" href="/posts?nutricion" style={{
-                                            color: "black",
-                                            fontFamily: "Roboto Slab",
-                                            textTransform: "uppercase",
-                                            fontSize: "0.8rem",
-                                            letterSpacing: "0.05rem",
-                                            fontWeight: "400"
-                                        }}>NUTRICION</a>
+                                    <li className={`nav-item ${styles.navItem}`}>
+                                        <a className={`nav-link ${styles.categoria}`} >NUTRICION</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/posts?ejercicio">
-                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
-                                        <a className="nav-link" href="/posts?ejercicio" style={{
-                                            color: "black",
-                                            fontFamily: "Roboto Slab",
-                                            textTransform: "uppercase",
-                                            fontSize: "0.8rem",
-                                            letterSpacing: "0.05rem",
-                                            fontWeight: "400"
-                                        }}>EJERCICIO</a>
+                                    <li className={`nav-item ${styles.navItem}`}>
+                                        <a className={`nav-link ${styles.categoria}`} >EJERCICIO</a>
                                     </li>
                                 </Link>
                                 <Link href="/posts?habitos">
-                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
-                                        <a className="nav-link" href="/posts?habitos" style={{
-                                            color: "black",
-                                            fontFamily: "Roboto Slab",
-                                            textTransform: "uppercase",
-                                            fontSize: "0.8rem",
-                                            letterSpacing: "0.05rem",
-                                            fontWeight: "400"
-                                        }}>HABITOS</a>
+                                    <li className={`nav-item ${styles.navItem}`}>
+                                        <a className={`nav-link ${styles.categoria}`} >HABITOS</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/contacto">
-                                    <li className="nav-item" style={{ paddingRight: "1rem" }}>
-                                        <a className="nav-link" href="/contacto" style={{
-                                            color: "black",
-                                            fontFamily: "Roboto Slab",
-                                            textTransform: "uppercase",
-                                            fontSize: "0.8rem",
-                                            letterSpacing: "0.05rem",
-                                            fontWeight: "400"
-                                        }}>CONTACTO</a>
+                                    <li className={`nav-item ${styles.navItem}`}>
+                                        <a className={`nav-link ${styles.categoria}`} >CONTACTO</a>
                                     </li>
                                 </Link>
+
                             </div>
                         </ul>
                     </div>
                 </div>
+
+                <div className="col-8 col-lg-3 mx-0 px-0">
+                    <div className="row justify-content-around align-items-center px-0 mx-0">
+
+                        <a className="nav-link" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500", fontFamily: "Merienda" }}>Visitá la Tienda</a>
+
+                        <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
+                            <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/bocasmercado/">
+                            <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
+                            <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
             </div>
         </nav >
     )

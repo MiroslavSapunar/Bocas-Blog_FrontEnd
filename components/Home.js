@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import styles from "../styles/Home.module.scss"
+import styles from "./Home.module.scss"
 
 function Card({ post }) {
     return (
