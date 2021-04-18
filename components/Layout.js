@@ -62,7 +62,7 @@ function NavBar() {
                     </div>
                 </div>
 
-                <div className="col-10 col-lg-2 mx-0 px-0">
+                <div className="col-12 col-lg-2 mx-0 px-0">
                     <div className="row justify-content-around align-items-center px-0 mx-0">
 
 
@@ -81,13 +81,12 @@ function NavBar() {
                         <a href="#">
                             <i className={`fas fa-search ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
                         </a>
-
+                        
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
                     </div>
                 </div>
-
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
 
             </div>
         </nav >
