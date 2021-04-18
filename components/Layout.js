@@ -8,7 +8,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
             <div className="row align-items-center justify-content-center mx-0 px-0 py-2" style={{ width: "80%", minHeight: "5rem" }}>
 
-                <div className="col-12 col-lg mx-0 px-0">
+                <div className="col-12 col-lg-4 mx-0 px-0">
                     <div className="row justify-content-between align-items-center mx-0 px-0">
                         <Link href="/">
                             <a href="/">
@@ -16,14 +16,13 @@ function NavBar() {
                             </a>
                         </Link>
 
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
+                        <a className="nav-link px-0" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500", fontFamily: "Merienda" }}>Visitá la Tienda</a>
+
                     </div>
 
                 </div>
 
-                <div className="col-10 col-lg-7 mx-0 px-0">
+                <div className="col-10 col-lg-6 mx-0 px-0">
 
                     <div className="collapse navbar-collapse" id="navbarToggler">
                         <ul className="navbar-nav mr-auto w-100">
@@ -63,10 +62,9 @@ function NavBar() {
                     </div>
                 </div>
 
-                <div className="col-10 col-lg-3 mx-0 px-0">
+                <div className="col-10 col-lg-2 mx-0 px-0">
                     <div className="row justify-content-around align-items-center px-0 mx-0">
 
-                        <a className="nav-link" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500", fontFamily: "Merienda" }}>Visitá la Tienda</a>
 
                         <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
                             <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
@@ -87,6 +85,9 @@ function NavBar() {
                     </div>
                 </div>
 
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
             </div>
         </nav >
