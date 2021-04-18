@@ -6,7 +6,7 @@ import styles from './Layout.module.scss'
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
-            <div className="row align-items-center justify-content-center mx-0 px-4 py-2" style={{width:"100%", minHeight: "5rem" }}>
+            <div className="row align-items-center justify-content-center mx-0 px-4 py-2" style={{ width: "100%", minHeight: "5rem" }}>
 
                 <div className="col-12 col-lg-3 mx-0 px-0">
                     <div className="row justify-content-around align-items-center mx-0 px-0">
@@ -78,6 +78,10 @@ function NavBar() {
 
                         <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
                             <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
+                        </a>
+
+                        <a href="#">
+                            <i className={`fas fa-search ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
                         </a>
 
                     </div>
