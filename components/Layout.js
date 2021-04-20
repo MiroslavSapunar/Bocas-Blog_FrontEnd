@@ -30,7 +30,7 @@ function NavBar() {
                                     </li>
                                 </Link>
 
-                                <Link href="/novedades">
+                                <Link href="/posts?novedades">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Novedades</a>
                                     </li>
