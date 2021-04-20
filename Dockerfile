@@ -3,7 +3,6 @@ FROM node:14-buster-slim
 
 # env variables
 ARG NEXT_PUBLIC_STRAPI_URL
-ARG NEXT_PUBLIC_GOOGLE_API
 ARG STRAPI_URL_BUILD
 ENV NODE_ENV production
 
@@ -26,9 +25,5 @@ RUN npm run build
 # Expose the listening port
 EXPOSE 3000
 
-# Run container as non-root (unprivileged) user
-# The node user is provided in the Node.js Alpine base image
-USER node
-
 # Run npm start script when container starts
-CMD npm start
+CMD [ "npm", "start"]
