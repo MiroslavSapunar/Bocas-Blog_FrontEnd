@@ -6,9 +6,9 @@ import styles from './Layout.module.scss'
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
-            <div className="row align-items-center justify-content-center mx-0 px-0 py-2" style={{ width: "80%", minHeight: "5rem" }}>
+            <div className="row align-items-center justify-content-start mx-0 px-0 py-2" style={{ width: "80%", minHeight: "5rem" }}>
 
-                <div className="col-12 col-lg-4 mx-0 px-0">
+                <div className="col-6 col-lg-2 order-1  mx-0 px-0">
                     <div className="row justify-content-between align-items-center mx-0 px-0">
                         <Link href="/">
                             <a href="/">
@@ -16,72 +16,62 @@ function NavBar() {
                             </a>
                         </Link>
 
-                        <a className="nav-link px-0" href="https://bocas.com.ar/" style={{ color: "black", fontWeight: "500", fontFamily: "Merienda" }}>Visitá la Tienda</a>
-
                     </div>
-
                 </div>
 
-                <div className="col-10 col-lg-6 mx-0 px-0">
+                <div className="col-12 col-lg-9 order-lg-2 order-12 mx-0 px-0">
+                    <div className="row w-100 justify-content-center align-items-center mx-0 my-1">
+                        <div className="collapse navbar-collapse justify-content-end w-75" id="navbarToggler">
+                            <ul className="navbar-nav">
 
-                    <div className="collapse navbar-collapse" id="navbarToggler">
-                        <ul className="navbar-nav mr-auto w-100">
-                            <div className="row w-100 justify-content-center mx-0 my-1">
-
-                                <Link href="/posts">
+                                <Link href="/">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a className={`nav-link ${styles.categoria}`} >POSTS</a>
+                                        <a className={`nav-link ${styles.categoria}`} >Home</a>
+                                    </li>
+                                </Link>
+
+                                <Link href="/novedades">
+                                    <li className={`nav-item ${styles.navItem}`}>
+                                        <a className={`nav-link ${styles.categoria}`} >Novedades</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/posts?nutricion">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a className={`nav-link ${styles.categoria}`} >NUTRICION</a>
+                                        <a className={`nav-link ${styles.categoria}`} >Nutrición</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/posts?ejercicio">
+                                <Link href="/posts?recetas">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a className={`nav-link ${styles.categoria}`} >EJERCICIO</a>
+                                        <a className={`nav-link ${styles.categoria}`} >Recetas</a>
                                     </li>
                                 </Link>
                                 <Link href="/posts?habitos">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a className={`nav-link ${styles.categoria}`} >HABITOS</a>
+                                        <a className={`nav-link ${styles.categoria}`} >Hábitos</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/contacto">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a className={`nav-link ${styles.categoria}`} >CONTACTO</a>
+                                        <a className={`nav-link ${styles.categoria}`} >Preguntas</a>
                                     </li>
                                 </Link>
 
-                            </div>
-                        </ul>
+                                <a className={` py-0 align-items-center ${styles.botonBocas}`} role="button" href="https://bocas.com.ar/">Visitá la Tienda</a>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div className="col-6 col-lg-1 order-3 mx-0 px-0">
+                    <div className="row w-100 justify-content-end align-items-center mx-0 my-1">
 
-                <div className="col-12 col-lg-2 mx-0 px-0">
-                    <div className="row justify-content-around align-items-center px-0 mx-0">
-
-
-                        <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
-                            <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
+                        <a className="mx-4" href="#">
+                            <i className={`fas fa-search ${styles.icono}`} alt={"busqueda-bocas-mercado"}></i>
                         </a>
 
-                        <a href="https://www.instagram.com/bocasmercado/">
-                            <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
-                        </a>
-
-                        <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
-                            <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
-                        </a>
-
-                        <a href="#">
-                            <i className={`fas fa-search ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
-                        </a>
-                        
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -103,7 +93,7 @@ function Footer() {
                         <p>Lorem ipsum dolor sit amet, perferendis aspernatur ut at quae omnis pariatur obcaecati possimus nisi ea iste!</p>
                     </div>
                 </div>
-                <div className="col-12 col-lg-6">
+                <div className="col-8 col-lg-4">
                     <div className="row align-items-center justify-content-end px-0">
                         <div className="d-flex">
                             <input type="email" className="form-control" placeholder="Deshabilitado" disabled />
@@ -111,6 +101,24 @@ function Footer() {
                                 <i className="fas fa-paper-plane"></i>
                             </button>
                         </div>
+                    </div>
+                </div>
+
+                <div className="col-4 col-lg-2 mx-0 px-0">
+                    <div className="row justify-content-around align-items-center px-0 mx-0">
+
+                        <a href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
+                            <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/bocasmercado/">
+                            <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
+                            <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
+                        </a>
+
                     </div>
                 </div>
 
@@ -126,7 +134,7 @@ export default function Layout({ children }) {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat:wght@200;300;400;500;600;700&&family=Roboto+Slab:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght&family=Montserrat:wght@200;300;400;500;600;700&&family=Roboto+Slab:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
                 <title>Bocas Blog | Alimentacion Consciente</title>
                 <meta name="description" content="Blog Online de Bocas" />
