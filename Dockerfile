@@ -2,7 +2,7 @@
 FROM node:14-buster-slim
 
 # env variables
-ARG NEXT_PUBLIC_STRAPI_URL
+ARG STRAPI_URL_PUBLIC
 ARG STRAPI_URL_BUILD
 ENV NODE_ENV production
 

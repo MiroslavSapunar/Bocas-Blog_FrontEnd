@@ -5,3 +5,15 @@
   height: 20rem;
   margin: 0px;
 }
+
+.cardCustom {
+  border: 0px;
+
+  .a:hover {
+    text-decoration: none;
+  }
+
+  .spam:hover {
+    text-decoration: none;
+  }
+}
