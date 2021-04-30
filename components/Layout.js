@@ -87,7 +87,7 @@ function Footer() {
     return (
         <nav className="navbar sticky-bottom navbar-light bg-light justify-content-center px-0">
             <div className="row align-items-center justify-content-between py-4" style={{ width: "80%" }}>
-                <div className="col-12 col-lg-8">
+                <div className="col-12 col-lg-9">
                     <div className="row align-items-center justify-content-start px-0">
                         <h5>¡Subscribite a nuestro Newsletter!</h5>
 
@@ -102,18 +102,18 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className="col-8 col-lg-4 mx-0 px-0">
+                <div className="col-8 col-lg-3 mx-0 px-0">
                     <div className="row justify-content-between align-items-center px-0 mx-0">
 
-                        <a style={{ fontSize: "2rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
+                        <a style={{ fontSize: "1.75rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
                             <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
                         </a>
 
-                        <a style={{ fontSize: "2rem" }} href="https://www.instagram.com/bocasmercado/">
+                        <a style={{ fontSize: "1.75rem" }} href="https://www.instagram.com/bocasmercado/">
                             <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
                         </a>
 
-                        <a style={{ fontSize: "2rem" }} href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
+                        <a style={{ fontSize: "1.75rem" }} href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
                             <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
                         </a>
 

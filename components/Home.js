@@ -27,7 +27,7 @@ function Card({ post }) {
                         />
                     </div>
 
-                    <div className="col-12 col-lg-6" style={{ padding: "2rem", paddingRight: "4rem", backgroundColor: "#f8f9fa", color: "black", minHeight: "20rem", alignItems: "stretch" }}>
+                    <div className="col-12 col-lg-6" style={{ padding: "2rem", paddingRight: "4rem", color: "black", minHeight: "20rem", alignItems: "stretch" }}>
 
                         <div className="row mx-0">
                             <Link href={`/posts/${post.seo_url}`}>
@@ -38,15 +38,15 @@ function Card({ post }) {
                         </div>
 
                         <div className="row mx-0">
-                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " 1rem", lineHeight: "1.5em", paddingBottom: "0.5" }}>{post.resumen}</p>
+                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " 0.9rem", lineHeight: "1.5em", paddingBottom: "0.5" }}>{post.resumen}</p>
                         </div>
 
                         <div className="row mx-0" style={{ alignItems: "center" }}>
-                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} className="d-block m-0">
-                                <a href={`/posts?nombre=${post.autor.nombre}`}>{post.autor.nombre}</a>{` en `}
+                            <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "1rem" }} className="d-block m-0">
+                                <a href={`/posts?nombre=${post.autor.nombre}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>{` en `}
                                 {
                                     post.categorias.map((c, i) =>
-                                        <a key={i} href={`/posts?categoria=${c.categoria} `}>{`${c.categoria} `} </a>
+                                        <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
                                     )
                                 }
                             </span>
@@ -55,7 +55,7 @@ function Card({ post }) {
                         <div className="row mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} className="date-read m-0">
                                 {post.published_at.split("T")[0].split("-").reverse().join("-")}
-                                <span className="mx-1">•</span> 3 min <span className="icon-star2"></span>
+                                <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
                             </span>
                         </div>
 
@@ -124,7 +124,7 @@ function Info({ noticia }) {
             <div className="card-body p-0" >
                 <div className="row justify-content-center p-0 mx-0 ">
 
-                    <div className="col-md-2  d-none d-md-block align-items-center px-0 " syle={{ padding: "0px", height: "100%" }}>
+                    <div className="col-md-3  d-none d-md-block align-items-center px-0 " syle={{ padding: "0px", height: "100%" }}>
                         <Image
                             src={url_image}
                             alt="Post Noticia"
@@ -133,7 +133,7 @@ function Info({ noticia }) {
                         />
                     </div>
 
-                    <div className="col-12 col-md-10 py-2" style={{ paddingRight: "5rem", paddingLeft: "2rem", minHeight: "9rem" }}>
+                    <div className="col-12 col-md-9 py-2" style={{ paddingRight: "5rem", paddingLeft: "1.5rem", minHeight: "9rem" }}>
 
                         <div className="row px-0 mx-0" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.seo_url}`}>
@@ -144,15 +144,15 @@ function Info({ noticia }) {
                         </div>
 
                         <div className="row px-0 mx-0">
-                            <p className="card-text" style={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
+                            <p className="card-text" style={{ fontSize: "0.8rem", lineHeight: "1rem", paddingBottom: "1rem" }}>{noticia.resumen}</p>
                         </div>
 
                         <div className="row px-0 mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} className="d-block m-0">
-                                <a href={`/posts?nombre=${noticia.autor.nombre}`}>{noticia.autor.nombre}</a>{` en `}
+                                <a href={`/posts/autor/${noticia.autor.nombre}`} style={{ textDecoration: "none", fontWeight: "bold" }} >{noticia.autor.nombre}</a>{` en `}
                                 {
                                     noticia.categorias.map(c =>
-                                        <a href={`/posts?categoria=${c.categoria} `}>{`${c.categoria} `}</a>
+                                        <a href={`/posts?categoria=${c.categoria}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `}</a>
                                     )
                                 }
                             </span>
@@ -161,7 +161,7 @@ function Info({ noticia }) {
                         <div className="row px-0 mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} className="date-read m-0">
                                 {noticia.published_at.split("T")[0].split("-").reverse().join("-")}
-                                <span className="mx-1">•</span> 3 min <span className="icon-star2"></span>
+                                <span className="mx-1">•</span> {`${noticia.tiempo_lectura} min`} <span className="icon-star2"></span>
                             </span>
                         </div>
 
@@ -196,18 +196,18 @@ function Trend({ trend, index }) {
                         </div>
 
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} className="d-block m-0">
-                                <a href={`/posts?nombre=${trend.autor.nombre}`}>{trend.autor.nombre}</a>{` en `}
+                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "1rem" }} className="d-block m-0">
+                                <a href={`/posts/autor/${trend.autor.nombre}`} style={{ textDecoration: "none", fontWeight: "bold", fontSize: "0.75rem" }}>{trend.autor.nombre}</a>{` en `}
                                 {
                                     trend.categorias.map(c =>
-                                        <a href={`/posts?categoria=${c.categoria} `}>{`${c.categoria} `}</a>
+                                        <a href={`/posts?categoria=${c.categoria}`} style={{ textDecoration: "none", fontWeight: "bold", fontSize: "0.75rem" }}>{`${c.categoria} `}</a>
                                     )
                                 }
                             </span>
                         </div>
 
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} className="date-read m-0">{trend.published_at.split("T")[0].split("-").reverse().join("-")} <span className="mx-1">•</span> 3 min <span className="icon-star2"></span></span>
+                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "1rem" }} className="date-read m-0">{trend.published_at.split("T")[0].split("-").reverse().join("-")} <span className="mx-1">•</span> {`${trend.tiempo_lectura} min`} <span className="icon-star2"></span></span>
                         </div>
 
                     </div>

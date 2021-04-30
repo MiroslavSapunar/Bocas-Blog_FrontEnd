@@ -6,14 +6,11 @@
   margin: 0px;
 }
 
+.a {
+  text-decoration: none;
+}
+
 .cardCustom {
+  background-color: #f3f3f3;
   border: 0px;
-
-  .a:hover {
-    text-decoration: none;
-  }
-
-  .spam:hover {
-    text-decoration: none;
-  }
 }
