@@ -1,0 +1,72 @@
+.destacado {
+    border-width: 0px;
+
+    .link:hover {
+        text-decoration: none;
+        color: #0645ad;
+    }
+
+    .colImage {
+        height: 22rem;
+    }
+
+    .colTexto {
+        height: 22rem;
+        background-color: #f3f3f3;
+        padding-top: 3rem;
+        padding-left: 2rem;
+        padding-right: 4rem;
+
+        .espacioTitulo {
+            min-height: 4rem;
+            margin-inline: 0;
+
+            .titulo {
+                color: black;
+                font-weight: 500;
+            }
+
+            .titulo:hover {
+                color: #0645ad;
+            }
+        }
+
+        .espacioResumen {
+            min-height: 8rem;
+            margin-inline: 0;
+
+            .resumen {
+                color: gray;
+                font-weight: 300;
+                font-size: 0.9rem;
+                line-height: 1rem;
+            }
+        }
+
+        .espacioMeta {
+            min-height: 2rem;
+            margin-inline: 0;
+            .meta {
+                color: black;
+                font-weight: 500;
+                font-size: 0.7rem;
+                line-height: 0.8rem;
+            }
+        }
+
+        .espacioMetaSub {
+            min-height: 2;
+            margin-inline: 0;
+            .metaSub {
+                color: black;
+                font-weight: 500;
+                font-size: 0.7rem;
+                line-height: 0.8rem;
+            }
+        }
+    }
+
+    .a:hover {
+        text-decoration: none;
+    }
+}

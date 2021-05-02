@@ -1,4 +1,4 @@
-import Home from '../components/Home'
+import Home from '../components/Home/Home'
 import { url_build } from '../utils/rest'
 
 export default function Root({ destacados, noticias, trending }) {
@@ -6,7 +6,6 @@ export default function Root({ destacados, noticias, trending }) {
     <Home destacados={destacados} noticias={noticias} trending={trending} />
   )
 }
-
 
 export async function getServerSideProps(context) {
 

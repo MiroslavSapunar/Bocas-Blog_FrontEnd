@@ -9,7 +9,6 @@ export default function Contacto(posts) {
 }
 
 export async function getStaticProps() {
-    //const resPosts = postsJson
     return {
         props: {}
     }

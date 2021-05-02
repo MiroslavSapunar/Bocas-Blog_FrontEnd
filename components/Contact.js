@@ -13,34 +13,34 @@ function ContactComponent() {
 
                     <div className="row">
                         <div className="col-md-6 form-group">
-                            <label for="fname">Nombre</label>
+                            <label htmlFor="fname">Nombre</label>
                             <input type="text" id="fname" className="form-control form-control-lg" />
                         </div>
                         <div className="col-md-6 form-group">
-                            <label for="lname">Apellido</label>
+                            <label htmlFor="lname">Apellido</label>
                             <input type="text" id="lname" className="form-control form-control-lg" />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6 form-group">
-                            <label for="eaddress">Email</label>
+                            <label htmlFor="eaddress">Email</label>
                             <input type="text" id="eaddress" className="form-control form-control-lg" />
                         </div>
                         <div className="col-md-6 form-group">
-                            <label for="tel">Telefono</label>
+                            <label htmlFor="tel">Telefono</label>
                             <input type="text" id="tel" className="form-control form-control-lg" />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-12 form-group">
-                            <label for="message">Mensaje</label>
+                            <label htmlFor="message">Mensaje</label>
                             <textarea name="" id="message" cols="30" rows="10" className="form-control"></textarea>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-12">
-                            <input type="submit" value="Deshabilitado" className="btn btn-dark py-3 px-5" disabled />
+                            <input type="submit" value="¡Próximamente!" className="btn btn-dark py-3 px-5" disabled />
                         </div>
                     </div>
 

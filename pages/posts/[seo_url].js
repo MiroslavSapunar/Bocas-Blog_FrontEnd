@@ -1,45 +1,53 @@
-import postsJson from '../../public/posts.json'
+import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
+
+import { url_build } from '../../utils/rest'
 
 function Post({ post }) {
+
+    var url_image = ""
+
+    if (post.imagenes[0].formats?.large) {
+        var url_image = `http://strapi:1337${post.imagenes[0].formats.large.url}`
+    } else {
+        var url_image = `http://strapi:1337${post.imagenes[0].url}`
+    }
+
     return (
         <div className="container-fluid px-0">
-            <div
-                style={{
-                    backgroundImage: `url(/${post.imagen})`,
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    height: "20rem"
-                }}
-                alt={"imagen-post-selecion-editor"}
-            ></div>
+            <div className="row m-0 p-0" style={{ backgroundColor: "#f5f5f5", height: "15rem", width: "100%" }}>
+                {/* <Image
+                    src={url_image}
+                    alt="Post destacado"
+                    layout="fill"
+                    objectFit="cover"
+                   
+                /> */}
+            </div>
             <div className="row justify-content-center mx-0 px-0 py-4">
 
-                <div className="row justify-content-center mx-0" style={{ width: "80%" }}>
-                    <div className="row">
-                        <div className="col align-items-stretch">
-                            <div className="row">
-                                <h4 className="card-title">{post.titulo}</h4>
-                            </div>
-                            <div className="row">
-                                <p className="card-text">{post.fecha_display + ` por ` + post.autor}</p>
-                            </div>
-                            <div className="row">
-                                <p className="card-text" style={{ fontWeight: "bolder" }}>{`Categorias: ` + post.categorias.join(", ")}</p>
-                            </div>
+                <div className="row justify-content-center mx-0" style={{ width: "75%" }}>
 
-                            <div className="row py-2">
-                                {
-                                    post.contenido.map(p =>
-                                        <p className="card-text">{p}</p>
-                                    )
-                                }
-                            </div>
+                    <div className="col px-0 align-items-stretch">
+                        <div className="row mx-0">
+                            <h3 className="card-title">{post.titulo}</h3>
                         </div>
+                        <div className="row mx-0">
+                            <p className="card-text">{`${post.published_at.split("T")[0].split("-").reverse().join("-")} por ${post.autor.nombre}`}</p>
+                        </div>
+                        <div className="row mx-0">
+                            {
+                                post.categorias.map((c, i) =>
+                                    <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                )
+                            }
+                        </div>
+                        <ReactMarkdown source={post.contenido} style={{ padding: "0", margin: "0" }} />
                     </div>
+
                 </div>
             </div >
-        </div>
+        </div >
     )
 }
 
@@ -49,9 +57,12 @@ export async function getStaticPaths() {
     //const res = await fetch('https://.../posts')
     //const posts = await res.json()
 
+    const resPost = await fetch(url_build.strapi_url_destacados)
+    const posts = await resPost.json()
+
     // Get the paths we want to pre-render based on posts
-    const paths = postsJson.map((post) => ({
-        params: { seo_url: post.url },
+    const paths = posts.map((post) => ({
+        params: { seo_url: post.seo_url },
     }))
 
     // We'll pre-render only these paths at build time.
@@ -66,7 +77,10 @@ export async function getStaticProps({ params }) {
     //const res = await fetch(`https://.../posts/${params.id}`)
     //const post = await res.json()
 
-    const post = postsJson.filter(post => post.url === params.seo_url)
+    const resPost = await fetch(url_build.strapi_url_destacados)
+    const posts = await resPost.json()
+
+    const post = posts.filter(post => post.seo_url === params.seo_url)
 
     // Pass post data to the page via props
     return { props: { post: post[0] } }
