@@ -68,7 +68,7 @@ function NavBar() {
                 <div className="col-6 col-lg-1 order-3 mx-0 px-0">
                     <div className="row w-100 justify-content-end align-items-center mx-0 my-1">
 
-                        <a className="mx-4" href="#">
+                        <a className="mx-4" href="#" style={{ fontSize: "1rem" }}>
                             <i className={`fas fa-search ${styles.icono}`} alt={"busqueda-bocas-mercado"}></i>
                         </a>
 

@@ -1,72 +1,74 @@
 .destacado {
     border-width: 0px;
 
-    .link:hover {
-        text-decoration: none;
-        color: #0645ad;
-    }
-
     .colImage {
-        height: 22rem;
+        min-height: 22rem;
     }
 
     .colTexto {
-        height: 22rem;
+        min-height: 22rem;
         background-color: #f3f3f3;
-        padding-top: 3rem;
-        padding-left: 2rem;
-        padding-right: 4rem;
+        padding-top: 3.5rem;
+        padding-bottom: 2rem;
+        padding-left: 2.25rem;
+        padding-right: 3.75rem;
 
         .espacioTitulo {
             min-height: 4rem;
             margin-inline: 0;
 
             .titulo {
-                color: black;
                 font-weight: 500;
-            }
-
-            .titulo:hover {
-                color: #0645ad;
             }
         }
 
         .espacioResumen {
-            min-height: 8rem;
+            min-height: 6rem;
             margin-inline: 0;
+            margin-bottom: 1rem;
 
             .resumen {
                 color: gray;
-                font-weight: 300;
-                font-size: 0.9rem;
-                line-height: 1rem;
+                font-weight: 400;
+                font-size: 0.85rem;
+                line-height: 1.25rem;
             }
         }
 
         .espacioMeta {
-            min-height: 2rem;
+            min-height: 1rem;
             margin-inline: 0;
             .meta {
                 color: black;
-                font-weight: 500;
-                font-size: 0.7rem;
-                line-height: 0.8rem;
-            }
-        }
+                font-weight: 400;
+                font-size: 0.85rem;
+                line-height: 1rem;
 
-        .espacioMetaSub {
-            min-height: 2;
-            margin-inline: 0;
+            }
+
             .metaSub {
                 color: black;
                 font-weight: 500;
-                font-size: 0.7rem;
-                line-height: 0.8rem;
+                font-size: 0.8rem;
+                line-height: 0.1rem;
             }
         }
     }
+}
 
-    .a:hover {
-        text-decoration: none;
-    }
+.link {
+    text-decoration: none;
+}
+.link:hover {
+    color: #0645ad;
+    text-decoration: none;
+}
+.linkMeta {
+    text-decoration: none;
+    font-weight: bold;
+}
+.linkMeta:hover {
+    color: #0645ad;
+    text-decoration: none;
+    font-weight: bold;
 }

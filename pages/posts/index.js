@@ -1,17 +1,21 @@
-import PostsComponent from '../../components/Posts'
+import PostsComponent from '../../components/Posts/Posts'
 
 import { url_build } from '../../utils/rest'
 
-export default function Posts({ posts, params }) {
+export default function Posts({ posts, filtro }) {
+
   return (
     <PostsComponent posts={posts} />
   )
 }
 
 export async function getServerSideProps(context) {
+  console.log(Object.keys( context.query )[ 0 ])
 
-  const resPost = await fetch(url_build.strapi_url_destacados)
+  const resPost = await fetch(url_build.strapi_url_posts)
   const posts = await resPost.json()
+
+  const filtro = "hola"
 
   if (!posts) {
     return {
@@ -22,6 +26,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       posts,
+      filtro,
 
     }, // will be passed to the page component as props
   }

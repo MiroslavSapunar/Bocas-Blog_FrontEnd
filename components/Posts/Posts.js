@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from "./Home.module.scss"
+import styles from "./Posts.module.scss"
 
 function Card({ post }) {
     var url_image = ""
@@ -12,11 +12,11 @@ function Card({ post }) {
     }
 
     return (
-        <div className={`card ${styles.cardCustom}`} style={{ marginBottom: "2rem" }}>
+        <div className={`card ${styles.post}`} style={{ marginBottom: "2rem" }}>
             <div className="card-body p-0" >
                 <div className="row justify-content-center" style={{ minHeight: "15rem" }} >
 
-                    <div className="col-12 col-lg-6" style={{ padding: "0px", minHeight: "15rem", alignItems: "stretch" }}>
+                    <div className="col-12 col-lg-4" style={{ padding: "0px", minHeight: "15rem", alignItems: "stretch" }}>
                         <Image
                             src={url_image}
                             alt="Post destacado"
@@ -25,7 +25,7 @@ function Card({ post }) {
                         />
                     </div>
 
-                    <div className="col-12 col-lg-6" style={{ padding: "2rem", paddingRight: "4rem", color: "black", minHeight: "15rem", alignItems: "stretch" }}>
+                    <div className="col-12 col-lg-8" style={{ padding: "2rem", paddingRight: "4rem", color: "black", minHeight: "15rem", alignItems: "stretch" }}>
 
                         <div className="row mx-0">
                             <Link href={`/posts/${post.seo_url}`}>

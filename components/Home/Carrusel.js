@@ -30,19 +30,19 @@ function Card({ post }) {
 
                         <div className={`row ${styles.espacioTitulo}`}>
                             <Link href={`/posts/${post.seo_url}`}>
-                                <a href={`/posts/${post.seo_url}`}>
+                                <a className={`${styles.link}`} href={`/posts/${post.seo_url}`}>
                                     <h4 className={`card-title ${styles.titulo}`} >{post.titulo}</h4>
                                 </a>
                             </Link>
                         </div>
 
                         <div className={`row ${styles.espacioResumen}`}>
-                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " 0.9rem", lineHeight: "1.5em", paddingBottom: "0.5" }}>{post.resumen}</p>
+                            <p className={`card-text ${styles.resumen}`} >{post.resumen}</p>
                         </div>
 
                         <div className={`row ${styles.espacioMeta}`}>
-                            <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a href={`/posts?nombre=${post.autor.nombre}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>{` en `}
+                            <span className={`d-block ${styles.meta}`}>
+                                <a className={`${styles.linkMeta} `} href={`/posts?nombre=${post.autor.nombre}`} >{post.autor.nombre}</a>{` en `}
                                 {
                                     post.categorias.map((c, i) =>
                                         <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
@@ -51,8 +51,8 @@ function Card({ post }) {
                             </span>
                         </div>
 
-                        <div className={`row ${styles.espacioMetaSub}`}>
-                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} className="date-read m-0">
+                        <div className={`row ${styles.espacioMeta}`}>
+                            <span className={`d-block ${styles.meta}`}>
                                 {post.published_at.split("T")[0].split("-").reverse().join("-")}
                                 <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
                             </span>
