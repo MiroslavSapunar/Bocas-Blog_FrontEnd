@@ -14,7 +14,7 @@
         padding-right: 3.75rem;
 
         .espacioTitulo {
-            min-height: 4rem;
+            min-height: 5rem;
             margin-inline: 0;
 
             .titulo {
@@ -36,7 +36,7 @@
         }
 
         .espacioMeta {
-            min-height: 1rem;
+            min-height: 1.75rem;
             margin-inline: 0;
             .meta {
                 color: black;
@@ -47,9 +47,9 @@
             }
 
             .metaSub {
-                color: black;
+                color: gray;
                 font-weight: 500;
-                font-size: 0.8rem;
+                font-size: 0.85rem;
                 line-height: 0.1rem;
             }
         }

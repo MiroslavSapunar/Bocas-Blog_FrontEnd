@@ -51,7 +51,7 @@ export const url_build = {
 
     strapi_url_destacados: `${strapi_url_build}/posts?destacado=true&_sort=published_at:DESC`,
     strapi_url_noticias: `${strapi_url_build}/posts?_sort=published_at:DESC&_limit=3`,
-    strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=5`,
+    strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
     
     strapi_url_productos_id: (id) => `${strapi_url_build}/productos/${id}`,
     strapi_url_productos_seo_url: (seo_url) => `${strapi_url_build}/productos/seo/${seo_url}`,

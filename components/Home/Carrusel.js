@@ -31,7 +31,7 @@ function Card({ post }) {
                         <div className={`row ${styles.espacioTitulo}`}>
                             <Link href={`/posts/${post.seo_url}`}>
                                 <a className={`${styles.link}`} href={`/posts/${post.seo_url}`}>
-                                    <h4 className={`card-title ${styles.titulo}`} >{post.titulo}</h4>
+                                    <h3 className={`card-title ${styles.titulo}`} >{post.titulo}</h3>
                                 </a>
                             </Link>
                         </div>
@@ -42,7 +42,8 @@ function Card({ post }) {
 
                         <div className={`row ${styles.espacioMeta}`}>
                             <span className={`d-block ${styles.meta}`}>
-                                <a className={`${styles.linkMeta} `} href={`/posts?nombre=${post.autor.nombre}`} >{post.autor.nombre}</a>{` en `}
+                                <a className={`${styles.linkMeta} `} href={`/posts?nombre=${post.autor.nombre}`} >{post.autor.nombre}</a>
+                                <span style={{color: "grey"}}>{` en `}</span>
                                 {
                                     post.categorias.map((c, i) =>
                                         <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
@@ -52,7 +53,7 @@ function Card({ post }) {
                         </div>
 
                         <div className={`row ${styles.espacioMeta}`}>
-                            <span className={`d-block ${styles.meta}`}>
+                            <span className={`d-block ${styles.metaSub}`}>
                                 {post.published_at.split("T")[0].split("-").reverse().join("-")}
                                 <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
                             </span>
