@@ -14,16 +14,16 @@ WORKDIR /usr/src/app
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN yarn install
 
 # Copy all files
 COPY . .
 
 # Build app
-RUN npm run build
+RUN yarn run build
 
 # Expose the listening port
 EXPOSE 3000
 
 # Run npm start script when container starts
-CMD [ "npm", "start"]
+CMD [ "yarn", "start"]
