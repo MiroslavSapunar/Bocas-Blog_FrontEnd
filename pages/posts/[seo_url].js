@@ -5,24 +5,23 @@ import { url_build } from '../../utils/rest'
 
 function Post({ post }) {
 
-    var url_image = ""
+    var url_image = `http://strapi:1337${post.imagenes[0].url}`
 
     if (post.imagenes[0].formats?.large) {
         var url_image = `http://strapi:1337${post.imagenes[0].formats.large.url}`
-    } else {
-        var url_image = `http://strapi:1337${post.imagenes[0].url}`
     }
 
     return (
         <div className="container-fluid px-0">
-            <div className="row m-0 p-0" style={{ backgroundColor: "#f5f5f5", height: "15rem", width: "100%" }}>
-                {/* <Image
+            <div style={{height:"15rem"}}>
+                <Image
                     src={url_image}
                     alt="Post destacado"
-                    layout="fill"
+                    layout="responsive"
                     objectFit="cover"
-                   
-                /> */}
+                    height="15"
+                    width="100"
+                />
             </div>
             <div className="row justify-content-center mx-0 px-0 py-4">
 
@@ -46,7 +45,9 @@ function Post({ post }) {
                     </div>
 
                 </div>
+                <iframe src="https://www.bocas.com.ar/productos/mix-estrella/?variant=194370736" height="1000" width="75%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
             </div >
+
         </div >
     )
 }
