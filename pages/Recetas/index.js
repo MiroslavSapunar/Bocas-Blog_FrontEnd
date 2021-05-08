@@ -9,7 +9,7 @@ export default function Recetas({ posts }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
     const resCategoria = await fetch(url_build.strapi_url_recetas)
     const categoria = await resCategoria.json()

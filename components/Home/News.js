@@ -1,8 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { url } from '../../utils/rest'
+
 export default function Info({ noticia }) {
-    const url_image = `http://strapi:1337` + noticia.imagenes[0].formats.small.url
+    var url_image = url.strapi_url_base + noticia.imagenes[0].url
+
+    if (noticia.imagenes[0].formats?.small) {
+        url_image = url.strapi_url_base + noticia.imagenes[0].formats.small.url
+    }
     return (
         <div className="card " style={{ border: "1px", marginBottom: "1rem", minHeight: "11rem" }} >
             <div className="card-body p-0" >

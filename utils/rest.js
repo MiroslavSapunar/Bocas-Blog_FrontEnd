@@ -49,7 +49,7 @@ export const url_build = {
     strapi_url_posts: `${strapi_url_build}/posts?_sort=published_at:DESC`,
     strapi_url_posts_count: `${strapi_url_build}/posts/count`,
 
-    strapi_url_destacados: `${strapi_url_build}/posts?destacado=true&_sort=published_at:DESC`,
+    strapi_url_destacados: `${strapi_url_build}/posts?destacado=true&_sort=published_at:DESC&_limit=5`,
     strapi_url_novedades: `${strapi_url_build}/categorias/1`,
     strapi_url_nutricion: `${strapi_url_build}/categorias/2`,
     strapi_url_recetas: `${strapi_url_build}/categorias/3`,

@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 import styles from './Carrusel.module.scss'
 
-function Card({ post }) {
-    var url_image = ""
+import { url } from '../../utils/rest'
 
-    if (post.imagenes[0].formats?.medium) {
-        var url_image = `http://strapi:1337${post.imagenes[0].formats.medium.url}`
-    } else {
-        var url_image = `http://strapi:1337${post.imagenes[0].url}`
+function Card({ post }) {
+    var url_image = url.strapi_url_base + post.imagenes[0].url
+
+    if (post.imagenes[0].formats?.small) {
+        url_image = url.strapi_url_base + post.imagenes[0].formats.small.url
     }
 
     return (
@@ -42,7 +42,7 @@ function Card({ post }) {
 
                         <div className={`row ${styles.espacioMeta}`}>
                             <span className={`d-block ${styles.meta}`}>
-                                <a style={{fontWeight:"bolder"}}  >{post.autor.nombre}</a>
+                                <a style={{ fontWeight: "bolder" }}  >{post.autor.nombre}</a>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
                                     post.categorias.map((c, i) =>

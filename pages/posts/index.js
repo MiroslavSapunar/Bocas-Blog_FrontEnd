@@ -9,7 +9,7 @@ export default function Posts({ posts, filtro }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   console.log(Object.keys( context.query )[ 0 ])
 
   const resPost = await fetch(url_build.strapi_url_posts)

@@ -9,7 +9,7 @@ export default function Nutricion({ posts }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
     const resCategoria = await fetch(url_build.strapi_url_nutricion)
     const categoria = await resCategoria.json()
@@ -25,7 +25,6 @@ export async function getServerSideProps(context) {
       const dataRes = await res.json()
       return dataRes
     }))
-    
   
     return {
       props: {
