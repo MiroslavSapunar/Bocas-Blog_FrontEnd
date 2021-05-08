@@ -9,7 +9,7 @@ function Body({ noticias, trending }) {
         <div className="row justify-content-center align-items-start px-0 py-4 mx-0 my-3">
             <div className="col-12 col-lg-8 px-0 py-4 alig-items-start">
                 <div className="row justify-content-start mx-0">
-                    <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Noticias</h4>
+                    <h4 style={{ textDecoration: "underline", fontSize: "1.2rem" }}>Novedades</h4>
                 </div>
                 {
                     noticias.map((noticia, k) => <Info noticia={noticia} key={k} />)

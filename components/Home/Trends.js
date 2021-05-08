@@ -25,11 +25,11 @@ export default function Trend({ trend, index }) {
 
                         <div className="row">
                             <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a href={`/posts/autor/${trend.autor.nombre}`} style={{ textDecoration: "none", fontSize: "0.75rem" }}>{trend.autor.nombre}</a>
+                                <a style={{ textDecoration: "none", fontSize: "0.75rem" }}>{trend.autor.nombre}</a>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
-                                    trend.categorias.map(c =>
-                                        <a href={`/posts?categoria=${c.categoria}`} style={{ textDecoration: "none", fontSize: "0.75rem" }}>{`${c.categoria} `}</a>
+                                    trend.categorias.map((c, i) =>
+                                        <a href={`/{c.categoria}`} style={{ textDecoration: "none", fontSize: "0.75rem" }} key={i}>{`${c.categoria} `}</a>
                                     )
                                 }
                             </span>

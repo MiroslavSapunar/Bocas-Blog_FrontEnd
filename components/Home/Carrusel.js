@@ -42,11 +42,11 @@ function Card({ post }) {
 
                         <div className={`row ${styles.espacioMeta}`}>
                             <span className={`d-block ${styles.meta}`}>
-                                <a className={`${styles.linkMeta} `} href={`/posts?nombre=${post.autor.nombre}`} >{post.autor.nombre}</a>
-                                <span style={{color: "grey"}}>{` en `}</span>
+                                <a style={{fontWeight:"bolder"}}  >{post.autor.nombre}</a>
+                                <span style={{ color: "grey" }}>{` en `}</span>
                                 {
                                     post.categorias.map((c, i) =>
-                                        <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                        <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
                                     )
                                 }
                             </span>

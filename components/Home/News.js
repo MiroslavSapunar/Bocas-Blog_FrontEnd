@@ -33,11 +33,11 @@ export default function Info({ noticia }) {
 
                         <div className="row px-0 mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} className="d-block m-0">
-                                <a href={`/posts/autor/${noticia.autor.nombre}`} style={{ textDecoration: "none" }} >{noticia.autor.nombre}</a>
-                                <span style={{color: "grey"}}>{` en `}</span>
+                                <a style={{ textDecoration: "none" }} >{noticia.autor.nombre}</a>
+                                <span style={{ color: "grey" }}>{` en `}</span>
                                 {
-                                    noticia.categorias.map(c =>
-                                        <a href={`/posts?categoria=${c.categoria}`} style={{ textDecoration: "none" }}>{`${c.categoria} `}</a>
+                                    noticia.categorias.map((c, i) =>
+                                        <a href={`/${c.categoria}`} style={{ textDecoration: "none" }} key={i}>{`${c.categoria} `}</a>
                                     )
                                 }
                             </span>

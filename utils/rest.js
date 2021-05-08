@@ -1,4 +1,4 @@
-const strapi_url = process.env.STRAPI_URL_PUBLIC
+const strapi_url = process.env.NEXT_PUBLIC_URL
 const strapi_url_build = process.env.STRAPI_URL_BUILD
 const strapi_key = process.env.STRAPI_API_KEY
 
@@ -50,8 +50,12 @@ export const url_build = {
     strapi_url_posts_count: `${strapi_url_build}/posts/count`,
 
     strapi_url_destacados: `${strapi_url_build}/posts?destacado=true&_sort=published_at:DESC`,
-    strapi_url_noticias: `${strapi_url_build}/posts?_sort=published_at:DESC&_limit=3`,
+    strapi_url_novedades: `${strapi_url_build}/categorias/1`,
+    strapi_url_nutricion: `${strapi_url_build}/categorias/2`,
+    strapi_url_recetas: `${strapi_url_build}/categorias/3`,
+    strapi_url_habitos: `${strapi_url_build}/categorias/4`,
     strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
+    strapi_url_noticias: `${strapi_url_build}/posts?_sort=published_at:DESC&_limit=3`,
     
     strapi_url_productos_id: (id) => `${strapi_url_build}/productos/${id}`,
     strapi_url_productos_seo_url: (seo_url) => `${strapi_url_build}/productos/seo/${seo_url}`,

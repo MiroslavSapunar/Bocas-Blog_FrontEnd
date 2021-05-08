@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import styles from './Layout.module.scss'
 
@@ -12,7 +13,12 @@ function NavBar() {
                     <div className="row justify-content-between align-items-center mx-0 px-0">
                         <Link href="/">
                             <a href="/">
-                                <img src="bocas.png" className={`${styles.logo}`} alt={"bocas-mercado-consciente"} />
+                                <Image
+                                    src="/bocas.png"
+                                    alt="Bocas Mercado consciente"
+                                    height="48"
+                                    width="160"
+                                />
                             </a>
                         </Link>
 
@@ -30,30 +36,30 @@ function NavBar() {
                                     </li>
                                 </Link>
 
-                                <Link href="/posts?novedades">
+                                <Link href="/Novedades">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Novedades</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/posts?nutricion">
+                                <Link href="/Nutricion">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Nutrición</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/posts?recetas">
+                                <Link href="/Recetas">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Recetas</a>
                                     </li>
                                 </Link>
-                                <Link href="/posts?habitos">
+                                <Link href="/Habitos">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Hábitos</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/contacto">
+                                <Link href="/Contacto">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Preguntas</a>
                                     </li>

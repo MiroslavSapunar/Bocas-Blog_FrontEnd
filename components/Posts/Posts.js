@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { url_build } from '../../utils/rest'
 import styles from "./Posts.module.scss"
 
 function Card({ post }) {
+    //console.log(post)
+
     var url_image = ""
 
     if (post.imagenes[0].formats?.medium) {
@@ -14,7 +17,7 @@ function Card({ post }) {
     return (
         <div className={`card ${styles.post}`} style={{ marginBottom: "2rem" }}>
             <div className="card-body p-0" >
-                <div className="row justify-content-center" style={{ minHeight: "15rem" }} >
+                <div className="row justify-content-center mx-0" style={{ minHeight: "15rem" }} >
 
                     <div className="col-12 col-lg-4" style={{ padding: "0px", minHeight: "15rem", alignItems: "stretch" }}>
                         <Image
@@ -41,10 +44,10 @@ function Card({ post }) {
 
                         <div className="row mx-0" style={{ alignItems: "center" }}>
                             <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a href={`/posts?nombre=${post.autor.nombre}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>{` en `}
+                                <a style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>{` en `}
                                 {
                                     post.categorias.map((c, i) =>
-                                        <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                        <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
                                     )
                                 }
                             </span>
@@ -63,16 +66,14 @@ function Card({ post }) {
     )
 }
 
-function PostsComponent({ posts }) {
+function PostsComponent({ posts, categoria }) {
     return (
 
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
-                <h1>Posts</h1>
-
-                {posts.map((p, i) =>
-                    <Card post={p} key={i} />
-                )
+                <h1>{categoria}</h1>
+                {
+                    posts.map((p, i) => <Card post={p} key={i} />)
                 }
             </div>
         </div>
