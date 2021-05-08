@@ -101,7 +101,7 @@ function Footer() {
                     <div className="row align-items-center justify-content-start px-0">
                         <div className="d-flex">
                             <input type="email" className="form-control" placeholder="¡Próximamente!" disabled />
-                            <button type="submit" className="btn btn-secondary">
+                            <button type="submit" className="btn btn-secondary" style={{ fontSize: "1rem" }}>
                                 <i className="fas fa-paper-plane"></i>
                             </button>
                         </div>
