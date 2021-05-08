@@ -1,4 +1,4 @@
-const strapi_url = process.env.NEXT_PUBLIC_URL
+const strapi_url = process.env.NEXT_PUBLIC_URL_STRAPI
 const strapi_url_build = process.env.STRAPI_URL_BUILD
 const strapi_key = process.env.STRAPI_API_KEY
 
