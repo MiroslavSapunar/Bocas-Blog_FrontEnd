@@ -1,15 +1,13 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { url } from '../../utils/rest'
 
 export default function Info({ noticia }) {
-    var url_image = ""
+    
+    let url_image =  url.strapi_url_base + noticia.imagenes[0].url
 
-    if (noticia.imagenes[0].formats?.medium) {
-        url_image = `http://strapi:1337${noticia.imagenes[0].formats.medium.url}`
-    } else {
-        url_image = `http://strapi:1337${noticia.imagenes[0].url}`
+    if (noticia.imagenes[0].formats?.small) {
+        url_image = url.strapi_url_base + noticia.imagenes[0].formats.small.url
     }
 
     return (
@@ -18,11 +16,10 @@ export default function Info({ noticia }) {
                 <div className="row justify-content-center p-0 mx-0 ">
 
                     <div className="col-md-3  d-none d-md-block align-items-center px-0 " style={{ padding: "0px", minHeight: "11rem" }}>
-                        <Image
+                        <img
                             src={url_image}
-                            alt="Post Noticia"
-                            layout="fill"
-                            objectFit="cover"
+                            alt="Post destacado"
+                            style={{ width: "100%", minHeight: "100%", objectFit: "cover" }}
                         />
                     </div>
 

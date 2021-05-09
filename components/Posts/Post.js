@@ -1,9 +1,8 @@
-import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 
 import Trend from '../Home/Trends'
 
-import { url, url_build } from '../../utils/rest'
+import { url } from '../../utils/rest'
 import styles from './Post.module.scss'
 
 function ProductoBocas({ url }) {
@@ -19,12 +18,10 @@ function ProductoBocas({ url }) {
 }
 
 function Post({ post, trending }) {
-    var url_image = ""
+    let url_image = url.strapi_url_base + post.imagenes[0].url
 
-    if (post.imagenes[0].formats?.medium) {
+    if (post.imagenes[0].formats?.large) {
         url_image = url.strapi_url_base + post.imagenes[0].formats.large.url
-    } else {
-        url_image = url.strapi_url_base + post.imagenes[0].url
     }
 
     return (
@@ -33,7 +30,7 @@ function Post({ post, trending }) {
                 <img
                     src={url_image}
                     alt="Post destacado"
-                    style={{ width: "100%", height: "17rem", objectFit: "cover" }}
+                    style={{ width: "100%", height: "20rem", objectFit: "cover" }}
                 />
             </div>
             <div className="row justify-content-center mx-0 px-0 py-4">

@@ -1,17 +1,13 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { url_build } from '../../utils/rest'
+import { url } from '../../utils/rest'
 import styles from "./Posts.module.scss"
 
 function Card({ post }) {
-    //console.log(post)
 
-    var url_image = ""
+    let url_image = url.strapi_url_base + post.imagenes[0].url
 
     if (post.imagenes[0].formats?.medium) {
-        var url_image = `http://strapi:1337${post.imagenes[0].formats.medium.url}`
-    } else {
-        var url_image = `http://strapi:1337${post.imagenes[0].url}`
+        url_image = url.strapi_url_base + post.imagenes[0].formats.medium.url
     }
 
     return (
@@ -20,11 +16,10 @@ function Card({ post }) {
                 <div className="row justify-content-center mx-0" style={{ minHeight: "15rem" }} >
 
                     <div className="col-12 col-lg-4" style={{ padding: "0px", minHeight: "15rem", alignItems: "stretch" }}>
-                        <Image
+                        <img
                             src={url_image}
                             alt="Post destacado"
-                            layout="fill"
-                            objectFit="cover"
+                            style={{ width: "100%", minHeight: "100%", objectFit: "cover" }}
                         />
                     </div>
 

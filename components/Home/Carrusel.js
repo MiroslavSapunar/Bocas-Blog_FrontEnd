@@ -1,17 +1,13 @@
 import Link from 'next/link'
-import Image from 'next/image'
-
+import { url } from '../../utils/rest'
 import styles from './Carrusel.module.scss'
 
-import { url, url_build } from '../../utils/rest'
-
 function Card({ post }) {
-    var url_image = ""
+    
+    let url_image = url.strapi_url_base + post.imagenes[0].url
 
     if (post.imagenes[0].formats?.medium) {
-        var url_image = `http://strapi:1337${post.imagenes[0].formats.medium.url}`
-    } else {
-        var url_image = `http://strapi:1337${post.imagenes[0].url}`
+        url_image = url.strapi_url_base + post.imagenes[0].formats.medium.url
     }
 
     return (
@@ -20,13 +16,13 @@ function Card({ post }) {
                 <div className="row justify-content-center">
 
                     <div className={`col-12 col-lg-6 ${styles.colImage}`}>
-                        <Image
+                        <img
                             src={url_image}
                             alt="Post destacado"
-                            layout="fill"
-                            objectFit="cover"
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
                         />
                     </div>
+
 
                     <div className={`col-12 col-lg-6 ${styles.colTexto}`} >
 
