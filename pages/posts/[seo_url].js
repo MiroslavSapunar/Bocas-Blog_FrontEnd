@@ -11,10 +11,8 @@ function Post({ post }) {
 // This function gets called at build time
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    //const res = await fetch('https://.../posts')
-    //const posts = await res.json()
 
-    const resPost = await fetch(url_build.strapi_url_destacados)
+    const resPost = await fetch(url_build.strapi_url_posts)
     const posts = await resPost.json()
 
     // Get the paths we want to pre-render based on posts

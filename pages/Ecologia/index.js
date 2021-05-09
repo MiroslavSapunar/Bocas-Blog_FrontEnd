@@ -5,7 +5,7 @@ import { url_build } from '../../utils/rest'
 export default function Habitos({ posts }) {
 
   return (
-    <PostsComponent categoria={"Hábitos"} posts={posts} />
+    <PostsComponent categoria={"Ecología"} posts={posts} />
   )
 }
 

@@ -53,7 +53,7 @@ function NavBar() {
                                         <a className={`nav-link ${styles.categoria}`} >Recetas</a>
                                     </li>
                                 </Link>
-                                <Link href="/Habitos">
+                                <Link href="/Ecologia">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a className={`nav-link ${styles.categoria}`} >Ecología</a>
                                     </li>
