@@ -35,7 +35,7 @@ export async function getStaticProps({ params }) {
     const resPost = await fetch(url_build.strapi_url_posts)
     const posts = await resPost.json()
 
-    const resTrends = await fetch(url_build.strapi_url_trending)
+    const resTrends = await fetch(url_build.strapi_url_top_trending)
     const trending = await resTrends.json()
 
 

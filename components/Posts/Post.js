@@ -38,9 +38,9 @@ function Post({ post, trending }) {
             </div>
             <div className="row justify-content-center mx-0 px-0 py-4">
 
-                <div className="row justify-content-between mx-0" style={{ width: "70%" }}>
+                <div className="row justify-content-between mx-0" style={{ width: "80%" }}>
 
-                    <div className="col-12 col-lg-9 px-0 pr-2 align-items-stretch">
+                    <div className="col-12 col-lg-9 px-0 pr-5 align-items-stretch">
                         <div className="row mx-0 my-1">
                             <h2 className="card-title">{post.titulo}</h2>
                         </div>
@@ -62,7 +62,7 @@ function Post({ post, trending }) {
                     </div>
                     
                     <div className="col-12 col-lg-3 px-0 align-items-stretch">
-                        <h4 style={{ textDecoration: "underline", fontSize: "1.2rem", marginTop:"1rem" }}>Trending</h4>
+                        <h4 style={{ textDecoration: "underline", fontSize: "1.2rem", marginTop:"1rem" }}>Top Trending</h4>
                         {
                             trending.map((trend, k) => <Trend trend={trend} key={k} index={k + 1} />)
                         }
