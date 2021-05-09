@@ -3,13 +3,15 @@ import Image from 'next/image'
 
 import styles from './Carrusel.module.scss'
 
-import { url } from '../../utils/rest'
+import { url, url_build } from '../../utils/rest'
 
 function Card({ post }) {
-    var url_image = url.strapi_url_base + post.imagenes[0].url
+    var url_image = ""
 
-    if (post.imagenes[0].formats?.small) {
-        url_image = url.strapi_url_base + post.imagenes[0].formats.small.url
+    if (post.imagenes[0].formats?.medium) {
+        var url_image = `http://strapi:1337${post.imagenes[0].formats.medium.url}`
+    } else {
+        var url_image = `http://strapi:1337${post.imagenes[0].url}`
     }
 
     return (

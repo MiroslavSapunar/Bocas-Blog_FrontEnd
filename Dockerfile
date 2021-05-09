@@ -2,7 +2,7 @@
 FROM node:14-buster-slim
 
 # env variables
-ARG STRAPI_URL_PUBLIC
+ARG NEXT_PUBLIC_URL_STRAPI
 ARG STRAPI_URL_BUILD
 ENV NODE_ENV production
 
@@ -11,7 +11,8 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json before other files
 # Utilise Docker cache to save re-installing dependencies if unchanged
-COPY ./package*.json ./
+COPY ./package.json ./
+COPY ./yarn.lock ./
 
 # Install dependencies
 RUN yarn install

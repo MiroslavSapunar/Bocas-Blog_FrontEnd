@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 
-import { url } from '../../utils/rest'
+import { url_build } from '../../utils/rest'
 import styles from './Post.module.scss'
 
 function ProductoBocas({ url }) {
@@ -17,12 +17,12 @@ function ProductoBocas({ url }) {
 }
 
 function Post({ post }) {
-    console.log(url_image = url.strapi_url_base + post.imagenes[0].url)
+    var url_image = ""
 
-    var url_image = url.strapi_url_base + post.imagenes[0].url
-
-    if (post.imagenes[0].formats?.large) {
-        var url_image = url.strapi_url_base + `${post.imagenes[0].formats.large.url}`
+    if (post.imagenes[0].formats?.medium) {
+        url_image = `http://strapi:1337${post.imagenes[0].formats.large.url}`
+    } else {
+        url_image = `http://strapi:1337${post.imagenes[0].url}`
     }
 
     return (
@@ -42,20 +42,22 @@ function Post({ post }) {
                 <div className="row justify-content-center mx-0" style={{ width: "75%" }}>
 
                     <div className="col-12 px-0 align-items-stretch">
-                        <div className="row mx-0">
-                            <h3 className="card-title">{post.titulo}</h3>
+                        <div className="row mx-0 my-1">
+                            <h2 className="card-title">{post.titulo}</h2>
                         </div>
-                        <div className="row mx-0">
+                        <div className="row mx-0 my-2">
                             <p className="card-text">{`${post.published_at.split("T")[0].split("-").reverse().join("-")} por ${post.autor.nombre}`}</p>
                         </div>
+
+                        <ReactMarkdown source={post.contenido} style={{ padding: "0", margin: "0" }} />
+
                         <div className="row mx-0">
                             {
                                 post.categorias.map((c, i) =>
-                                    <a key={i} href={`/posts?categoria=${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                    <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}> <span>{`#${c.categoria} `}</span> </a>
                                 )
                             }
                         </div>
-                        <ReactMarkdown source={post.contenido} style={{ padding: "0", margin: "0" }} />
                     </div>
 
                 </div>

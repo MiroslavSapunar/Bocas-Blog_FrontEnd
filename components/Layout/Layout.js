@@ -55,7 +55,7 @@ function NavBar() {
                                 </Link>
                                 <Link href="/Habitos">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a className={`nav-link ${styles.categoria}`} >Hábitos</a>
+                                        <a className={`nav-link ${styles.categoria}`} >Ecología</a>
                                     </li>
                                 </Link>
 
