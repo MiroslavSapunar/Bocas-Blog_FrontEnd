@@ -6,10 +6,10 @@ import styles from './Layout.module.scss'
 
 function NavBar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
+        <nav className="navbar navbar-expand-xl navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
             <div className="row align-items-center justify-content-start mx-0 px-0 py-2" style={{ width: "80%", minHeight: "5rem" }}>
 
-                <div className="col-6 col-lg-3 order-1  mx-0 px-0">
+                <div className="col-6 col-lg-2 order-1  mx-0 px-0">
                     <div className="row justify-content-between align-items-center mx-0 px-0">
                         <Link href="/">
                             <a href="/">
@@ -25,7 +25,7 @@ function NavBar() {
                     </div>
                 </div>
 
-                <div className="col-12 col-lg-8 order-lg-2 order-12 mx-0 px-0">
+                <div className="col-12 col-lg-8 col-xl-9 order-lg-2 order-12 mx-0 px-0">
                     <div className="row w-100 justify-content-center align-items-center mx-0 my-1">
                         <div className="collapse navbar-collapse justify-content-end w-75" id="navbarToggler">
                             <ul className="navbar-nav">
@@ -71,7 +71,7 @@ function NavBar() {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 col-lg-1 order-3 mx-0 px-0">
+                <div className="col-6 col-lg-2 col-xl-1 order-3 mx-0 px-0">
                     <div className="row w-100 justify-content-end align-items-center mx-0 my-1">
 
                         <a className="mx-4" href="#" style={{ fontSize: "1rem" }}>
