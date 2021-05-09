@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
     //const res = await fetch(`https://.../posts/${params.id}`)
     //const post = await res.json()
 
-    const resPost = await fetch(url_build.strapi_url_destacados)
+    const resPost = await fetch(url_build.strapi_url_posts)
     const posts = await resPost.json()
 
     const post = posts.filter(post => post.seo_url === params.seo_url)
