@@ -4,8 +4,10 @@ FROM node:14-buster-slim
 # env variables
 ARG NEXT_PUBLIC_URL_STRAPI
 ARG STRAPI_URL_BUILD
+ARG STRAPI_API_KEY
 ARG IG_TEST_TOKEN
 ARG APP_CLIENT_TOKEN
+ARG GOOGLE_TAG
 ENV NODE_ENV production
 
 # Set working directory

@@ -30,7 +30,6 @@ function Body({ noticias, trending }) {
 }
 
 export default function Home({ destacados, noticias, trending, ig }) {
-    console.log(ig)
     return (
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
@@ -38,12 +37,11 @@ export default function Home({ destacados, noticias, trending, ig }) {
                 <div style={{ height: "1rem" }}></div>
                 <Body noticias={noticias} trending={trending} />
                 <div className="row">
-                    {ig.map(p => {
+                    {ig.map((p,i) => {
 
-                        console.log(p.media_url)
                         return (
 
-                            < div className="col-12 col-md-4 my-2" >
+                            < div className="col-12 col-sm-6 col-md-4 my-2" key={i}>
                                 <a href={`${p.permalink}`}>
 
                                     <div className="card">
@@ -52,12 +50,10 @@ export default function Home({ destacados, noticias, trending, ig }) {
                                             width="100%"
                                             height="100%"
                                             showcontrols="false"
-                                            loading="lazy"
+                                            autoPlay="1"
+                                            mute="1"
                                             src={`${p.media_url}`}
-                                            autoplay="1"
-                                            loop="1"
-                                            autopause="0"
-                                            style={{ height: "18rem", objectFit: "cover", pointerEvents: "none" }}
+                                            style={{ height: "20rem", objectFit: "cover" }}
                                         >
                                         </embed>
                                         {/* <img src={p.media_url}  />

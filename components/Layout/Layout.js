@@ -92,8 +92,8 @@ function NavBar() {
 function Footer() {
     return (
         <nav className="navbar sticky-bottom navbar-light bg-light justify-content-center px-0">
-            <div className="row align-items-center justify-content-between py-4" style={{ width: "80%" }}>
-                <div className="col-12 col-md-6 px-0 py-2 ">
+            <div className="row align-items-center justify-content-around py-4" style={{ width: "80%" }}>
+                {/* <div className="col-12 col-md-6 px-0 py-2 ">
 
                     <div className="row align-items-center justify-content-center px-0">
                         <h5>¡Subscribite a nuestro Newsletter!</h5>
@@ -107,27 +107,26 @@ function Footer() {
                         </div>
                     </div>
 
-                </div>
 
-                <div className="co-12 col-md-6 mx-0 px-0 py-2">
-
+                <div className="coL-12  mx-0 px-0 py-2">
                     <div className="row justify-content-around align-items-center px-0 mx-0">
-
-                        <a style={{ fontSize: "1.75rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
-                            <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
-                        </a>
-
-                        <a style={{ fontSize: "1.75rem" }} href="https://www.instagram.com/bocasmercado/">
-                            <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
-                        </a>
-
-                        <a style={{ fontSize: "1.75rem" }} href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
-                            <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
-                        </a>
-
                     </div>
-
                 </div>
+                </div> */}
+
+                <a style={{ fontSize: "1.75rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
+                    <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
+                </a>
+
+                <a style={{ fontSize: "1.75rem" }} href="https://www.instagram.com/bocasmercado/">
+                    <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
+                </a>
+
+                <a style={{ fontSize: "1.75rem" }} href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
+                    <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
+                </a>
+
+
 
             </div>
         </nav>
@@ -136,13 +135,11 @@ function Footer() {
 
 export default function Layout({ children }) {
     return (
-        <>
+        <div>
             <Head lang="es">
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght&family=Montserrat:wght@200;300;400;500;600;700&&family=Roboto+Slab:wght@100;200;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
+                
                 <title>Bocas Blog | Alimentacion Consciente</title>
                 <meta name="description" content="Blog Online de Bocas" />
                 <link rel="icon" href="/favicon.ico" />
@@ -176,6 +173,6 @@ export default function Layout({ children }) {
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossOrigin="anonymous"></script>
             </body>
-        </>
+        </div>
     )
 }

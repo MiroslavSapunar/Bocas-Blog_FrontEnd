@@ -3,6 +3,7 @@ const strapi_url_build = process.env.STRAPI_URL_BUILD
 const strapi_key = process.env.STRAPI_API_KEY
 const ig_test_token = process.env.IG_TEST_TOKEN
 const app_client_token = process.env.APP_CLIENT_TOKEN
+const gtag_id = process.env.GOOGLE_TAG
 
 export const options = {
     strapi: {
@@ -35,10 +36,10 @@ export const options = {
 }
 
 export const tokens = {
+    google_tag: gtag_id,
     instagram_test_token: ig_test_token,
     intagram_app_token: app_client_token,
     instagram_media: `https://graph.instagram.com/me/media?fields=media_url,permalink&access_token=${ig_test_token}`
-
 }
 
 export const url = {
