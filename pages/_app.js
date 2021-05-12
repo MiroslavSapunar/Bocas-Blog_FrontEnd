@@ -14,7 +14,7 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
 
-  console.log(tokens.google_tag)
+  //console.log(tokens.google_tag)
 
   useEffect(() => {
     TagManager.initialize({ gtmId: 'G-DNVVG9NRTY' })

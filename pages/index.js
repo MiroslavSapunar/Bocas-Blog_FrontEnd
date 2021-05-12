@@ -7,7 +7,7 @@ export default function Root({ destacados, noticias, trending, ig }) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
   const [resDestacados, resNoticias, resTrending, resIG] = await Promise.all([
     fetch(url_build.strapi_url_destacados),

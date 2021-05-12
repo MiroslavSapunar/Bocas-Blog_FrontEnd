@@ -2,7 +2,7 @@ import Destacados from "./Carrusel"
 import Info from "./News"
 import Trend from "./Trends"
 
-import { tokens } from '../../utils/rest'
+//import { tokens } from '../../utils/rest'
 
 function Body({ noticias, trending }) {
 

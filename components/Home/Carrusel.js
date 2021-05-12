@@ -12,53 +12,53 @@ function Card({ post }) {
 
     return (
         <div className={`card ${styles.destacado}`} >
-            <div className="card-body py-0" >
-                <div className="row justify-content-center">
 
-                    <div className={`col-12 col-lg-6 ${styles.colImage}`}>
-                        <img className={`${styles.image}`}
-                            src={url_image}
-                            alt="Post destacado"
-                        />
-                    </div>
+            <div className="row justify-content-center h-100">
 
-
-                    <div className={`col-12 col-lg-6 py-2 my-auto ${styles.colTexto}`} >
-
-                        <div className={`row ${styles.espacioTitulo}`}>
-                            <Link href={`/posts/${post.seo_url}`}>
-                                <a className={`${styles.link}`} href={`/posts/${post.seo_url}`}>
-                                    <h3 className={`card-title ${styles.titulo}`} >{post.titulo}</h3>
-                                </a>
-                            </Link>
-                        </div>
-
-                        <div className={`row ${styles.espacioResumen}`}>
-                            <p className={`card-text ${styles.resumen}`} >{post.resumen}</p>
-                        </div>
-
-                        <div className={`row ${styles.espacioMeta}`}>
-                            <span className={`d-block ${styles.meta}`}>
-                                <a style={{ fontWeight: "bolder" }}  >{post.autor.nombre}</a>
-                                <span style={{ color: "grey" }}>{` en `}</span>
-                                {
-                                    post.categorias.map((c, i) =>
-                                        <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
-                                    )
-                                }
-                            </span>
-                        </div>
-
-                        <div className={`row ${styles.espacioMeta}`}>
-                            <span className={`d-block ${styles.metaSub}`}>
-                                {post.published_at.split("T")[0].split("-").reverse().join("-")}
-                                <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
-                            </span>
-                        </div>
-
-
-                    </div>
+                <div className={`col-12 col-lg-6 ${styles.colImage}`}>
+                    <img className={`${styles.image}`}
+                        src={url_image}
+                        alt="Post destacado"
+                    />
                 </div>
+
+
+                <div className={`col-12 col-lg-6 py-2 my-auto ${styles.colTexto}`} >
+
+                    <div className={`row ${styles.espacioTitulo}`}>
+                        <Link href={`/posts/${post.seo_url}`}>
+                            <a className={`${styles.link}`} href={`/posts/${post.seo_url}`}>
+                                <h3 className={`card-title ${styles.titulo}`} >{post.titulo}</h3>
+                            </a>
+                        </Link>
+                    </div>
+
+                    <div className={`row ${styles.espacioResumen}`}>
+                        <p className={`card-text ${styles.resumen}`} >{post.resumen}</p>
+                    </div>
+
+                    <div className={`row ${styles.espacioMeta}`}>
+                        <span className={`d-block ${styles.meta}`}>
+                            <a style={{ fontWeight: "bolder" }}  >{post.autor.nombre}</a>
+                            <span style={{ color: "grey" }}>{` en `}</span>
+                            {
+                                post.categorias.map((c, i) =>
+                                    <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                )
+                            }
+                        </span>
+                    </div>
+
+                    <div className={`row ${styles.espacioMeta}`}>
+                        <span className={`d-block ${styles.metaSub}`}>
+                            {post.published_at.split("T")[0].split("-").reverse().join("-")}
+                            <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
+                        </span>
+                    </div>
+
+
+                </div>
+
             </div>
         </div >
     )

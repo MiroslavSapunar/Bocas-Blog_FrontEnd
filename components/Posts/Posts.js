@@ -13,17 +13,17 @@ function Card({ post }) {
     return (
         <div className={`card ${styles.post}`} style={{ marginBottom: "2rem" }}>
             <div className="card-body p-0" >
-                <div className="row justify-content-center align-items-center mx-auto" style={{ height: "15rem" }} >
+                <div className="row justify-content-center align-items-center mx-auto" style={{ minHeight: "15rem" }} >
 
-                    <div className="col-md-3  d-none d-md-block" style={{ padding: "0px", height: "15rem" }}>
+                    <div className="col-lg-2  d-none d-lg-block" style={{ padding: "0px", height: "15rem" }}>
                         <img
                             src={url_image}
                             alt="Post destacado"
-                            style={{ width: "100%", height: "15rem", objectFit: "cover" }}
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
                         />
                     </div>
 
-                    <div className="col-12 col-md-9 pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf:"center" }}>
+                    <div className="col-12 col-lg-10 pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf:"center" }}>
 
                         <div className="row mx-0">
                             <Link href={`/posts/${post.seo_url}`}>
@@ -34,7 +34,7 @@ function Card({ post }) {
                         </div>
 
                         <div className="row mx-0">
-                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: " 0.9rem", lineHeight: "1.5em", paddingBottom: "0.5", textAlign: "justify" }}>{post.resumen}</p>
+                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: "auto", lineHeight: "1.5em", paddingBottom: "0.5", textAlign: "justify" }}>{post.resumen}</p>
                         </div>
 
                         <div className="row mx-0" style={{ alignItems: "center" }}>
