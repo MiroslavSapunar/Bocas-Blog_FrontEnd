@@ -15,7 +15,7 @@ export default function Info({ noticia }) {
             <div className="card-body p-0" >
                 <div className="row justify-content-center p-0 mx-0 ">
 
-                    <div className="col-md-3  d-none d-md-block align-items-center px-0 " style={{ padding: "0px", minHeight: "11rem" }}>
+                    <div className="col-md-3  d-none d-md-block align-items-center px-0 " style={{ padding: "0px", height: "12rem" }}>
                         <img
                             src={url_image}
                             alt="Post destacado"
@@ -23,18 +23,18 @@ export default function Info({ noticia }) {
                         />
                     </div>
 
-                    <div className="col-12 col-md-9 py-1" style={{ paddingRight: "5.5rem", paddingLeft: "1.5rem", minHeight: "100%" }}>
+                    <div className="col-12 col-md-9 py-1" style={{ paddingRight: "5rem", paddingLeft: "1.5rem", minHeight: "100%" }}>
 
-                        <div className="row px-0 mx-0 py-2" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
+                        <div className="row px-0 mx-0 py-0" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.seo_url}`}>
-                                <a href={`/posts/${noticia.seo_url}`} style={{ textDecoration: "none" }}>
+                                <a href={`/posts/${noticia.seo_url}`} style={{ textDecoration: "none", textAlign: "justify" }}>
                                     <h6 className="card-title">{noticia.titulo}</h6>
                                 </a>
                             </Link>
                         </div>
 
                         <div className="row px-0 mx-0">
-                            <p className="card-text" style={{ fontSize: "0.8rem", lineHeight: "1rem", paddingBottom: "1rem", color: "grey" }}>{noticia.resumen}</p>
+                            <p className="card-text" style={{ fontSize: "0.8rem", lineHeight: "1rem", paddingBottom: "1rem", color: "grey", textAlign: "justify" }}>{noticia.resumen}</p>
                         </div>
 
                         <div className="row px-0 mx-0">

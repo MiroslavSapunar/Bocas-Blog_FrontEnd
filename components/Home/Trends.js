@@ -18,7 +18,7 @@ export default function Trend({ trend, index }) {
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${trend.seo_url}`}>
                                 <a href={`/posts/${trend.seo_url}`} style={{ textDecoration: "none" }}>
-                                    <h6 className="card-title" style={{ fontSize: "1rem" }}>{trend.titulo}</h6>
+                                    <h6 className="card-title" style={{ fontSize: "1rem", textAlign: "left" }}>{trend.titulo}</h6>
                                 </a>
                             </Link>
                         </div>

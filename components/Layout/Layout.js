@@ -93,23 +93,25 @@ function Footer() {
     return (
         <nav className="navbar sticky-bottom navbar-light bg-light justify-content-center px-0">
             <div className="row align-items-center justify-content-between py-4" style={{ width: "80%" }}>
-                <div className="col-12 col-lg-9">
-                    <div className="row align-items-center justify-content-start px-0">
-                        <h5>¡Subscribite a nuestro Newsletter!</h5>
+                <div className="col-12 col-md-6 px-0 py-2 ">
 
+                    <div className="row align-items-center justify-content-center px-0">
+                        <h5>¡Subscribite a nuestro Newsletter!</h5>
                     </div>
-                    <div className="row align-items-center justify-content-start px-0">
+                    <div className="row align-items-center justify-content-center px-0">
                         <div className="d-flex">
                             <input type="email" className="form-control" placeholder="¡Próximamente!" disabled />
-                            <button type="submit" className="btn btn-secondary" style={{ fontSize: "1rem" }}>
+                            <button type="submit" className="btn btn-secondary" style={{ fontSize: "1rem", maxWidth: "3rem" }}>
                                 <i className="fas fa-paper-plane"></i>
                             </button>
                         </div>
                     </div>
+
                 </div>
 
-                <div className="col-8 col-lg-3 mx-0 px-0">
-                    <div className="row justify-content-between align-items-center px-0 mx-0">
+                <div className="co-12 col-md-6 mx-0 px-0 py-2">
+
+                    <div className="row justify-content-around align-items-center px-0 mx-0">
 
                         <a style={{ fontSize: "1.75rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
                             <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
@@ -124,6 +126,7 @@ function Footer() {
                         </a>
 
                     </div>
+
                 </div>
 
             </div>

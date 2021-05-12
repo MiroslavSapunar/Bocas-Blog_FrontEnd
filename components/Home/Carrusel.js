@@ -3,7 +3,7 @@ import { url } from '../../utils/rest'
 import styles from './Carrusel.module.scss'
 
 function Card({ post }) {
-    
+
     let url_image = url.strapi_url_base + post.imagenes[0].url
 
     if (post.imagenes[0].formats?.medium) {
@@ -12,19 +12,18 @@ function Card({ post }) {
 
     return (
         <div className={`card ${styles.destacado}`} >
-            <div className="card-body" >
+            <div className="card-body py-0" >
                 <div className="row justify-content-center">
 
                     <div className={`col-12 col-lg-6 ${styles.colImage}`}>
-                        <img
+                        <img className={`${styles.image}`}
                             src={url_image}
                             alt="Post destacado"
-                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
                         />
                     </div>
 
 
-                    <div className={`col-12 col-lg-6 ${styles.colTexto}`} >
+                    <div className={`col-12 col-lg-6 py-2 my-auto ${styles.colTexto}`} >
 
                         <div className={`row ${styles.espacioTitulo}`}>
                             <Link href={`/posts/${post.seo_url}`}>

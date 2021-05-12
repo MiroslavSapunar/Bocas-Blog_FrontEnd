@@ -2,6 +2,7 @@ import Destacados from "./Carrusel"
 import Info from "./News"
 import Trend from "./Trends"
 
+import { tokens } from '../../utils/rest'
 
 function Body({ noticias, trending }) {
 
@@ -28,14 +29,47 @@ function Body({ noticias, trending }) {
     )
 }
 
-export default function Home({ destacados, noticias, trending }) {
+export default function Home({ destacados, noticias, trending, ig }) {
+    console.log(ig)
     return (
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
                 <Destacados destacados={destacados} />
                 <div style={{ height: "1rem" }}></div>
                 <Body noticias={noticias} trending={trending} />
+                <div className="row">
+                    {ig.map(p => {
+
+                        console.log(p.media_url)
+                        return (
+
+                            < div className="col-12 col-md-4 my-2" >
+                                <a href={`${p.permalink}`}>
+
+                                    <div className="card">
+                                        <embed
+                                            title="Post Bocas"
+                                            width="100%"
+                                            height="100%"
+                                            showcontrols="false"
+                                            loading="lazy"
+                                            src={`${p.media_url}`}
+                                            autoplay="1"
+                                            loop="1"
+                                            autopause="0"
+                                            style={{ height: "18rem", objectFit: "cover", pointerEvents: "none" }}
+                                        >
+                                        </embed>
+                                        {/* <img src={p.media_url}  />
+                                     */}
+                                    </div>
+                                </a>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
             </div>
-        </div>
+        </div >
     )
 }

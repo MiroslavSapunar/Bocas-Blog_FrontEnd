@@ -1,24 +1,26 @@
 import Home from '../components/Home/Home'
-import { url_build } from '../utils/rest'
+import { url_build, tokens } from '../utils/rest'
 
-export default function Root({ destacados, noticias, trending }) {
+export default function Root({ destacados, noticias, trending, ig }) {
   return (
-    <Home destacados={destacados} noticias={noticias} trending={trending} />
+    <Home destacados={destacados} noticias={noticias} trending={trending} ig={ig} />
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
-  const [resDestacados, resNoticias, resTrending] = await Promise.all([
+  const [resDestacados, resNoticias, resTrending, resIG] = await Promise.all([
     fetch(url_build.strapi_url_destacados),
     fetch(url_build.strapi_url_noticias),
-    fetch(url_build.strapi_url_trending)
+    fetch(url_build.strapi_url_trending),
+    fetch(tokens.instagram_media)
   ])
 
-  const [destacados, noticias, trending] = await Promise.all([
+  const [destacados, noticias, trending, ig] = await Promise.all([
     resDestacados.json(),
     resNoticias.json(),
-    resTrending.json()
+    resTrending.json(),
+    resIG.json()
   ])
 
   if (!destacados || !noticias || !trending) {
@@ -31,7 +33,8 @@ export async function getStaticProps(context) {
     props: {
       destacados,
       noticias,
-      trending
+      trending,
+      ig: ig.data.slice(0, 6)
     }, // will be passed to the page component as props
   }
 }
