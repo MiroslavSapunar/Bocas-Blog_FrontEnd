@@ -10,7 +10,7 @@ function ProductoBocas({ url }) {
         <div className={`${styles.containerMiniatura}`}>
             <a href={url}>
                 <div className={`${styles.miniatura}`}>
-                    <iframe src={url} frameBorder="0" scrolling="no" ></iframe>
+                    <embed src={url} frameBorder="0" scrolling="no" />
                 </div>
             </a>
         </div>
@@ -69,9 +69,30 @@ function Post({ post, trending }) {
                         }
                     </div>
 
+                    {post.productos.map((p, i) =>
+                        < div className="col-12 my-2 mx-0 px-0" key={i}>
+                            <a href={`${p.url_bocas_producto}`}>
+
+                                <div className="card">
+                                    <embed
+                                        title="Producto Bocas"
+                                        width="100%"
+                                        height="100%"
+                                        scrolling="no"
+                                        src={`${p.url_bocas_producto}`}
+                                        style={{ height: "35rem", objectFit: "cover", pointerEvents: "none"}}
+                                    >
+                                    </embed>
+                                    {/* <img src={p.media_url}  />
+                                     */}
+                                </div>
+                            </a>
+                        </div>
+                    )}
                 </div>
 
-                <div className="row mx-0 px-0 justify-content-center w-75">
+
+                {/* <div className="row mx-0 px-0 justify-content-center w-75">
                     {post.productos &&
                         post.productos.map((p, i) =>
                             <div className="col-6">
@@ -79,7 +100,7 @@ function Post({ post, trending }) {
                             </div>
                         )
                     }
-                </div>
+                </div> */}
             </div >
         </div >
     )
