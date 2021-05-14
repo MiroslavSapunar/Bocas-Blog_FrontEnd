@@ -45,7 +45,7 @@ function IgGrid({ ig }) {
                                 autoPlay="1"
                                 mute="1"
                                 src={`${p.media_url}`}
-                                style={{ height: "20rem", objectFit: "cover" }}
+                                style={{ height: "30rem", objectFit: "cover" }}
                             >
                             </embed>
                             {/* <img src={p.media_url}  />
