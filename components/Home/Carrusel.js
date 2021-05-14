@@ -15,7 +15,7 @@ function Card({ post }) {
 
             <div className="row justify-content-center h-100">
 
-                <div className={`col-12 col-lg-6 ${styles.colImage}`}>
+                <div className={`col-12 col-xl-6 ${styles.colImage}`}>
                     <img className={`${styles.image}`}
                         src={url_image}
                         alt="Post destacado"
@@ -23,7 +23,7 @@ function Card({ post }) {
                 </div>
 
 
-                <div className={`col-12 col-lg-6 py-2 my-auto ${styles.colTexto}`} >
+                <div className={`col-12 col-xl-6 py-3 my-auto ${styles.colTexto}`} >
 
                     <div className={`row ${styles.espacioTitulo}`}>
                         <Link href={`/posts/${post.seo_url}`}>

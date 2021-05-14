@@ -34,7 +34,7 @@ export async function getServerSideProps(context) {
       destacados,
       noticias,
       trending,
-      ig: ig.data.slice(0, 6)
+      ig: ig.data
     }, // will be passed to the page component as props
   }
 }

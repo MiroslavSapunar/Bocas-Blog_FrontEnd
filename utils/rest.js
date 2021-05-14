@@ -39,7 +39,7 @@ export const tokens = {
     google_tag: gtag_id,
     instagram_test_token: ig_test_token,
     intagram_app_token: app_client_token,
-    instagram_media: `https://graph.instagram.com/me/media?fields=media_url,permalink&access_token=${ig_test_token}`
+    instagram_media: `https://graph.instagram.com/me/media?fields=media_url,permalink&limit=6&access_token=${ig_test_token}`
 }
 
 export const url = {

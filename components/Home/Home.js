@@ -29,6 +29,35 @@ function Body({ noticias, trending }) {
     )
 }
 
+function IgGrid({ ig }) {
+    return (
+        <div className="row mx-auto">
+            {ig.map((p, i) =>
+                < div className="col-12 col-sm-6 col-md-4 my-2" key={i}>
+                    <a href={`${p.permalink}`}>
+
+                        <div className="card">
+                            <embed
+                                title="Post Bocas"
+                                width="100%"
+                                height="100%"
+                                showcontrols="false"
+                                autoPlay="1"
+                                mute="1"
+                                src={`${p.media_url}`}
+                                style={{ height: "20rem", objectFit: "cover" }}
+                            >
+                            </embed>
+                            {/* <img src={p.media_url}  />
+                                     */}
+                        </div>
+                    </a>
+                </div>
+            )}
+        </div>
+    )
+}
+
 export default function Home({ destacados, noticias, trending, ig }) {
     return (
         <div className="row" style={{ width: "80%" }} >
@@ -36,35 +65,7 @@ export default function Home({ destacados, noticias, trending, ig }) {
                 <Destacados destacados={destacados} />
                 <div style={{ height: "1rem" }}></div>
                 <Body noticias={noticias} trending={trending} />
-                <div className="row">
-                    {ig.map((p,i) => {
-
-                        return (
-
-                            < div className="col-12 col-sm-6 col-md-4 my-2" key={i}>
-                                <a href={`${p.permalink}`}>
-
-                                    <div className="card">
-                                        <embed
-                                            title="Post Bocas"
-                                            width="100%"
-                                            height="100%"
-                                            showcontrols="false"
-                                            autoPlay="1"
-                                            mute="1"
-                                            src={`${p.media_url}`}
-                                            style={{ height: "20rem", objectFit: "cover" }}
-                                        >
-                                        </embed>
-                                        {/* <img src={p.media_url}  />
-                                     */}
-                                    </div>
-                                </a>
-                            </div>
-                        )
-                    })
-                    }
-                </div>
+                <IgGrid ig={ig} />
             </div>
         </div >
     )
