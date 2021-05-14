@@ -16,9 +16,9 @@ function MyApp({ Component, pageProps }) {
 
   //console.log(tokens.google_tag)
 
-  useEffect(() => {
-    TagManager.initialize({ gtmId: 'G-DNVVG9NRTY' })
-  }, []);
+  // useEffect(() => {
+  //   TagManager.initialize({ gtmId: 'UA-188357032-2' })
+  // }, []);
   return (
     <Layout>
       <Component {...pageProps} />
