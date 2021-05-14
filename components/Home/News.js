@@ -15,7 +15,7 @@ export default function Info({ noticia }) {
             <div className="card-body p-0" >
                 <div className="row justify-content-betwee p-0 mx-0 ">
 
-                    <div className="col-lg-3  d-none d-md-block align-items-center px-0 my-auto" style={{ padding: "0px", height: "12rem" }}>
+                    <div className="col-lg-3  d-none d-lg-block align-items-center px-0 my-auto" style={{ padding: "0px", height: "12rem" }}>
                         <img
                             src={url_image}
                             alt="Post destacado"
