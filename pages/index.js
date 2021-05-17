@@ -7,7 +7,7 @@ export default function Root({ destacados, noticias, trending, ig }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
   const [resDestacados, resNoticias, resTrending, resIG] = await Promise.all([
     fetch(url_build.strapi_url_destacados),
@@ -35,6 +35,7 @@ export async function getServerSideProps(context) {
       noticias,
       trending,
       ig: ig.data
-    }, // will be passed to the page component as props
+    },
+    revalidate: 1 // will be passed to the page component as props
   }
 }
