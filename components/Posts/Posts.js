@@ -23,7 +23,7 @@ function Card({ post }) {
                         />
                     </div>
 
-                    <div className="col-12 col-lg-10 pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf:"center" }}>
+                    <div className="col-12 col-lg-10 pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
 
                         <div className="row mx-0">
                             <Link href={`/posts/${post.seo_url}`}>
@@ -64,7 +64,7 @@ function Card({ post }) {
 function PostsComponent({ posts, categoria }) {
     return (
 
-        <div className="row" style={{ width: "80%" }} >
+        <div className="row" style={{ width: "80%", minHeight: "69.5vh" }} >
             <div className="col px-0 py-4">
                 <h1>{categoria}</h1>
                 {
