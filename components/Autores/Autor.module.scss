@@ -1,0 +1,40 @@
+.texto {
+    font-size: 0.9rem;
+    color: rgb(79, 79, 79);
+    text-align: justify;
+}
+
+.miniatura iframe {
+    width: 1440px;
+    height: 1000px;
+    pointer-events: none;
+}
+
+.miniatura {
+    position: relative;
+    -ms-zoom: 0.35;
+    -moz-transform: scale(0.35);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.35);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.35);
+    -webkit-transform-origin: 0 0;
+}
+
+.miniatura:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.containerMiniatura {
+    max-width: 100%;
+    height: 20rem;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}

@@ -65,6 +65,7 @@ export const url_build = {
     strapi_url_nutricion: `${strapi_url_build}/categorias/2`,
     strapi_url_recetas: `${strapi_url_build}/categorias/3`,
     strapi_url_habitos: `${strapi_url_build}/categorias/4`,
+    strapi_url_autores: `${strapi_url_build}/autors`,
     strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
     strapi_url_top_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=3`,
     strapi_url_noticias: `${strapi_url_build}/posts?_sort=published_at:DESC&_limit=3`,
