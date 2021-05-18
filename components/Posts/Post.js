@@ -69,26 +69,26 @@ function Post({ post, trending }) {
                         }
                     </div>
 
-                    {post.productos.map((p, i) =>
-                        < div className="col-12 my-2 mx-0 px-0" key={i}>
-                            <a href={`${p.url_bocas_producto}`}>
+                    <div className="row justify-content-around my-4">
+                        {post.productos.map((p, i) => {
+                            console.log(p)
+                            return (< div className="col-12 col-md-5 col-lg-3 my-2 mx-2 px-0" key={i}>
+                                <a href={`${p.url_producto_bocas}`}>
 
-                                <div className="card">
-                                    <embed
-                                        title="Producto Bocas"
-                                        width="100%"
-                                        height="100%"
-                                        scrolling="no"
-                                        src={`${p.url_bocas_producto}`}
-                                        style={{ height: "35rem", objectFit: "cover", pointerEvents: "none"}}
-                                    >
-                                    </embed>
-                                    {/* <img src={p.media_url}  />
-                                     */}
-                                </div>
-                            </a>
-                        </div>
-                    )}
+                                    <div className="card" style={{ heigth: "20rem" }}>
+                                        <img
+                                            alt={p.nombre}
+                                            width="100%"
+                                            height="100%"
+                                            src={`http://localhost:1337${p.foto.url}`}
+                                            style={{ objectFit: "cover", height: "20rem" }}
+                                        />
+                                    </div>
+                                </a>
+                            </div>)
+                        }
+                        )}
+                    </div>
                 </div>
 
 
