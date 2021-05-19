@@ -37,20 +37,31 @@ function Card({ post }) {
                             <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: "auto", lineHeight: "1.5em", paddingBottom: "0.5", textAlign: "justify" }}>{post.resumen}</p>
                         </div>
 
-                        <div className="row mx-0" style={{ alignItems: "center" }}>
-                            <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>{` en `}
+                        <div className="row mx-0" style={{ alignItems: "center", paddingBlock: "0.5rem" }}>
+                            <span style={{ fontWeight: "400", fontSize: ".9rem", lineHeight: "1rem" }} className="d-block m-0">
+                                <span>
+                                    <Link href={`/autores/${post.autor.seo_url}`}>
+                                        <a href={`/autores/${post.autor.seo_url}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>
+                                    </Link>
+                                </span>
+                                <span>
+                                    {` en `}
+                                </span>
                                 {
                                     post.categorias.map((c, i) =>
-                                        <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                        <span>
+                                            <Link href={`/${c.url}`}>
+                                                <a key={i} href={`/${c.url}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                            </Link>
+                                        </span>
                                     )
                                 }
                             </span>
                         </div>
 
                         <div className="row mx-0">
-                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1.5em" }} className="date-read m-0">
-                                {post.published_at.split("T")[0].split("-").reverse().join("-")}
+                            <span style={{ fontWeight: "400", fontSize: "0.9rem", lineHeight: "1rem" }} className="date-read m-0">
+                                {post.fecha.split("-").reverse().join("-")}
                                 <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
                             </span>
                         </div>

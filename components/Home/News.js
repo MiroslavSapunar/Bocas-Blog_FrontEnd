@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { url } from '../../utils/rest'
 
 export default function Info({ noticia }) {
-    
-    let url_image =  url.strapi_url_base + noticia.imagenes[0].url
+
+    let url_image = url.strapi_url_base + noticia.imagenes[0].url
 
     if (noticia.imagenes[0].formats?.small) {
         url_image = url.strapi_url_base + noticia.imagenes[0].formats.small.url
@@ -34,16 +34,20 @@ export default function Info({ noticia }) {
                         </div>
 
                         <div className="row px-0 mx-0">
-                            <p className="card-text" style={{ fontSize: "0.8rem", lineHeight: "1rem", paddingBottom: "1rem", color: "grey", textAlign: "justify" }}>{noticia.resumen}</p>
+                            <p className="card-text" style={{ fontSize: "0.8rem", lineHeight: "1rem", paddingBottom: "0.5rem", color: "grey", textAlign: "justify" }}>{noticia.resumen}</p>
                         </div>
 
                         <div className="row px-0 mx-0">
-                            <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em" }} className="d-block m-0">
-                                <a style={{ textDecoration: "none" }} >{noticia.autor.nombre}</a>
+                            <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "0.9rem" }} className="d-block m-0">
+                                <Link href={`/autores/${noticia.autor.seo_url}`}>
+                                    <a href={`/autores/${noticia.autor.seo_url}`} style={{ textDecoration: "none", fontSize: "0.9rem" }}>{noticia.autor.nombre}</a>
+                                </Link>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
                                     noticia.categorias.map((c, i) =>
-                                        <a href={`/${c.categoria}`} style={{ textDecoration: "none" }} key={i}>{`${c.categoria} `}</a>
+                                        <Link href={`/${c.url}`}>
+                                            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.9rem" }} key={i}>{`${c.categoria} `}</a>
+                                        </Link>
                                     )
                                 }
                             </span>

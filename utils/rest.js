@@ -61,10 +61,9 @@ export const url_build = {
     strapi_url_posts_count: `${strapi_url_build}/posts/count`,
 
     strapi_url_destacados: `${strapi_url_build}/posts?destacado=true&_sort=published_at:DESC&_limit=5`,
-    strapi_url_novedades: `${strapi_url_build}/categorias/1`,
-    strapi_url_nutricion: `${strapi_url_build}/categorias/2`,
-    strapi_url_recetas: `${strapi_url_build}/categorias/3`,
-    strapi_url_habitos: `${strapi_url_build}/categorias/4`,
+    strapi_url_nutricion: `${strapi_url_build}/categorias?url=nutricion`,
+    strapi_url_recetas: `${strapi_url_build}/categorias?url=recetas`,
+    strapi_url_ecologia: `${strapi_url_build}/categorias?url=ecologia`,
     strapi_url_autores: `${strapi_url_build}/autors`,
     strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
     strapi_url_top_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=3`,

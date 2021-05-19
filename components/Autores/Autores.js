@@ -23,8 +23,8 @@ function Card({ autor }) {
                     </div>
 
                     <div className="col-12 col-lg-9 my-auto py-3" style={{ color: "black", height: "auto", paddingLeft: "3rem", paddingRight: "4rem" }}>
-                        <Link href={`/Autores/${autor.seo_url}`}>
-                            <a href={`/Autores/${autor.seo_url}`} style={{ textDecoration: "none" }}>
+                        <Link href={`/autores/${autor.seo_url}`}>
+                            <a href={`/autores/${autor.seo_url}`} style={{ textDecoration: "none" }}>
 
                                 <div className="row mx-0">
                                     <h3 className="card-title">{autor.nombre}</h3>

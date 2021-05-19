@@ -36,36 +36,36 @@ function NavBar() {
                                     </li>
                                 </Link>
 
-                                <Link href="/Novedades">
+                                <Link href="/novedades">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a href="/Novedades" className={`nav-link ${styles.categoria}`} >Novedades</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/Nutricion">
+                                <Link href="/nutricion">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a href="/Nutricion" className={`nav-link ${styles.categoria}`} >Nutrición</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/Recetas">
+                                <Link href="/recetas">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a href="/Recetas" className={`nav-link ${styles.categoria}`} >Recetas</a>
                                     </li>
                                 </Link>
-                                <Link href="/Ecologia">
+                                <Link href="/ecologia">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a href="/Ecologia" className={`nav-link ${styles.categoria}`} >Ecología</a>
                                     </li>
                                 </Link>
 
-                                <Link href="/Autores">
+                                <Link href="/autores">
                                     <li className={`nav-item ${styles.navItem}`}>
                                         <a href="/Autores" className={`nav-link ${styles.categoria}`} >Autores</a>
                                     </li>
                                 </Link>
 
-                                <a className={` py-0 align-items-center ${styles.botonBocas}`} role="button" href="https://bocas.com.ar/">Visitá la Tienda</a>
+                                <a className={` py-0 align-items-center ${styles.botonBocas}`} role="button" target="_blank" href="https://www.bocas.com.ar/?utm_source=Blog&utm_campaign=Blog">Visitá la Tienda</a>
 
                             </ul>
                         </div>
@@ -92,51 +92,44 @@ function NavBar() {
 function Footer() {
     return (
         <nav className="navbar sticky-bottom navbar-light bg-light justify-content-center px-0">
-            <div className="row align-items-center justify-content-around py-4" style={{ width: "80%" }}>
-                {/* <div className="col-12 col-md-6 px-0 py-2 ">
+            <div className="row align-items-center justify-content-between py-1" style={{ width: "80%" }}>
 
-                    <div className="row align-items-center justify-content-center px-0">
-                        <h5>¡Subscribite a nuestro Newsletter!</h5>
-                    </div>
-                    <div className="row align-items-center justify-content-center px-0">
-                        <div className="d-flex">
-                            <input type="email" className="form-control" placeholder="¡Próximamente!" disabled />
-                            <button type="submit" className="btn btn-secondary" style={{ fontSize: "1rem", maxWidth: "3rem" }}>
-                                <i className="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </div>
-
-
-                <div className="coL-12  mx-0 px-0 py-2">
-                    <div className="row justify-content-around align-items-center px-0 mx-0">
+                <div className="col-12 col-md-4 align-items-center">
+                    <div className="row justify-content-center">
+                        <a className={`${styles.link}`} target="_blank" role="button" href="https://www.bocas.com.ar/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.5rem" }}>Visitá Bocas Mercado</a>
                     </div>
                 </div>
-                </div> */}
 
-                <a style={{ fontSize: "1.75rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
-                    <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
-                </a>
+                <div className="col-12 col-md-4 py-4 align-items-center">
+                    <div className="row justify-content-center">
+                        <a className={`${styles.link}`} target="_blank" role="button" href="https://www.bocas.com.ar/nosotros/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.25rem" }}>Sobre nosotros</a>
+                        <Link href="/contacto">
+                            <a className={`${styles.link}`} role="button" href="/contacto" style={{ fontSize: "1.25rem" }}>Contacto</a>
+                        </Link>
+                    </div>
+                </div>
 
-                <a style={{ fontSize: "1.75rem" }} href="https://www.instagram.com/bocasmercado/">
-                    <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
-                </a>
+                <div className="col-12 col-md-4 align-items-center">
+                    <div className="row justify-content-around px-4 mx-0">
+                        <a style={{ fontSize: "1.75rem" }} href="https://api.whatsapp.com/send/?phone=5491136599170&text&app_absent=0">
+                            <i className={`fab fa-whatsapp ${styles.icono}`} alt={"bocas-mercado-whatsapp"}></i>
+                        </a>
 
-                <a style={{ fontSize: "1.75rem" }} href="https://www.facebook.com/BOCAS-Mercado-Consciente-109340780925806">
-                    <i className={`fab fa-facebook-f ${styles.icono}`} alt={"bocas-mercado-facebook"}></i>
-                </a>
-
-
+                        <a style={{ fontSize: "1.75rem" }} href="https://www.instagram.com/bocasmercado/">
+                            <i className={`fab fa-instagram ${styles.icono}`} alt={"bocas-mercado-instagram"}></i>
+                        </a>
+                    </div>
+                </div>
 
             </div>
-        </nav>
+        </nav >
     )
 }
 
 export default function Layout({ children }) {
     return (
         <div>
-            <Head lang="es">
+            <Head>
                 <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
                 <script
                     dangerouslySetInnerHTML={{
@@ -153,18 +146,22 @@ export default function Layout({ children }) {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-                <title>Bocas Blog | Alimentacion Consciente</title>
-                <meta name="description" content="Blog Online de Bocas" />
-                <link rel="icon" href="/favicon.ico" />
+                <title>Blog de Alimentación Consciente | Bocas Mercado Blog</title>
+                <meta name="title" content="Blog de Alimentación Consciente | Bocas Mercado Blog" />
+                <meta name="description" key="description" content="Si ingresas vas a encontrar Datos, Consejos y Recomendaciones de Expertos sobre temáticas como Nutrición, Ecología, Meditación y Cuidado Personal." />
+                <meta name="keywords" content="bocas, mercado, expertos, nutricion, ecologia, meditacion, cuidado personal" />
 
-                <meta property="og:site_name" content="Bocas Blog" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Bocas Blog Online" />
-                <meta property="og:description" content="Alimentacion Consciente" />
+                <meta property="og:site_name" content="Blog de Alimentación Consciente | Bocas Mercado Blog" />
+                <meta property="og:title" content="Blog de Alimentación Consciente | Bocas Mercado Blog" />
+                <meta property="og:description" content="Si ingresas vas a encontrar Datos, Consejos y Recomendaciones de Expertos sobre temáticas como Nutrición, Ecología, Meditación y Cuidado Personal." />
+
                 <meta property="og:url" content="https://www.bocas.com.ar" />
 
                 <meta property="og:image" content="http://d3ugyf2ht6aenh.cloudfront.net/stores/001/309/998/themes/common/logo-243132392-1601649288-ec5d9eaafdabc508ef3d2db5177acd451601649289.png?0" />
                 <meta property="og:image:secure_url" content="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/309/998/themes/common/logo-243132392-1601649288-ec5d9eaafdabc508ef3d2db5177acd451601649289.png?0" />
+
+                <link rel="icon" href="/favicon.ico" />
 
             </Head>
             <body>

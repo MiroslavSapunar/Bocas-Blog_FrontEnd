@@ -31,9 +31,9 @@ function Body({ noticias, trending }) {
 
 function IgGrid({ ig }) {
     return (
-        <div className="row mx-auto">
+        <div className="row mx-auto justify-content-between">
             {ig.map((p, i) =>
-                < div className="col-12 col-sm-6 col-md-4 my-2" style={{ maxHeight: "30rem", maxWidth: "30rem" }} key={i}>
+                < div className="col-12 col-md-4 my-2" style={{ maxHeight: "30rem", maxWidth: "30rem" }} key={i}>
                     <a href={`${p.permalink}`}>
 
                         <div className="card">

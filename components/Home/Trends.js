@@ -24,19 +24,23 @@ export default function Trend({ trend, index }) {
                         </div>
 
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a style={{ textDecoration: "none", fontSize: "0.75rem" }}>{trend.autor.nombre}</a>
+                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "0.9rem" }} className="d-block m-0">
+                                <Link href={`/autores/${trend.autor.seo_url}`}>
+                                    <a href={`/autores/${trend.autor.seo_url}`} style={{ textDecoration: "none", fontSize: "0.75rem" }}>{trend.autor.nombre}</a>
+                                </Link>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
                                     trend.categorias.map((c, i) =>
-                                        <a href={`/${c.categoria}`} style={{ textDecoration: "none", fontSize: "0.75rem" }} key={i}>{`${c.categoria} `}</a>
+                                        <Link href={`/${c.url}`}>
+                                            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.75rem" }} key={i}>{`${c.categoria} `}</a>
+                                        </Link>
                                     )
                                 }
                             </span>
                         </div>
 
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "1rem", color: "grey" }} className="date-read m-0">{trend.published_at.split("T")[0].split("-").reverse().join("-")} <span className="mx-1">•</span> {`${trend.tiempo_lectura} min`} <span className="icon-star2"></span></span>
+                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "1rem", color: "grey" }} className="date-read m-0">{trend.fecha.split("-").reverse().join("-")} <span className="mx-1">•</span> {`${trend.tiempo_lectura} min`} <span className="icon-star2"></span></span>
                         </div>
 
                     </div>

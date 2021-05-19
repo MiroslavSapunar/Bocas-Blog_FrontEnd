@@ -5,17 +5,17 @@ import Trend from '../Home/Trends'
 import { url } from '../../utils/rest'
 import styles from './Post.module.scss'
 
-function ProductoBocas({ url }) {
-    return (
-        <div className={`${styles.containerMiniatura}`}>
-            <a href={url}>
-                <div className={`${styles.miniatura}`}>
-                    <embed src={url} frameBorder="0" scrolling="no" />
-                </div>
-            </a>
-        </div>
-    )
-}
+// function ProductoBocas({ url }) {
+//     return (
+//         <div className={`${styles.containerMiniatura}`}>
+//             <a href={url}>
+//                 <div className={`${styles.miniatura}`}>
+//                     <embed src={url} frameBorder="0" scrolling="no" />
+//                 </div>
+//             </a>
+//         </div>
+//     )
+// }
 
 function Post({ post, trending }) {
     let url_image = url.strapi_url_base + post.imagenes[0].url
@@ -42,7 +42,19 @@ function Post({ post, trending }) {
                             <h2 className="card-title">{post.titulo}</h2>
                         </div>
                         <div className="row mx-0 my-2">
-                            <p className="card-text">{`${post.published_at.split("T")[0].split("-").reverse().join("-")} por ${post.autor.nombre}`}</p>
+                            <p className="card-text" style={{ fontSize: "1.5rem" }}>
+                                <span>
+                                    {`${post.fecha.split("-").reverse().join("-")}`}
+                                </span>
+                                <span>
+                                    {` por `}
+                                </span>
+                                <span>
+                                    <a href={`/autores/${post.autor.seo_url}`}>
+                                        {`${post.autor.nombre}`}
+                                    </a>
+                                </span>
+                            </p>
                         </div>
 
                         <div className={`${styles.texto}`}>
@@ -54,7 +66,7 @@ function Post({ post, trending }) {
                                 <span>
                                     {
                                         post.categorias.map((c, i) =>
-                                            <a key={i} href={`/${c.categoria} `} style={{ textDecoration: "none", fontWeight: "bold" }}> <span>{`${c.categoria} `}</span> </a>
+                                            <a key={i} href={`/${c.url} `} style={{ textDecoration: "none", fontWeight: "bold" }}> <span>{`${c.categoria} `}</span> </a>
                                         )
                                     }
                                 </span>
@@ -90,17 +102,6 @@ function Post({ post, trending }) {
                         )}
                     </div>
                 </div>
-
-
-                {/* <div className="row mx-0 px-0 justify-content-center w-75">
-                    {post.productos &&
-                        post.productos.map((p, i) =>
-                            <div className="col-6">
-                                <ProductoBocas url={p.url_bocas_producto} key={i} />
-                            </div>
-                        )
-                    }
-                </div> */}
             </div >
         </div >
     )
