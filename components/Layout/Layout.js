@@ -65,7 +65,7 @@ function NavBar() {
                                     </li>
                                 </Link>
 
-                                <a className={` py-0 align-items-center ${styles.botonBocas}`} role="button" target="_blank" href="https://www.bocas.com.ar/?utm_source=Blog&utm_campaign=Blog">Visitá la Tienda</a>
+                                <a className={` py-0 align-items-center ${styles.botonBocas}`} role="button" rel="noopener noreferrer" target="_blank" href="https://www.bocas.com.ar/?utm_source=Blog&utm_campaign=Blog">Visitá la Tienda</a>
 
                             </ul>
                         </div>
@@ -96,13 +96,13 @@ function Footer() {
 
                 <div className="col-12 col-md-4 align-items-center">
                     <div className="row justify-content-center">
-                        <a className={`${styles.link}`} target="_blank" role="button" href="https://www.bocas.com.ar/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.5rem" }}>Visitá Bocas Mercado</a>
+                        <a className={`${styles.link}`} rel="noopener noreferrer" target="_blank" role="button" href="https://www.bocas.com.ar/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.5rem" }}>Visitá Bocas Mercado</a>
                     </div>
                 </div>
 
                 <div className="col-12 col-md-4 py-4 align-items-center">
                     <div className="row justify-content-center">
-                        <a className={`${styles.link}`} target="_blank" role="button" href="https://www.bocas.com.ar/nosotros/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.25rem" }}>Sobre nosotros</a>
+                        <a className={`${styles.link}`} rel="noopener noreferrer" target="_blank" role="button" href="https://www.bocas.com.ar/nosotros/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.25rem" }}>Sobre nosotros</a>
                         <Link href="/contacto">
                             <a className={`${styles.link}`} role="button" href="/contacto" style={{ fontSize: "1.25rem" }}>Contacto</a>
                         </Link>
