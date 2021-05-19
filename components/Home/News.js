@@ -55,7 +55,7 @@ export default function Info({ noticia }) {
 
                         <div className="row px-0 mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.8rem", lineHeight: "1.5em", color: "grey" }} className="date-read m-0">
-                                {noticia.published_at.split("T")[0].split("-").reverse().join("-")}
+                                {noticia.fecha.split("-").reverse().join("-")}
                                 <span className="mx-1">•</span> {`${noticia.tiempo_lectura} min`} <span className="icon-star2"></span>
                             </span>
                         </div>

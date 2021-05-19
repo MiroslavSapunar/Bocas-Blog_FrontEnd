@@ -59,7 +59,7 @@ function Card({ post }) {
 
                     <div className={`row ${styles.espacioMeta}`}>
                         <span>
-                            {post.published_at.split("T")[0].split("-").reverse().join("-")}
+                            {post.fecha.split("T")[0].split("-").reverse().join("-")}
                             <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
                         </span>
                     </div>
