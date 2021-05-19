@@ -82,9 +82,8 @@ function Post({ post, trending }) {
                     </div>
 
                     <div className="row justify-content-around my-4">
-                        {post.productos.map((p, i) => {
-                            console.log(p)
-                            return (< div className="col-12 col-md-5 col-lg-3 my-2 mx-2 px-0" key={i}>
+                        {post.productos.map((p, i) =>
+                            < div className="col-12 col-md-5 col-lg-3 my-2 mx-2 px-0" key={i}>
                                 <a href={`${p.url_producto_bocas}`}>
 
                                     <div className="card" style={{ heigth: "20rem" }}>
@@ -97,8 +96,7 @@ function Post({ post, trending }) {
                                         />
                                     </div>
                                 </a>
-                            </div>)
-                        }
+                            </div>
                         )}
                     </div>
                 </div>
