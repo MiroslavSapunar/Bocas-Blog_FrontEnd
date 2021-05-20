@@ -59,13 +59,14 @@ function IgGrid({ ig }) {
 }
 
 export default function Home({ destacados, noticias, trending, ig }) {
+    console.log(ig)
     return (
         <div className="row" style={{ width: "80%" }} >
             <div className="col px-0 py-4">
                 <Destacados destacados={destacados} />
                 <div style={{ height: "1rem" }}></div>
                 <Body noticias={noticias} trending={trending} />
-                <IgGrid ig={ig} />
+                {/* <IgGrid ig={ig} /> */}
             </div>
         </div >
     )
