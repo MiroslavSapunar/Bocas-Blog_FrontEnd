@@ -1,6 +1,6 @@
 // next.config.js
 module.exports = {
     images: {
-        domains: ['localhost', 'localhost:1337', 'http://localhost', 'http://localhost:1337', 'http://api.blog.com.ar', 'https://api.blog.com.ar', 'api.blog.com.ar', 'strapi', 'strapi:1337', 'http://strapi', 'http://strapi:1337'],
+        domains: ["localhost", "127.0.0.1", "apis.blog.bocas.com.ar", "test.apis.blog.paginamiro.com.ar", "strapi", "strapi-dev"],
     },
 }
