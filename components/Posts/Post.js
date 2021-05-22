@@ -66,7 +66,7 @@ function Post({ post, trending }) {
                                 <span>
                                     {
                                         post.categorias.map((c, i) =>
-                                            <a key={i} href={`/${c.url} `} style={{ textDecoration: "none", fontWeight: "bold" }}> <span>{`${c.categoria} `}</span> </a>
+                                            <a key={i} href={`/${c.url} `} style={{ textDecoration: "none", fontWeight: "bold" }}> <span>{`#${c.categoria} `}</span> </a>
                                         )
                                     }
                                 </span>

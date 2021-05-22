@@ -15,7 +15,7 @@ function Card({ post }) {
             <div className="card-body p-0" >
                 <div className="row justify-content-center align-items-center mx-auto" style={{ minHeight: "15rem" }} >
 
-                    <div className="col-lg-2  d-none d-lg-block" style={{ padding: "0px", height: "15rem" }}>
+                    <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "15rem" }}>
                         <img
                             src={url_image}
                             alt="Post destacado"
@@ -23,19 +23,19 @@ function Card({ post }) {
                         />
                     </div>
 
-                    <div className="col-12 col-lg-10 pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
+                    <div className="col-12 col-lg-9 m pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
+                        <Link href={`/posts/${post.seo_url}`}>
+                            <a href={`/posts/${post.seo_url}`} style={{ textDecoration: "none" }}>
 
-                        <div className="row mx-0">
-                            <Link href={`/posts/${post.seo_url}`}>
-                                <a href={`/posts/${post.seo_url}`} style={{ textDecoration: "none" }}>
-                                    <h4 className="card-title" style={{ fontSize: " 1.2rem", fontWeight: "500", textAlign: "left" }}>{post.titulo}</h4>
-                                </a>
-                            </Link>
-                        </div>
+                                <div className="row mx-0">
+                                    <h4 className="card-title" style={{ fontWeight: "500", textAlign: "left" }}>{post.titulo}</h4>
+                                </div>
 
-                        <div className="row mx-0">
-                            <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: "auto", lineHeight: "1.5em", paddingBottom: "0.5", textAlign: "justify" }}>{post.resumen}</p>
-                        </div>
+                                <div className="row mx-0">
+                                    <p className="card-text mb-3" style={{ color: "gray", fontWeight: "400", fontSize: "auto", lineHeight: "1.5em", paddingBottom: "0.5", textAlign: "justify" }}>{post.resumen}</p>
+                                </div>
+                            </a>
+                        </Link>
 
                         <div className="row mx-0" style={{ alignItems: "center", paddingBlock: "0.5rem" }}>
                             <span style={{ fontWeight: "400", fontSize: ".9rem", lineHeight: "1rem" }} className="d-block m-0">

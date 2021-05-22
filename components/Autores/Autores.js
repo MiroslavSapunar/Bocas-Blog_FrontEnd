@@ -38,7 +38,7 @@ function Card({ autor }) {
 
                         <div className="row mx-0" style={{ alignItems: "center" }}>
                             <span style={{ fontWeight: "400", fontSize: "1rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a href={autor.link_personal} style={{ textDecoration: "none", fontWeight: "bold" }}>+ info</a>
+                                <a href={autor.link_personal} rel="noopener noreferrer" target="_blank" style={{ textDecoration: "none", fontWeight: "bold" }}>+ info</a>
                             </span>
                         </div>
 
