@@ -34,7 +34,7 @@ export async function getStaticProps(context) {
       destacados,
       noticias,
       trending,
-      ig: ig.data
+      ig: ig.data? ig.data: null
     },
     revalidate: 1 // will be passed to the page component as props
   }
