@@ -38,30 +38,30 @@ function NavBar() {
 
                                 <Link href="/novedades">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a href="/Novedades" className={`nav-link ${styles.categoria}`} >Novedades</a>
+                                        <a href="/novedades" className={`nav-link ${styles.categoria}`} >Novedades</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/nutricion">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a href="/Nutricion" className={`nav-link ${styles.categoria}`} >Nutrición</a>
+                                        <a href="/nutricion" className={`nav-link ${styles.categoria}`} >Nutrición</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/recetas">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a href="/Recetas" className={`nav-link ${styles.categoria}`} >Recetas</a>
+                                        <a href="/recetas" className={`nav-link ${styles.categoria}`} >Recetas</a>
                                     </li>
                                 </Link>
                                 <Link href="/ecologia">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a href="/Ecologia" className={`nav-link ${styles.categoria}`} >Ecología</a>
+                                        <a href="/ecologia" className={`nav-link ${styles.categoria}`} >Ecología</a>
                                     </li>
                                 </Link>
 
                                 <Link href="/autores">
                                     <li className={`nav-item ${styles.navItem}`}>
-                                        <a href="/Autores" className={`nav-link ${styles.categoria}`} >Autores</a>
+                                        <a href="/autores" className={`nav-link ${styles.categoria}`} >Autores</a>
                                     </li>
                                 </Link>
 
