@@ -23,7 +23,7 @@ function Card({ post }) {
                         />
                     </div>
 
-                    <div className="col-12 col-lg-9 m pr-2 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
+                    <div className="col-12 col-lg-9 m px-4 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
                         <Link href={`/posts/${post.seo_url}`}>
                             <a href={`/posts/${post.seo_url}`} style={{ textDecoration: "none" }}>
 
