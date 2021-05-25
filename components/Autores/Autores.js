@@ -1,24 +1,27 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
 import { url } from '../../utils/rest'
 
 function Card({ autor }) {
 
     let url_image = url.strapi_url_base + autor.foto.url
 
-    if (autor.foto.formats?.medium) {
-        url_image = url.strapi_url_base + autor.foto.formats.medium.url
+    if (autor.foto.formats?.small) {
+        url_image = url.strapi_url_base + autor.foto.formats.small.url
     }
 
     return (
         <div className={`card`} style={{ marginBlock: "2rem" }}>
             <div className="card-body p-0" >
-                <div className="row justify-content-center align-items-center mx-auto" style={{ minHeight: "12rem" }} >
+                <div className="row justify-content-center align-items-center mx-auto" >
 
-                    <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "100%" }}>
-                        <img
+                    <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "17rem" }}>
+                        <Image
                             src={url_image}
-                            alt="Post destacado"
-                            style={{ width: "100%", height: "12", objectFit: "cover" }}
+                            alt="imagen autor"
+                            layout="fill"
+                            objectFit="cover"
                         />
                     </div>
 
