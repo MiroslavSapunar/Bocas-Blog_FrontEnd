@@ -151,9 +151,16 @@ export default function Layout({ children }) {
 
                 <link rel="icon" href="/favicon.ico" />
 
+                <link rel="preconnect" href="https://www.googletagmanager.com" />
+                <link rel="preconnect" href="/scripts/analytics.js" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link rel="preconnect" href="https://scontent.cdninstagram.com" />
+
+
                 <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
                 <script src="/scripts/analytics.js" />
-            
+
             </Head>
             <body>
                 <header>

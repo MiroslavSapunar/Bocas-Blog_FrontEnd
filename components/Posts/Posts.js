@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
 import { url } from '../../utils/rest'
 import styles from "./Posts.module.scss"
 
@@ -6,8 +8,8 @@ function Card({ post }) {
 
     let url_image = url.strapi_url_base + post.imagenes[0].url
 
-    if (post.imagenes[0].formats?.medium) {
-        url_image = url.strapi_url_base + post.imagenes[0].formats.medium.url
+    if (post.imagenes[0].formats?.small) {
+        url_image = url.strapi_url_base + post.imagenes[0].formats.small.url
     }
 
     return (
@@ -16,10 +18,11 @@ function Card({ post }) {
                 <div className="row justify-content-center align-items-center mx-auto" style={{ minHeight: "15rem" }} >
 
                     <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "15rem" }}>
-                        <img
+                        <Image
                             src={url_image}
-                            alt="Post destacado"
-                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                            alt="imagen post"
+                            layout="fill"
+                            objectFit="cover"
                         />
                     </div>
 

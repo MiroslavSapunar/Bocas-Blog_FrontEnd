@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { url } from '../../utils/rest'
 import styles from "./Autor.module.scss"
@@ -16,13 +17,14 @@ function Card({ post }) {
 
                 <div className={`card ${styles.post}`} style={{ marginBottom: "2rem" }}>
                     <div className="card-body p-0" >
-                        <div className="row justify-content-center align-items-center mx-auto" style={{ minHeight: "15rem" }} >
+                        <div className="row justify-content-center align-items-center mx-auto" >
 
-                            <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "15rem" }}>
-                                <img
+                            <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "13rem" }}>
+                                <Image
                                     src={url_image}
-                                    alt="imagen post"
-                                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                    alt="imagen autor"
+                                    layout="fill"
+                                    objectFit="cover"
                                 />
                             </div>
 
