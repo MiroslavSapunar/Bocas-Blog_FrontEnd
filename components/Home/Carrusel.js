@@ -1,6 +1,17 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { url } from '../../utils/rest'
 import styles from './Carrusel.module.scss'
+
+function LinkComponent({ c }) {
+    return (
+        <span>
+            <Link href={`/${c.url}`}>
+                <a href={`/${c.url}`} className={`${styles.linkMeta}`}>{`${c.categoria} `} </a>
+            </Link>
+        </span>
+    )
+}
 
 function Card({ post }) {
 
@@ -16,10 +27,17 @@ function Card({ post }) {
             <div className="row justify-content-center h-100">
 
                 <div className={`col-12 col-xl-6 ${styles.colImage}`}>
-                    <img className={`${styles.image}`}
+                    <Image
+                        src={url_image}
+                        alt="imagen destacado"
+                        layout="fill"
+                        objectFit="cover"
+                    />
+
+                    {/* <img className={`${styles.image}`}
                         src={url_image}
                         alt="Post destacado"
-                    />
+                    /> */}
                 </div>
 
 
@@ -47,11 +65,7 @@ function Card({ post }) {
                             <span style={{ color: "grey" }}>{` en `}</span>
                             {
                                 post.categorias.map((c, i) =>
-                                    <span>
-                                        <Link href={`/${c.url}`}>
-                                            <a key={i} href={`/${c.url}`} className={`${styles.linkMeta}`}>{`${c.categoria} `} </a>
-                                        </Link>
-                                    </span>
+                                    <LinkComponent c={c} key={i} />
                                 )
                             }
                         </span>
@@ -63,7 +77,6 @@ function Card({ post }) {
                             <span className="mx-1">•</span> {`${post.tiempo_lectura} min`} <span className="icon-star2"></span>
                         </span>
                     </div>
-
 
                 </div>
 

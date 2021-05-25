@@ -1,5 +1,13 @@
 import Link from 'next/link'
 
+function LinkComponent({c}) {
+    return (
+        <Link href={`/${c.url}`} >
+            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.75rem" }} >{`${c.categoria} `}</a>
+        </Link>
+    )
+}
+
 export default function Trend({ trend, index }) {
 
     return (
@@ -31,9 +39,7 @@ export default function Trend({ trend, index }) {
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
                                     trend.categorias.map((c, i) =>
-                                        <Link href={`/${c.url}`}>
-                                            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.75rem" }} key={i}>{`${c.categoria} `}</a>
-                                        </Link>
+                                        <LinkComponent key={i} c={c} />
                                     )
                                 }
                             </span>

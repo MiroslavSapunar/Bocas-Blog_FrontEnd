@@ -1,6 +1,15 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { url } from '../../utils/rest'
+
+function LinkComponent({ c }) {
+    return (
+        <Link href={`/${c.url}`}>
+            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.9rem" }}>{`${c.categoria} `}</a>
+        </Link>
+    )
+}
 
 export default function Info({ noticia }) {
 
@@ -16,11 +25,17 @@ export default function Info({ noticia }) {
                 <div className="row justify-content-betwee p-0 mx-0 ">
 
                     <div className="col-lg-3  d-none d-lg-block align-items-center px-0 my-auto" style={{ padding: "0px", height: "12rem" }}>
-                        <img
+                        <Image
+                            src={url_image}
+                            layout= "fill"
+                            alt="imagen noticia"
+                            objectFit="cover"
+                        />
+                        {/* <img
                             src={url_image}
                             alt="Post destacado"
                             style={{ width: "100%", minHeight: "100%", objectFit: "cover" }}
-                        />
+                        /> */}
                     </div>
 
                     <div className="col-12 col-lg-8 py-1 my-auto" style={{ paddingLeft: "1.5rem", minHeight: "100%" }}>
@@ -45,9 +60,7 @@ export default function Info({ noticia }) {
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
                                     noticia.categorias.map((c, i) =>
-                                        <Link href={`/${c.url}`}>
-                                            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.9rem" }} key={i}>{`${c.categoria} `}</a>
-                                        </Link>
+                                        <LinkComponent c={c} key={i} />
                                     )
                                 }
                             </span>

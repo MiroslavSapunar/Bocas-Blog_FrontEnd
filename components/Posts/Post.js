@@ -4,6 +4,7 @@ import Trend from '../Home/Trends'
 
 import { url } from '../../utils/rest'
 import styles from './Post.module.scss'
+import Image from 'next/image'
 
 // function ProductoBocas({ url }) {
 //     return (
@@ -26,12 +27,19 @@ function Post({ post, trending }) {
 
     return (
         <div className="container-fluid px-0">
-            <div style={{ height: "auto" }}>
-                <img
+            <div style={{ position: "relative", width: "100%", height: "20rem" }} >
+                <Image
+                    src={url_image}
+                    alt="Post destacado"
+                    layout="fill"
+                    objectFit="cover"
+                />
+
+                {/* <img
                     src={url_image}
                     alt="Post destacado"
                     style={{ width: "100%", height: "20rem", objectFit: "cover" }}
-                />
+                /> */}
             </div>
             <div className="row justify-content-center mx-0 px-0 py-4">
 
@@ -80,25 +88,24 @@ function Post({ post, trending }) {
                             trending.map((trend, k) => <Trend trend={trend} key={k} index={k + 1} />)
                         }
                     </div>
+                </div>
+                <div className="row justify-content-between my-4" style={{ width: "80%" }}>
+                    {post.productos.map((p, i) =>
+                        < div className="col-12 col-md-6 col-lg-4 my-2 px-3" key={i}>
+                            <a href={`${p.url_producto_bocas}`}>
 
-                    <div className="row justify-content-around my-4">
-                        {post.productos.map((p, i) =>
-                            < div className="col-12 col-md-5 col-lg-3 my-2 mx-2 px-0" key={i}>
-                                <a href={`${p.url_producto_bocas}`}>
-
-                                    <div className="card" style={{ heigth: "20rem" }}>
-                                        <img
-                                            alt={p.nombre}
-                                            width="100%"
-                                            height="100%"
-                                            src={`http://localhost:1337${p.foto.url}`}
-                                            style={{ objectFit: "cover", height: "20rem" }}
-                                        />
-                                    </div>
-                                </a>
-                            </div>
-                        )}
-                    </div>
+                                <div className="card" style={{ heigth: "20rem" }}>
+                                    <img
+                                        alt={p.nombre}
+                                        width="100%"
+                                        height="100%"
+                                        src={`http://localhost:1337${p.foto.url}`}
+                                        style={{ objectFit: "cover", height: "20rem" }}
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div >
         </div >
