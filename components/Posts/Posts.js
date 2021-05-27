@@ -23,6 +23,7 @@ function Card({ post }) {
                             alt="imagen post"
                             layout="fill"
                             objectFit="cover"
+                            priority="true"
                         />
                     </div>
 

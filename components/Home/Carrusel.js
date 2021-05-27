@@ -32,6 +32,7 @@ function Card({ post }) {
                         alt="imagen destacado"
                         layout="fill"
                         objectFit="cover"
+                        priority="true"
                     />
 
                     {/* <img className={`${styles.image}`}

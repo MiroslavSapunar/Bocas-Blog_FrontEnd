@@ -27,9 +27,10 @@ export default function Info({ noticia }) {
                     <div className="col-lg-3  d-none d-lg-block align-items-center px-0 my-auto" style={{ padding: "0px", height: "12rem" }}>
                         <Image
                             src={url_image}
-                            layout= "fill"
+                            layout="fill"
                             alt="imagen noticia"
                             objectFit="cover"
+                            priority="true"
                         />
                         {/* <img
                             src={url_image}

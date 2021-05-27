@@ -33,6 +33,7 @@ function Post({ post, trending }) {
                     alt="Post destacado"
                     layout="fill"
                     objectFit="cover"
+                    priority="true"
                 />
 
                 {/* <img
