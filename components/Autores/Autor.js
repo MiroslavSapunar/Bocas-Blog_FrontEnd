@@ -18,7 +18,7 @@ function Card({ post }) {
             <div className="card-body p-0" >
                 <div className="row justify-content-center align-items-center mx-auto" >
 
-                    <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "13rem" }}>
+                    <div className="col-lg-3  d-none d-lg-block" style={{ padding: "0px", height: "15rem" }}>
                         <Image
                             src={url_image}
                             alt="imagen autor"

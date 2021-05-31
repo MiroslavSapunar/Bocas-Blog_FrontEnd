@@ -27,12 +27,12 @@ function Card({ post }) {
                         />
                     </div>
 
-                    <div className="col-12 col-lg-9 m px-4 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
+                    <div className="col-12 col-lg-9 m px-4 py-2 my-auto" style={{ height: "auto", alignSelf: "center" }}>
                         <Link href={`/posts/${post.seo_url}`}>
                             <a href={`/posts/${post.seo_url}`} className={`${styles.link}`}>
 
                                 <div className="row mx-0">
-                                    <h3 className="card-title" style={{ fontWeight: "500", textAlign: "left" }}>{post.titulo}</h3>
+                                    <h4 className="card-title" style={{ fontWeight: "500", textAlign: "left" }}>{post.titulo}</h4>
                                 </div>
 
                                 <div className="row mx-0">

@@ -13,7 +13,7 @@ function Card({ autor }) {
     }
 
     return (
-        <div className={`card`} style={{ marginBlock: "2rem" }}>
+        <div className={`card`} style={{ marginBottom: "2rem" }}>
             <div className="card-body p-0" >
                 <div className="row justify-content-center align-items-center mx-auto" >
 
