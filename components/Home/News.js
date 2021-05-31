@@ -3,20 +3,22 @@ import Link from 'next/link'
 
 import { url } from '../../utils/rest'
 
+import styles from './Links.module.scss'
+
 function LinkComponent({ c }) {
     return (
         <Link href={`/${c.url}`}>
-            <a href={`/${c.url}`} style={{ textDecoration: "none", fontSize: "0.9rem" }}>{`${c.categoria} `}</a>
+            <a href={`/${c.url}`} className={`${styles.link}`}>{`${c.categoria} `}</a>
         </Link>
     )
 }
 
 export default function Info({ noticia }) {
 
-    let url_image = url.strapi_url_base + noticia.imagenes[0].url
+    let url_image = url.strapi_url_base_server_image + noticia.imagenes[0].url
 
     if (noticia.imagenes[0].formats?.small) {
-        url_image = url.strapi_url_base + noticia.imagenes[0].formats.small.url
+        url_image = url.strapi_url_base_server_image + noticia.imagenes[0].formats.small.url
     }
 
     return (
@@ -32,19 +34,14 @@ export default function Info({ noticia }) {
                             objectFit="cover"
                             priority="true"
                         />
-                        {/* <img
-                            src={url_image}
-                            alt="Post destacado"
-                            style={{ width: "100%", minHeight: "100%", objectFit: "cover" }}
-                        /> */}
                     </div>
 
                     <div className="col-12 col-lg-8 py-1 my-auto" style={{ paddingLeft: "1.5rem", minHeight: "100%" }}>
 
                         <div className="row px-0 mx-0 py-0" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${noticia.seo_url}`}>
-                                <a href={`/posts/${noticia.seo_url}`} style={{ textDecoration: "none", textAlign: "justify" }}>
-                                    <h6 className="card-title">{noticia.titulo}</h6>
+                                <a href={`/posts/${noticia.seo_url}`} className={`${styles.link}`}>
+                                    <h5 className="card-title">{noticia.titulo}</h5>
                                 </a>
                             </Link>
                         </div>
@@ -56,7 +53,7 @@ export default function Info({ noticia }) {
                         <div className="row px-0 mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "0.9rem" }} className="d-block m-0">
                                 <Link href={`/autores/${noticia.autor.seo_url}`}>
-                                    <a href={`/autores/${noticia.autor.seo_url}`} style={{ textDecoration: "none", fontSize: "0.9rem" }}>{noticia.autor.nombre}</a>
+                                    <a href={`/autores/${noticia.autor.seo_url}`} className={`${styles.link}`}>{noticia.autor.nombre}</a>
                                 </Link>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {
