@@ -29,10 +29,10 @@ function Card({ post }) {
 
                     <div className="col-12 col-lg-9 m px-4 py-2 my-auto" style={{ color: "black", height: "auto", alignSelf: "center" }}>
                         <Link href={`/posts/${post.seo_url}`}>
-                            <a href={`/posts/${post.seo_url}`} style={{ textDecoration: "none" }}>
+                            <a href={`/posts/${post.seo_url}`} className={`${styles.link}`}>
 
                                 <div className="row mx-0">
-                                    <h4 className="card-title" style={{ fontWeight: "500", textAlign: "left" }}>{post.titulo}</h4>
+                                    <h3 className="card-title" style={{ fontWeight: "500", textAlign: "left" }}>{post.titulo}</h3>
                                 </div>
 
                                 <div className="row mx-0">
@@ -45,7 +45,7 @@ function Card({ post }) {
                             <span style={{ fontWeight: "400", fontSize: ".9rem", lineHeight: "1rem" }} className="d-block m-0">
                                 <span>
                                     <Link href={`/autores/${post.autor.seo_url}`}>
-                                        <a href={`/autores/${post.autor.seo_url}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{post.autor.nombre}</a>
+                                        <a href={`/autores/${post.autor.seo_url}`} className={`${styles.linkMeta}`}>{post.autor.nombre}</a>
                                     </Link>
                                 </span>
                                 <span>
@@ -55,7 +55,7 @@ function Card({ post }) {
                                     post.categorias.map((c, i) =>
                                         <span>
                                             <Link href={`/${c.url}`}>
-                                                <a key={i} href={`/${c.url}`} style={{ textDecoration: "none", fontWeight: "bold" }}>{`${c.categoria} `} </a>
+                                                <a key={i} href={`/${c.url}`} className={`${styles.linkMeta}`}>{`${c.categoria} `} </a>
                                             </Link>
                                         </span>
                                     )

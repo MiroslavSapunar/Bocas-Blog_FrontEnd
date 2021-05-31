@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { url } from '../../utils/rest'
+import styles from './Autores.module.scss'
 
 function Card({ autor }) {
 
@@ -28,7 +29,7 @@ function Card({ autor }) {
 
                     <div className="col-12 col-lg-9 my-auto py-3" style={{ color: "black", height: "auto", paddingLeft: "3rem", paddingRight: "4rem" }}>
                         <Link href={`/autores/${autor.seo_url}`}>
-                            <a href={`/autores/${autor.seo_url}`} style={{ textDecoration: "none" }}>
+                            <a href={`/autores/${autor.seo_url}`} className={`${styles.link}`}>
 
                                 <div className="row mx-0">
                                     <h3 className="card-title">{autor.nombre}</h3>
@@ -42,7 +43,7 @@ function Card({ autor }) {
 
                         <div className="row mx-0" style={{ alignItems: "center" }}>
                             <span style={{ fontWeight: "400", fontSize: "1rem", lineHeight: "1rem" }} className="d-block m-0">
-                                <a href={autor.link_personal} rel="noopener noreferrer" target="_blank" style={{ textDecoration: "none", fontWeight: "bold" }}>+ info</a>
+                                <a href={autor.link_personal} rel="noopener noreferrer" target="_blank" className={`${styles.linkMeta}`}>+ info</a>
                             </span>
                         </div>
 
