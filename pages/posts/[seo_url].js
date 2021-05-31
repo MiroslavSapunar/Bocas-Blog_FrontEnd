@@ -1,7 +1,24 @@
 import PostComponent from '../../components/Posts/Post'
 import { url_build } from '../../utils/rest'
 
+async function actualizar_contador_visitas({ vistas, id }) {
+
+    const res = await fetch(`http://dev.api.blog.paginamiro.com.ar:1337/posts/${id}`, {
+        body: JSON.stringify({
+            vistas: vistas + 1
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer `+process.env.NEXT_PUBLIC_ADMIN_JWT_SECRET,
+        },
+        method: 'PUT'
+    })
+}
+
 export default function Post({ post, trending }) {
+
+    actualizar_contador_visitas(post)
+
     return (
         <PostComponent post={post} trending={trending} />
     )
