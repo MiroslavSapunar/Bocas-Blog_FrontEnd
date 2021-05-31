@@ -27,7 +27,12 @@ export async function getStaticProps({ params }) {
 
     const autor = autores.filter(a => a.seo_url === params.seo_url)
 
-    return { props: { autor: autor[0] } }
+    return {
+        props: {
+            autor: autor[0]
+        },
+        revalidate: 60
+    }
 }
 
 export default Autor

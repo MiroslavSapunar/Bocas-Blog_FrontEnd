@@ -1,8 +1,7 @@
 import PostComponent from '../../components/Posts/Post'
 import { url_build } from '../../utils/rest'
 
-function Post({ post, trending }) {
-
+export default function Post({ post, trending }) {
     return (
         <PostComponent post={post} trending={trending} />
     )
@@ -30,7 +29,11 @@ export async function getStaticProps({ params }) {
 
     const post = posts.filter(post => post.seo_url === params.seo_url)
 
-    return { props: {post: post[0], trending: trending} }
+    return {
+        props: {
+            post: post[0],
+            trending: trending
+        },
+        revalidate: 60
+    }
 }
-
-export default Post

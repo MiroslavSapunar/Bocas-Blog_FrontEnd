@@ -10,7 +10,6 @@ export default function Posts({ posts }) {
 }
 
 export async function getStaticProps(context) {
-  //console.log(Object.keys( context.query )[ 0 ])
 
   const resPost = await fetch(url_build.strapi_url_posts)
   const posts = await resPost.json()
@@ -26,6 +25,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       posts,
-    }, // will be passed to the page component as props
+    },
+    revalidate: 60
   }
 }
