@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 
 import Trend from '../Home/Trends'
@@ -47,10 +48,10 @@ function Post({ post, trending }) {
                 <div className="row justify-content-between mx-0" style={{ width: "80%" }}>
 
                     <div className="col-12 col-lg-8 px-0 align-items-stretch" >
-                        <div className="row mx-0 my-1">
-                            <h2 className="card-title">{post.titulo}</h2>
-                        </div>
                         <div className="row mx-0 my-2">
+                            <h1 className="card-title">{post.titulo}</h1>
+                        </div>
+                        <div className="row mx-0 mb-2">
                             <p className="card-text" style={{ fontSize: "1.5rem" }}>
                                 <span>
                                     {`${post.fecha.split("-").reverse().join("-")}`}
@@ -59,9 +60,11 @@ function Post({ post, trending }) {
                                     {` por `}
                                 </span>
                                 <span>
-                                    <a href={`/autores/${post.autor.seo_url}`}>
-                                        {`${post.autor.nombre}`}
-                                    </a>
+                                    <Link href={`/autores/${post.autor.seo_url}`}>
+                                        <a href={`/autores/${post.autor.seo_url}`} className={`${styles.link}`}>
+                                            {`${post.autor.nombre}`}
+                                        </a>
+                                    </Link>
                                 </span>
                             </p>
                         </div>
@@ -75,7 +78,9 @@ function Post({ post, trending }) {
                                 <span>
                                     {
                                         post.categorias.map((c, i) =>
-                                            <a key={i} href={`/${c.url} `} style={{ textDecoration: "none", fontWeight: "bold" }}> <span>{`#${c.categoria} `}</span> </a>
+                                            <Link href={`/${c.url} `}>
+                                                <a key={i} href={`/${c.url} `} style={{ fontWeight: "bold" }}> <span>{`#${c.categoria} `}</span> </a>
+                                            </Link>
                                         )
                                     }
                                 </span>
