@@ -1,4 +1,5 @@
 const strapi_url = process.env.NEXT_PUBLIC_URL_STRAPI
+const strapi_url_image = process.env.NEXT_PUBLIC_URL_STRAPI_IMAGE
 const strapi_url_build = process.env.STRAPI_URL_BUILD
 const strapi_key = process.env.STRAPI_API_KEY
 const ig_test_token = process.env.IG_TEST_TOKEN
@@ -44,6 +45,7 @@ export const tokens = {
 
 export const url = {
     strapi_url_base: strapi_url,
+    strapi_url_base_server_image: strapi_url_image,
 
     strapi_url_posts: `${strapi_url}/posts?_sort=fecha:DESC`,
     strapi_url_posts_count: `${strapi_url}/posts/count`,

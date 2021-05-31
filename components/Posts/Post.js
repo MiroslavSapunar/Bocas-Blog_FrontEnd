@@ -1,10 +1,9 @@
+import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 
 import Trend from '../Home/Trends'
-
 import { url } from '../../utils/rest'
 import styles from './Post.module.scss'
-import Image from 'next/image'
 
 // function ProductoBocas({ url }) {
 //     return (
@@ -19,11 +18,11 @@ import Image from 'next/image'
 // }
 
 function Post({ post, trending }) {
-    let url_image = url.strapi_url_base + post.imagenes[0].url
+    let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
 
-    if (post.imagenes[0].formats?.large) {
-        url_image = url.strapi_url_base + post.imagenes[0].formats.large.url
-    }
+    // if (post.imagenes[0].formats?.large) {
+    //     url_image = url.strapi_url_base_server_image + post.imagenes[0].formats.large.url
+    // }
 
     return (
         <div className="container-fluid px-0">
@@ -34,6 +33,7 @@ function Post({ post, trending }) {
                     layout="fill"
                     objectFit="cover"
                     priority="true"
+                    quality={100}
                 />
 
                 {/* <img

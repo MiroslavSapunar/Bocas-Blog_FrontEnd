@@ -5,10 +5,10 @@ import { url } from '../../utils/rest'
 
 function Card({ autor }) {
 
-    let url_image = url.strapi_url_base + autor.foto.url
+    let url_image = url.strapi_url_base_server_image + autor.foto.url
 
     if (autor.foto.formats?.small) {
-        url_image = url.strapi_url_base + autor.foto.formats.small.url
+        url_image = url.strapi_url_base_server_image + autor.foto.formats.small.url
     }
 
     return (
@@ -22,6 +22,7 @@ function Card({ autor }) {
                             alt="imagen autor"
                             layout="fill"
                             objectFit="cover"
+                            priority="true"
                         />
                     </div>
 

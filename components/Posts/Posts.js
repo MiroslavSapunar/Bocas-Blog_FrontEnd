@@ -6,10 +6,10 @@ import styles from "./Posts.module.scss"
 
 function Card({ post }) {
 
-    let url_image = url.strapi_url_base + post.imagenes[0].url
+    let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
 
     if (post.imagenes[0].formats?.small) {
-        url_image = url.strapi_url_base + post.imagenes[0].formats.small.url
+        url_image = url.strapi_url_base_server_image + post.imagenes[0].formats.small.url
     }
 
     return (
