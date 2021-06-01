@@ -1,47 +1,65 @@
 function ContactComponent() {
+
+    async function registerUser(event) {
+        event.preventDefault()
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL_STRAPI}/emails`, {
+            body: JSON.stringify({
+                nombre: event.target.name.value,
+                apellido: event.target.surname.value,
+                email: event.target.email.value,
+                comentario: event.target.message.value
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ` + process.env.NEXT_PUBLIC_ADMIN_JWT_SECRET,
+            },
+            method: 'POST'
+        }).catch(err => console.log(err))
+
+        console.log(res.status)
+    }
+
     return (
 
         <div className="row w-75 justify-content-center justify-self-center py-5" >
             <div className="col-lg-12">
-                <div className="section-title mb-5">
-                    <h2>Contacto</h2>
-                    <h5>¿Tenés alguna duda o consulta? Escribinos a holabocas@gmail.com o contactate a través de Instagram!</h5>
-                    <h5>5491136599170</h5>
-                    <h5>holabocas@gmail.com</h5>
+                <div className="section-title mb-3">
+                    <h1>Bocas Newsletter</h1>
+                    <h4>¡No te pierdas de nada, suscribite a nuestro newsletter y mantenete al dia con las mejores notas, recetas y consejos en alimentacion saludable! ;)</h4>
+                    <h6>(*) Campos obligatorios</h6>
                 </div>
-                <form method="post">
+                <form onSubmit={registerUser}>
+                    <div className="row">
+                        <div className="col-md-12 form-group">
+                            <label htmlFor="fname">Nombre *</label>
+                            <input type="text" id="name" name="name" className="form-control form-control-lg" required />
 
-                    <div className="row">
-                        <div className="col-md-6 form-group">
-                            <label htmlFor="fname">Nombre</label>
-                            <input type="text" id="fname" className="form-control form-control-lg" />
-                        </div>
-                        <div className="col-md-6 form-group">
-                            <label htmlFor="lname">Apellido</label>
-                            <input type="text" id="lname" className="form-control form-control-lg" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-6 form-group">
-                            <label htmlFor="eaddress">Email</label>
-                            <input type="text" id="eaddress" className="form-control form-control-lg" />
-                        </div>
-                        <div className="col-md-6 form-group">
-                            <label htmlFor="tel">Telefono</label>
-                            <input type="text" id="tel" className="form-control form-control-lg" />
+                            <label htmlFor="fsurname">Apellido *</label>
+                            <input type="text" id="surname" name="surname" className="form-control form-control-lg" required />
+
+                            <label htmlFor="eaddress">Email *</label>
+                            <input type="email" id="email" name="email" className="form-control form-control-lg" required />
+                            <small id="emailHelp" className="form-text text-muted">Nunca vamos a compartir tu email con terceros, ni solicitar informacion adicional</small>
+
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-12 form-group">
                             <label htmlFor="message">Mensaje</label>
-                            <textarea name="" id="message" cols="30" rows="10" className="form-control"></textarea>
+                            <textarea name="" id="message" name="message" cols="30" rows="10" className="form-control"></textarea>
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div className="col-12">
-                            <input type="submit" value="¡Próximamente!" className="btn btn-dark py-3 px-5" disabled />
-                        </div>
+                    {/* <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> */}
+
+                    <div className="row justify-content-center">
+
+                        <input type="submit" value="SUSCRIBIRSE" className="btn btn-outline-dark py-3 px-5" />
+
                     </div>
 
                 </form>

@@ -1,6 +1,6 @@
 import ContactComponent from '../../components/Contact'
 
-export default function Contacto(posts) {
+export default function Contacto() {
     return (
         <>
             <ContactComponent />
