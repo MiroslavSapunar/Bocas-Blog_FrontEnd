@@ -5,25 +5,36 @@ import ReactMarkdown from 'react-markdown'
 import Trend from '../Home/Trends'
 import { url } from '../../utils/rest'
 import styles from './Post.module.scss'
+import { useEffect, useState } from 'react'
 
-// function ProductoBocas({ url }) {
-//     return (
-//         <div className={`${styles.containerMiniatura}`}>
-//             <a href={url}>
-//                 <div className={`${styles.miniatura}`}>
-//                     <embed src={url} frameBorder="0" scrolling="no" />
-//                 </div>
-//             </a>
-//         </div>
-//     )
-// }
+async function actualizar_vistas({ vistas, id }) {
+
+    const res = await fetch(`${url.strapi_url_base}/posts/${id}`, {
+        body: JSON.stringify({
+            vistas: vistas + 1
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ` + process.env.NEXT_PUBLIC_ADMIN_JWT_SECRET,
+        },
+        method: 'PUT'
+    })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+}
 
 function Post({ post, trending }) {
-    let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
 
-    // if (post.imagenes[0].formats?.large) {
-    //     url_image = url.strapi_url_base_server_image + post.imagenes[0].formats.large.url
-    // }
+    const [views, setViews] = useState(null)
+
+    useEffect(() => {
+        actualizar_vistas(post)
+        console.log("effect")
+    }, [views])
+
+    //actualizar_vistas(post)
+
+    let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
 
     return (
         <div className="container-fluid px-0">
@@ -78,8 +89,8 @@ function Post({ post, trending }) {
                                 <span>
                                     {
                                         post.categorias.map((c, i) =>
-                                            <Link href={`/${c.url} `}>
-                                                <a key={i} href={`/${c.url} `} style={{ fontWeight: "bold" }}> <span>{`#${c.categoria} `}</span> </a>
+                                            <Link key={i} href={`/${c.url} `}>
+                                                <a href={`/${c.url} `} style={{ fontWeight: "bold" }}> <span>{`#${c.categoria} `}</span> </a>
                                             </Link>
                                         )
                                     }
