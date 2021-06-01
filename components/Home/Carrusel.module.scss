@@ -16,7 +16,6 @@
 
     .colTexto {
         height: auto;
-        //background-color: #f3f3f3;
         padding-left: 2.25rem;
         padding-right: 3.75rem;
 
@@ -48,14 +47,12 @@
             margin-inline: 0;
             padding-bottom: 0.25rem;
             .meta {
-                color: black;
                 font-weight: 400;
                 font-size: 1rem;
                 line-height: 0.5rem;
             }
 
             .metaSub {
-                color: gray;
                 font-weight: 500;
                 font-size: 0.95rem;
                 line-height: 0.1rem;
@@ -65,18 +62,18 @@
 }
 
 .link {
-    color: rgb(79, 79, 79);
+    color: #212529;
 }
 
 .link:hover {
     text-decoration: none;
 }
 .linkMeta {
-    color: rgb(79, 79, 79);
+    color: #212529;
     font-weight: bold;
 }
 .linkMeta:hover {
-    color: #0645ad;
+    //color: #0645ad;
     text-decoration: none;
     font-weight: bold;
 }
