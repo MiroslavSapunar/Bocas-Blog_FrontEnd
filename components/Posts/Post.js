@@ -15,11 +15,11 @@ async function actualizar_vistas({ vistas, id }) {
         }),
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ` + process.env.NEXT_PUBLIC_ADMIN_JWT_SECRET,
+            'Authorization': `Bearer ` + process.env.NEXT_PUBLIC_STRAPI_API_KEY,
         },
         method: 'PUT'
     })
-        .then(res => console.log(res))
+        //.then(res => console.log(res))
         .catch(err => console.log(err))
 }
 
@@ -29,7 +29,7 @@ function Post({ post, trending }) {
 
     useEffect(() => {
         actualizar_vistas(post)
-        console.log("effect")
+        //console.log("effect")
     }, [views])
 
     //actualizar_vistas(post)

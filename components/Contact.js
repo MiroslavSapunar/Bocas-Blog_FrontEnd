@@ -17,7 +17,7 @@ function ContactComponent() {
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ` + process.env.NEXT_PUBLIC_ADMIN_JWT_SECRET,
+                'Authorization': `Bearer ` + process.env.NEXT_PUBLIC_STRAPI_API_KEY,
             },
             method: 'POST'
         })
@@ -28,7 +28,7 @@ function ContactComponent() {
                 } else {
                     setExito(false)
                     setError(true)
-                    console.log(res)
+                    //console.log(res)
                 }
             })
             .catch(err => console.log(err))
@@ -56,7 +56,7 @@ function ContactComponent() {
             <div className="row">
                 <div className="col-md-12 form-group">
                     <label style={{ marginBlock: ".75rem" }} htmlFor="message">Mensaje</label>
-                    <textarea name="" id="message" name="message" cols="30" rows="3" className="form-control"></textarea>
+                    <textarea maxlength="400" name="" id="message" name="message" cols="30" rows="3" className="form-control"></textarea>
                 </div>
             </div>
 
