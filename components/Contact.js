@@ -22,13 +22,13 @@ function ContactComponent() {
             method: 'POST'
         })
             .then(res => {
-                if (res.statusCode != 200) {
-                    setError(true)
-                    setExito(false)
-                    console.log(res)
-                } else {
-                    setError(false)
+                if (res.status == 200) {
                     setExito(true)
+                    setError(false)
+                } else {
+                    setExito(false)
+                    setError(true)
+                    console.log(res)
                 }
             })
             .catch(err => console.log(err))
