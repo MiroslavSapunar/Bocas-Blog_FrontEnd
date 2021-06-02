@@ -19,7 +19,7 @@ export default function Footer() {
                         <Link href="/contacto">
                             <a className={`${styles.link}`} role="button" href="/contacto" style={{ fontSize: "1.25rem" }}>
                                 <div className="row align-items-center justify-content-between px-4">
-                                    <i className={`far fa-envelope ${styles.icono}`} alt={"bocas-mercado-newsletter"}></i>
+                                    <i className={`far fa-envelope ${styles.iconoNews}`} alt={"bocas-mercado-newsletter"}></i>
                                     <span>{` Newsletter`}</span>
                                 </div>
                             </a>
