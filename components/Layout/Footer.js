@@ -17,7 +17,12 @@ export default function Footer() {
                     <div className="row justify-content-center">
                         <a className={`${styles.link}`} rel="noopener noreferrer" target="_blank" role="button" href="https://www.bocas.com.ar/nosotros/?utm_source=Blog&utm_campaign=Blog" style={{ fontSize: "1.25rem" }}>Sobre nosotros</a>
                         <Link href="/contacto">
-                            <a className={`${styles.link}`} role="button" href="/contacto" style={{ fontSize: "1.25rem" }}>Contacto</a>
+                            <a className={`${styles.link}`} role="button" href="/contacto" style={{ fontSize: "1.25rem" }}>
+                                <div className="row align-items-center justify-content-between px-4">
+                                    <i className={`far fa-envelope ${styles.icono}`} alt={"bocas-mercado-newsletter"}></i>
+                                    <span>{` Newsletter`}</span>
+                                </div>
+                            </a>
                         </Link>
                     </div>
                 </div>
