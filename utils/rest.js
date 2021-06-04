@@ -53,7 +53,7 @@ export const url = {
     strapi_url_destacados: `${strapi_url}/posts?destacado=true&_sort=fecha:DESC`,
     strapi_url_noticias: `${strapi_url}/posts?_sort=fecha:DESC&_limit=5`,
     strapi_url_trending: `${strapi_url}/posts?_sort=vistas:DESC&_limit=5`,
-
+    strapi_url_busqueda_email: (email = "") => `${strapi_url}/emails/count/?email=${email}`,
 }
 
 export const url_build = {
@@ -62,6 +62,7 @@ export const url_build = {
     strapi_url_posts: `${strapi_url_build}/posts?_sort=fecha:DESC`,
     strapi_url_posts_count: `${strapi_url_build}/posts/count`,
 
+    strapi_url_biblioteca: `${strapi_url_build}/biblioteca`,
     strapi_url_destacados: `${strapi_url_build}/posts?destacado=true&_sort=fecha:DESC&_limit=5`,
     strapi_url_nutricion: `${strapi_url_build}/categorias?url=nutricion`,
     strapi_url_recetas: `${strapi_url_build}/categorias?url=recetas`,
@@ -70,6 +71,4 @@ export const url_build = {
     strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
     strapi_url_top_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=3`,
     strapi_url_noticias: `${strapi_url_build}/posts?_sort=fecha:DESC&_limit=3`,
-
-    strapi_url_productos_id: (id) => `${strapi_url_build}/productos/${id}`,
 }
