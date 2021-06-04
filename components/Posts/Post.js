@@ -7,7 +7,7 @@ import { url } from '../../utils/rest'
 import styles from './Post.module.scss'
 import { useEffect, useState } from 'react'
 
-async function actualizar_vistas({ vistas, id }) {
+async function actualizar_vistas(vistas, id) {
 
     const res = await fetch(`${url.strapi_url_base}/posts/${id}`, {
         body: JSON.stringify({
@@ -25,34 +25,33 @@ async function actualizar_vistas({ vistas, id }) {
 
 function Post({ post, trending }) {
 
-    const [views, setViews] = useState(null)
-
     useEffect(() => {
-        actualizar_vistas(post)
-        //console.log("effect")
-    }, [views])
+        actualizar_vistas(post.vistas, post.id)
+        console.log("effect")
+    })
 
     //actualizar_vistas(post)
 
-    let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
+    let url_image = url.strapi_url_base + post.imagenes[0].url
 
     return (
         <div className="container-fluid px-0">
             <div style={{ position: "relative", width: "100%", height: "20rem" }} >
-                <Image
+                {/* <Image
                     src={url_image}
                     alt="Post destacado"
                     layout="fill"
                     objectFit="cover"
                     priority="true"
                     quality={100}
-                />
+                /> */}
 
-                {/* <img
+                <img
                     src={url_image}
                     alt="Post destacado"
                     style={{ width: "100%", height: "20rem", objectFit: "cover" }}
-                /> */}
+                    loading="lazy"
+                />
             </div>
             <div className="row justify-content-center mx-0 px-0 py-4">
 
