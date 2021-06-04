@@ -13,7 +13,7 @@ function ContactComponent() {
                 nombre: event.target.name.value,
                 apellido: event.target.surname.value,
                 email: event.target.email.value,
-                comentario: event.target.message.value
+                comentario: ""
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -37,7 +37,6 @@ function ContactComponent() {
     const Formulario = () => (
 
         <form onSubmit={registerUser}>
-
             <div className="row">
                 <div className="col-md-12 form-group">
                     <label style={{ marginBlock: ".75rem" }} htmlFor="fname">Nombre *</label>
@@ -53,19 +52,16 @@ function ContactComponent() {
                 </div>
             </div>
 
-            <div className="row">
+            {/* <div className="row">
                 <div className="col-md-12 form-group">
                     <label style={{ marginBlock: ".75rem" }} htmlFor="message">Mensaje</label>
                     <textarea maxlength="400" name="" id="message" name="message" cols="30" rows="3" className="form-control"></textarea>
                 </div>
-            </div>
+            </div> */}
 
             <div className="row justify-content-center">
                 <input type="submit" value="SUSCRIBIRSE" style={{ fontFamily: "Lato", fontStyle: "italic" }} className="btn btn-dark py-3 px-5" />
             </div>
-
-
-
         </form>
     )
 
