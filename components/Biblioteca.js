@@ -7,22 +7,22 @@ function Guia({ guia }) {
 
     let url_guia = url.strapi_url_base + guia.pdf.url
     return (
-        <div className="card" style={{ maxWidth: "35rem" }}>
+        <div className="card">
             <div className="card-body">
-                <div className="row justify-content-center">
+                <div className="row ">
                     <div className="col" >
-                        <a href={`${url_guia}`} >
+                        <a href={`${url_guia}`}>
                             <img src={url.strapi_url_base + guia.portada_guia.url}
                                 alt="postada guia"
-                                style={{ width: "100%", height: "30rem", width: "30rem", objectFit: "cover" }}
+                                style={{ width: "100%", height: "auto", width: "100%", objectFit: "cover" }}
                                 loading="lazy"
-
 
                             />
                         </a>
                         {/* <h5 className="card-title">{guia.nombre_pdf}</h5> */}
                         <p className="card-text">{guia.resumen_guia}</p>
                         <a href={`${url_guia}`} className="btn btn-primary">Descarga la guía</a>
+
                     </div>
                 </div>
             </div>
@@ -66,10 +66,10 @@ function BibliotecaComponent({ biblioteca }) {
                     <div className="modal-content">
                         <div className="modal-body">
                             <p>Para acceder a esta seccion debes estar suscripto a nuestro Newsletter</p>
-                            
-                            {   error &&
-                                    <div class="alert alert-danger my-3" role="alert">
-                                        El email proporcionado no esta registrado
+
+                            {error &&
+                                <div class="alert alert-danger my-3" role="alert">
+                                    El email proporcionado no esta registrado
                                     </div>
                             }
                             <form onSubmit={registerUser}>
@@ -118,7 +118,7 @@ function BibliotecaComponent({ biblioteca }) {
 
                         {
                             biblioteca.guia.map((g, i) =>
-                                <div className="col-12 col-lg-6">
+                                <div className="col-12 col-xl-6">
                                     <Guia key={i} guia={g} />
                                 </div>
                             )
