@@ -37,6 +37,8 @@ function ContactComponent() {
     const Formulario = () => (
 
         <form onSubmit={registerUser}>
+            <h4>¡No te pierdas de nada, suscribite a nuestro newsletter y mantenete al dia con las mejores notas, recetas y consejos en alimentacion saludable!</h4>
+            <h6>(*) Campos obligatorios</h6>
             <div className="row">
                 <div className="col-md-12 form-group">
                     <label style={{ marginBlock: ".75rem" }} htmlFor="fname">Nombre *</label>
@@ -72,8 +74,6 @@ function ContactComponent() {
             <div className="col-lg-12">
                 <div className="section-title mb-3">
                     <h1>Bocas Newsletter</h1>
-                    <h4>¡No te pierdas de nada, suscribite a nuestro newsletter y mantenete al dia con las mejores notas, recetas y consejos en alimentacion saludable!</h4>
-                    <h6>(*) Campos obligatorios</h6>
                 </div>
 
                 {error &&
