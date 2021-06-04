@@ -60,6 +60,12 @@ export default function NavBar() {
                                 </li>
 
                                 <li className={`nav-item ${styles.navItem}`}>
+                                    <Link href="/biblioteca">
+                                        <a href="/biblioteca" className={`nav-link ${styles.categoria}`} >Biblioteca</a>
+                                    </Link>
+                                </li>
+
+                                <li className={`nav-item ${styles.navItem}`}>
                                     <Link href="/autores">
                                         <a href="/autores" className={`nav-link ${styles.categoria}`} >Autores</a>
                                     </Link>
