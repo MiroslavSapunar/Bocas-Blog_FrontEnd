@@ -3,19 +3,6 @@ import Head from 'next/head'
 export default function head() {
     return (
         <Head>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                        page_path: window.location.pathname,
-                    });
-                    `,
-                }}
-            />
             <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -42,8 +29,8 @@ export default function head() {
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link rel="preconnect" href="https://scontent.cdninstagram.com" />
 
-            {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
-            <script src="/scripts/analytics.js" /> */}
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+            <script src="/scripts/analytics.js" />
         </Head>
     )
 }
