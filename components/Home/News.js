@@ -15,11 +15,15 @@ function LinkComponent({ c }) {
 
 export default function Info({ noticia }) {
 
-    let url_image = url.strapi_url_base_server_image + noticia.imagenes[0].url
-
+    let url_image = url.strapi_url_base + noticia.imagenes[0].url
     if (noticia.imagenes[0].formats?.small) {
-        url_image = url.strapi_url_base_server_image + noticia.imagenes[0].formats.small.url
+        url_image = url.strapi_url_base + noticia.imagenes[0].formats.small.url
     }
+    // let url_image = url.strapi_url_base_server_image + noticia.imagenes[0].url
+
+    // if (noticia.imagenes[0].formats?.small) {
+    //     url_image = url.strapi_url_base_server_image + noticia.imagenes[0].formats.small.url
+    // }
 
     return (
         <div className="card " style={{ border: "1px", marginBottom: "1rem", minHeight: "11rem" }} >
@@ -27,12 +31,19 @@ export default function Info({ noticia }) {
                 <div className="row justify-content-betwee p-0 mx-0 ">
 
                     <div className="col-lg-3  d-none d-lg-block align-items-center px-0 my-auto" style={{ padding: "0px", height: "12rem" }}>
-                        <Image
+                        {/* <Image
                             src={url_image}
                             layout="fill"
                             alt="imagen noticia"
                             objectFit="cover"
                             priority="true"
+                            quality={100}
+                        /> */}
+                        <img
+                            src={url_image}
+                            alt="Post destacado"
+                            style={{ width: "100%", height: "12rem", objectFit: "cover" }}
+                            loading="lazy"
                         />
                     </div>
 

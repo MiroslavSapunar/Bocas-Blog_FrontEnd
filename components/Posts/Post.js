@@ -39,8 +39,8 @@ function Post({ post, trending }) {
             <div style={{ position: "relative", width: "100%", height: "20rem" }} >
                 {/* <Image
                     src={url_image}
-                    alt="Post destacado"
                     layout="fill"
+                    alt="Post destacado"
                     objectFit="cover"
                     priority="true"
                     quality={100}
@@ -110,13 +110,13 @@ function Post({ post, trending }) {
                         < div className="col-12 col-md-6 col-lg-4 my-2 px-3" key={i}>
                             <a href={`${p.url_producto_bocas}`}>
 
-                                <div className="card" style={{ heigth: "20rem" }}>
+                                <div className="card" style={{ minHeigth: "20rem" }}>
                                     <img
                                         alt={p.nombre}
                                         width="100%"
                                         height="100%"
                                         src={`http://localhost:1337${p.foto.url}`}
-                                        style={{ objectFit: "cover", height: "20rem" }}
+                                        style={{ objectFit: "cover", minHeight: "20rem" }}
                                     />
                                 </div>
                             </a>

@@ -27,13 +27,13 @@ export default function Trend({ trend, index }) {
                         <div className="row" style={{ color: "black", backgroundColor: `rgb(255, 255, 255, 1)` }}>
                             <Link href={`/posts/${trend.seo_url}`}>
                                 <a href={`/posts/${trend.seo_url}`} className={`${styles.link}`}>
-                                    <h6 className="card-title" >{trend.titulo}</h6>
+                                    <h5 className="card-title" >{trend.titulo}</h5>
                                 </a>
                             </Link>
                         </div>
 
                         <div className="row">
-                            <span style={{ fontWeight: "400", fontSize: "0.75rem", lineHeight: "0.9rem" }} className="d-block m-0">
+                            <span style={{ fontWeight: "400", fontSize: "0.80rem", lineHeight: "0.9rem" }} className="d-block m-0">
                                 <Link href={`/autores/${trend.autor.seo_url}`}>
                                     <a href={`/autores/${trend.autor.seo_url}`} className={`${styles.link}`}>{trend.autor.nombre}</a>
                                 </Link>

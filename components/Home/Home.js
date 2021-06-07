@@ -31,10 +31,10 @@ function Body({ noticias, trending }) {
 
 function IgGrid({ ig }) {
     return (
-        <div className="row mx-auto justify-content-between">
+        <div className="row mx-0 px-0 justify-content-between">
             {ig.map((p, i) =>
-                < div className="col-12 col-md-4 my-2" style={{ maxHeight: "30rem", maxWidth: "30rem" }} key={i}>
-                    <a href={`${p.permalink}`}>
+                < div className="col-12 col-md-6 col-lg-4 py-2" key={i}>
+                    <a href={`${p.permalink}`} rel="noopener noreferrer" target="_blank">
 
                         <div className="card">
                             <embed
@@ -45,7 +45,7 @@ function IgGrid({ ig }) {
                                 autoPlay="1"
                                 mute="1"
                                 src={`${p.media_url}`}
-                                style={{ height: "20rem", width: "auto", objectFit: "cover" }}
+                                style={{ height: "27rem", width: "auto", objectFit: "contain" }}
                             >
                             </embed>
                             {/* <img src={p.media_url}  />
@@ -53,8 +53,9 @@ function IgGrid({ ig }) {
                         </div>
                     </a>
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     )
 }
 

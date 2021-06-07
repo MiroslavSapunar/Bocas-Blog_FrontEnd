@@ -15,10 +15,16 @@ function LinkComponent({ c }) {
 
 function Card({ post }) {
 
-    let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
+    // let url_image = url.strapi_url_base_server_image + post.imagenes[0].url
+
+    // if (post.imagenes[0].formats?.medium) {
+    //     url_image = url.strapi_url_base_server_image + post.imagenes[0].formats.medium.url
+    // }
+
+    let url_image = url.strapi_url_base + post.imagenes[0].url
 
     if (post.imagenes[0].formats?.medium) {
-        url_image = url.strapi_url_base_server_image + post.imagenes[0].formats.medium.url
+        url_image = url.strapi_url_base + post.imagenes[0].formats.medium.url
     }
 
     return (
@@ -27,19 +33,21 @@ function Card({ post }) {
             <div className="row justify-content-center h-100">
 
                 <div className={`col-12 col-xl-6 ${styles.colImage}`}>
-                    <Image
+                    {/* <Image
                         src={url_image}
-                        alt="imagen destacado"
                         layout="fill"
+                        alt="imagen destacado"
                         objectFit="cover"
                         priority="true"
                         quality={100}
-                    />
+                    /> */}
 
-                    {/* <img className={`${styles.image}`}
+                    <img
                         src={url_image}
                         alt="Post destacado"
-                    /> */}
+                        style={{ width: "100%", height: "23rem", objectFit: "cover" }}
+                        loading="lazy"
+                    />
                 </div>
 
 

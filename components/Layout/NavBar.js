@@ -30,12 +30,6 @@ export default function NavBar() {
                             <ul className="navbar-nav">
 
                                 <li className={`nav-item ${styles.navItem}`}>
-                                    <Link href="/">
-                                        <a href="/" className={`nav-link ${styles.categoria}`} >Home</a>
-                                    </Link>
-                                </li>
-
-                                <li className={`nav-item ${styles.navItem}`}>
                                     <Link href="/novedades">
                                         <a href="/novedades" className={`nav-link ${styles.categoria}`} >Novedades</a>
                                     </Link>
