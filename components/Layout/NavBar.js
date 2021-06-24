@@ -54,8 +54,8 @@ export default function NavBar() {
                                 </li>
 
                                 <li className={`nav-item ${styles.navItem}`}>
-                                    <Link href="/biblioteca">
-                                        <a href="/biblioteca" className={`nav-link ${styles.categoria}`} >Biblioteca</a>
+                                    <Link href="/guias">
+                                        <a href="/guias" className={`nav-link ${styles.categoria}`} >Guías</a>
                                     </Link>
                                 </li>
 
