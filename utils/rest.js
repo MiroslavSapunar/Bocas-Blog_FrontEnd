@@ -69,6 +69,6 @@ export const url_build = {
     strapi_url_ecologia: `${strapi_url_build}/categorias?url=ecologia`,
     strapi_url_autores: `${strapi_url_build}/autors`,
     strapi_url_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
-    strapi_url_top_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=3`,
+    strapi_url_top_trending: `${strapi_url_build}/posts?_sort=vistas:DESC&_limit=6`,
     strapi_url_noticias: `${strapi_url_build}/posts?_sort=fecha:DESC&_limit=3`,
 }
