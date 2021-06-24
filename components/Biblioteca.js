@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+import Trend from '../components/Home/Trends'
 import { url } from '../utils/rest'
 
 function Guia({ guia }) {
@@ -32,7 +33,7 @@ function Guia({ guia }) {
 
 
 
-function BibliotecaComponent({ biblioteca }) {
+function BibliotecaComponent({ biblioteca, trending }) {
 
     const [modalState, setState] = useState(true)
     const [error, setError] = useState(false)
@@ -70,7 +71,7 @@ function BibliotecaComponent({ biblioteca }) {
                             {error &&
                                 <div class="alert alert-danger my-3" role="alert">
                                     El email proporcionado no esta registrado
-                                    </div>
+                                </div>
                             }
                             <form onSubmit={registerUser}>
                                 <div className="form-row align-items-center">
@@ -108,7 +109,7 @@ function BibliotecaComponent({ biblioteca }) {
             <div className="row justify-content-center justify-self-center py-5" style={{ width: "80%", minHeight: "79vh" }}>
                 <PopUp modalState={modalState} setState={setState} />
 
-                <div className="col mx-0 px-0">
+                <div className="col-12 col-lg-9 mx-0 px-0">
                     {/* <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                         Launch static backdrop modal
                     </button> */}
@@ -118,13 +119,21 @@ function BibliotecaComponent({ biblioteca }) {
 
                         {
                             biblioteca.guia.map((g, i) =>
-                                <div className="col-12 col-xl-6">
+                                <div className="col-12 col-xl-5 py-3">
                                     <Guia key={i} guia={g} />
                                 </div>
                             )
                         }
                     </div>
                 </div>
+                
+                <div className="col-12 col-lg-3 px-0 py-0 align-items-stretch">
+                    <h4 style={{ textDecoration: "underline", fontSize: "1.2rem", marginTop: "1rem" }}>Top Trending</h4>
+                    {
+                        trending.map((trend, k) => <Trend trend={trend} key={k} index={k + 1} />)
+                    }
+                </div>
+
             </div>
         </>
     )
