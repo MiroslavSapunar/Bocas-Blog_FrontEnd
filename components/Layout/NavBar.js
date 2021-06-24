@@ -7,7 +7,7 @@ export default function NavBar() {
         <nav className="navbar navbar-expand-xl navbar-light justify-content-center align-items-center mx-0 px-0" style={{ borderBottom: "1px solid rgb(233, 233, 234)" }}>
             <div className="row align-items-center justify-content-start mx-0 px-0 py-2" style={{ width: "80%", minHeight: "5rem" }}>
 
-                <div className="col-6 col-lg-2 order-1  mx-0 px-0">
+                <div className="col-6 col-xl-2 order-1  mx-0 px-0">
                     <div className="row justify-content-between align-items-center mx-0 px-0">
 
                         <Link href="/">
@@ -15,8 +15,8 @@ export default function NavBar() {
                                 <Image
                                     src="/bocas.png"
                                     alt="Bocas Mercado consciente"
-                                    height="48"
-                                    width="160"
+                                    height="155"
+                                    width="480"
                                 />
                             </a>
                         </Link>
@@ -24,10 +24,10 @@ export default function NavBar() {
                     </div>
                 </div>
 
-                <div className="col-12 col-lg-8 col-xl-9 order-lg-2 order-12 mx-0 px-0">
+                <div className="col-12 col-xl-9 order-xl-2 order-12 mx-0 px-0">
                     <div className="row w-100 justify-content-center align-items-center mx-0 my-1">
                         <div className="collapse navbar-collapse justify-content-end w-75" id="navbarToggler">
-                            <ul className="navbar-nav">
+                            <ul className="navbar-nav pl-4">
 
                                 <li className={`nav-item ${styles.navItem}`}>
                                     <Link href="/novedades">
@@ -72,7 +72,7 @@ export default function NavBar() {
                     </div>
                 </div>
 
-                <div className="col-6 col-lg-2 col-xl-1 order-3 mx-0 px-0">
+                <div className="col-6 col-xl-1 order-3 mx-0 px-0">
                     <div className="row w-100 justify-content-end align-items-center mx-0 my-1">
 
                         <Link href="/">
