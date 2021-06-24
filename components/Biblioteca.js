@@ -21,7 +21,7 @@ function Guia({ guia }) {
                         </a>
                         {/* <h5 className="card-title">{guia.nombre_pdf}</h5> */}
                         <p className="card-text">{guia.resumen_guia}</p>
-                        <a href={`${url_guia}`} className="btn btn-primary">Descarga la guía</a>
+                        <a href={`${url_guia}`} rel="noopener noreferrer" target="_blank" className="btn btn-primary">Descarga la guía</a>
 
                     </div>
                 </div>
