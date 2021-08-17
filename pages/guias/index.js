@@ -14,7 +14,7 @@ export async function getStaticProps(context) {
   const resBiblioteca = await fetch(url_build.strapi_url_biblioteca)
   const biblioteca = await resBiblioteca.json()
 
-  const resTrends = await fetch(url_build.strapi_url_top_trending)
+  const resTrends = await fetch(url_build.strapi_url_trending)
   const trending = await resTrends.json()
 
   if (!biblioteca) {
@@ -28,6 +28,6 @@ export async function getStaticProps(context) {
       biblioteca: biblioteca,
       trending: trending
     },
-    revalidate: 60
+    revalidate: 300
   }
 }

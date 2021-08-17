@@ -68,8 +68,8 @@ function Card({ post }) {
                     <div className={`row ${styles.espacioMeta}`}>
                         <span>
                             <span>
-                                <Link href={`/autores/${post.autor.seo_url}`}>
-                                    <a href={`/autores/${post.autor.seo_url}`} className={`${styles.linkMeta}`}  >{post.autor.nombre}</a>
+                                <Link href={`/autores/${post.autor[0].seo_url}`}>
+                                    <a href={`/autores/${post.autor[0].seo_url}`} className={`${styles.linkMeta}`}  >{post.autor[0].nombre}</a>
                                 </Link>
                             </span>
                             <span style={{ color: "grey" }}>{` en `}</span>

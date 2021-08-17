@@ -34,8 +34,8 @@ export default function Trend({ trend, index }) {
 
                         <div className="row">
                             <span style={{ fontWeight: "400", fontSize: "0.80rem", lineHeight: "0.9rem" }} className="d-block m-0">
-                                <Link href={`/autores/${trend.autor.seo_url}`}>
-                                    <a href={`/autores/${trend.autor.seo_url}`} className={`${styles.link}`}>{trend.autor.nombre}</a>
+                                <Link href={`/autores/${trend.autor[0].seo_url}`}>
+                                    <a href={`/autores/${trend.autor[0].seo_url}`} className={`${styles.link}`}>{trend.autor[0].nombre}</a>
                                 </Link>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {

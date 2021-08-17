@@ -11,7 +11,7 @@ export default function Novedades({ posts }) {
 
 export async function getStaticProps(context) {
 
-  const resCategoria = await fetch(url_build.strapi_url_posts)
+  const resCategoria = await fetch(url_build.strapi_url_novedades)
   const categoria = await resCategoria.json()
 
   if (!categoria) {
@@ -24,6 +24,6 @@ export async function getStaticProps(context) {
     props: {
       posts:categoria
     },
-    revalidate: 60
+    revalidate: 3600
   }
 }

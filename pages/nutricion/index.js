@@ -20,16 +20,10 @@ export async function getStaticProps(context) {
     }
   }
 
-  const posts = await Promise.all(categoria[0].posts.map(async p => {
-    const res = await fetch(url_build.strapi_url_base + `/posts/` + p.id)
-    const dataRes = await res.json()
-    return dataRes
-  }))
-
   return {
     props: {
-      posts
+      posts: categoria
     },
-    revalidate: 60
+    revalidate: 3600
   }
 }

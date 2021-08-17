@@ -16,8 +16,8 @@ function LinkComponent({ c }) {
 export default function Info({ noticia }) {
 
     let url_image = url.strapi_url_base + noticia.imagenes[0].url
-    if (noticia.imagenes[0].formats?.small) {
-        url_image = url.strapi_url_base + noticia.imagenes[0].formats.small.url
+    if (noticia.imagenes[0].formats?.thumbnail) {
+        url_image = url.strapi_url_base + noticia.imagenes[0].formats.thumbnail.url
     }
     // let url_image = url.strapi_url_base_server_image + noticia.imagenes[0].url
 
@@ -63,8 +63,8 @@ export default function Info({ noticia }) {
 
                         <div className="row px-0 mx-0">
                             <span style={{ fontWeight: "400", fontSize: "0.85rem", lineHeight: "0.9rem" }} className="d-block m-0">
-                                <Link href={`/autores/${noticia.autor.seo_url}`}>
-                                    <a href={`/autores/${noticia.autor.seo_url}`} className={`${styles.link}`}>{noticia.autor.nombre}</a>
+                                <Link href={`/autores/${noticia.autor[0].seo_url}`}>
+                                    <a href={`/autores/${noticia.autor[0].seo_url}`} className={`${styles.link}`}>{noticia.autor[0].nombre}</a>
                                 </Link>
                                 <span style={{ color: "grey" }}>{` en `}</span>
                                 {

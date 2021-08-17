@@ -21,17 +21,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-
-    const resAutores = await fetch(url_build.strapi_url_autores)
-    const autores = await resAutores.json()
-
-    const autor = autores.filter(a => a.seo_url === params.seo_url)
+    const resAutor = await fetch(url_build.strapi_url_autor(params.seo_url))
+    const autor = await resAutor.json()
+    console.log(autor)
 
     return {
         props: {
             autor: autor[0]
         },
-        revalidate: 60
+        revalidate: 3600
     }
 }
 

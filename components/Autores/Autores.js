@@ -6,11 +6,7 @@ import styles from './Autores.module.scss'
 
 function Card({ autor }) {
 
-    let url_image = url.strapi_url_base_server_image + autor.foto.url
-
-    if (autor.foto.formats?.small) {
-        url_image = url.strapi_url_base_server_image + autor.foto.formats.small.url
-    }
+    let url_image = autor.foto[0].formats.small ? url.strapi_url_base_server_image + autor.foto[0].formats.small.url : url.strapi_url_base_server_image + autor.foto[0].url
 
     return (
         <div className={`card`} style={{ marginBottom: "2rem" }}>

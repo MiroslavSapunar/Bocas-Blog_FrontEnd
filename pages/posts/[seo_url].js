@@ -24,7 +24,7 @@ export async function getStaticProps({ params }) {
     const resPost = await fetch(url_build.strapi_url_posts)
     const posts = await resPost.json()
 
-    const resTrends = await fetch(url_build.strapi_url_top_trending)
+    const resTrends = await fetch(url_build.strapi_url_trending)
     const trending = await resTrends.json()
 
     const post = posts.filter(post => post.seo_url === params.seo_url)
@@ -34,6 +34,6 @@ export async function getStaticProps({ params }) {
             post: post[0],
             trending: trending
         },
-        revalidate: 60
+        revalidate: 300
     }
 }

@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import styles from '../../components/Posts/Posts.module.scss'
 import { url } from '../../utils/rest'
-import styles from "./Posts.module.scss"
 
 function Card({ post }) {
 
@@ -72,19 +73,59 @@ function Card({ post }) {
     )
 }
 
-function PostsComponent({ posts, categoria }) {
-    return (
+export default function Busqueda() {
 
+    const [posts, setPosts] = useState([])
+    const [busqueda, setBusqueda] = useState("")
+
+    useEffect(() => {
+
+        const setUp = async () => {
+
+            const [resPosts] = await Promise.all([
+                fetch(url.strapi_url_busqueda_post(busqueda))
+            ])
+
+            const [posts] = await Promise.all([
+                resPosts.json()
+            ])
+            
+            setPosts(
+                posts
+            )
+        }
+
+        setUp()
+
+    }, [busqueda])
+
+
+    function buscar(e) {
+        e.preventDefault()
+        setBusqueda(e.target.titulo_post.value)
+    }
+
+    return (
         <div className="row" style={{ width: "80%", minHeight: "69.5vh" }} >
             <div className="col px-0 py-4">
-                <h1>{categoria}</h1>
-                {
+                <h1>Busqueda</h1>
+                <form onSubmit={buscar}>
+                    <div className="form-row align-items-center my-4 w-100">
+                        <div className="col-9">
+                            <input type="text" id="titulo_post" placeholder="Buscar Posts" name="titulo_post" className="form-control form-control-lg" />
+                        </div>
+                        <div className="col-3">
+                            <input type="submit" value="Buscar" style={{ fontFamily: "Lato", fontStyle: "italic" }} className="btn btn-dark" />
+                        </div>
+
+                    </div>
+                </form>
+
+                {posts.map &&
                     posts.map((p, i) => <Card post={p} key={i} />)
                 }
             </div>
         </div>
-
     )
 }
 
-export default PostsComponent

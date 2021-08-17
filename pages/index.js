@@ -36,6 +36,6 @@ export async function getStaticProps(context) {
       trending,
       ig: ig.data ? ig.data : null
     },
-    revalidate: 60
+    revalidate: 180
   }
 }

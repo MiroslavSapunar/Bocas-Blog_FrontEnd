@@ -2,7 +2,7 @@ import PostsComponent from '../../components/Posts/Posts'
 
 import { url_build } from '../../utils/rest'
 
-export default function Habitos({ posts }) {
+export default function Ecologia({ posts }) {
 
   return (
     <PostsComponent categoria={"Ecología"} posts={posts} />
@@ -10,7 +10,6 @@ export default function Habitos({ posts }) {
 }
 
 export async function getStaticProps(context) {
-
 
   const resCategoria = await fetch(url_build.strapi_url_ecologia)
   const categoria = await resCategoria.json()
@@ -21,17 +20,10 @@ export async function getStaticProps(context) {
     }
   }
 
-  const posts = await Promise.all(categoria[0].posts.map(async p => {
-    const res = await fetch(url_build.strapi_url_base + `/posts/` + p.id)
-    const dataRes = await res.json()
-    return dataRes
-  }))
-
-
   return {
     props: {
-      posts
+      posts: categoria
     },
-    revalidate: 60
+    revalidate: 3600
   }
 }
