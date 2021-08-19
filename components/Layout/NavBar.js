@@ -75,8 +75,8 @@ export default function NavBar() {
                 <div className="col-6 col-xl-1 order-3 mx-0 px-0">
                     <div className="row w-100 justify-content-end align-items-center mx-0 my-1">
 
-                        <Link href="/">
-                            <a className="mx-4" href="/" style={{ fontSize: "1rem" }}>
+                        <Link href="/busqueda">
+                            <a className="mx-4" href="/busqueda" style={{ fontSize: "1rem" }}>
                                 <i className={`fas fa-search ${styles.icono}`} alt={"busqueda-bocas-mercado"}></i>
                             </a>
                         </Link>
