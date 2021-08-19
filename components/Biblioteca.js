@@ -52,7 +52,6 @@ function BibliotecaComponent({ biblioteca, trending }) {
                 .catch(err => console.log(err))
 
             const response = await res.json()
-            console.log(response)
 
             if (response > 0) {
                 setState(false)

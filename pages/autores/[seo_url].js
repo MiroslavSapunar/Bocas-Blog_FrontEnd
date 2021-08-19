@@ -23,7 +23,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const resAutor = await fetch(url_build.strapi_url_autor(params.seo_url))
     const autor = await resAutor.json()
-    console.log(autor)
 
     return {
         props: {

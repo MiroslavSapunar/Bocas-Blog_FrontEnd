@@ -27,7 +27,6 @@ function Post({ post, trending }) {
 
     useEffect(() => {
         actualizar_vistas(post.vistas, post.id)
-        console.log("effect")
     })
 
     //actualizar_vistas(post)

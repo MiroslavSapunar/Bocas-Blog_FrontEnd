@@ -73,7 +73,6 @@ function Card({ post }) {
 }
 
 function AutorComponent({ autor }) {
-    console.log(autor)
     return (
 
         <div className="row" style={{ width: "80%", minHeight: "69.5vh" }} >
