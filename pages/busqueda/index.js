@@ -76,7 +76,7 @@ function Card({ post }) {
 export default function Busqueda() {
 
     const [posts, setPosts] = useState([])
-    const [busqueda, setBusqueda] = useState("")
+    const [busqueda, setBusqueda] = useState(null)
 
     useEffect(() => {
 
