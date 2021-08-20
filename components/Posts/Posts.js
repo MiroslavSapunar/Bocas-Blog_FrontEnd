@@ -40,8 +40,8 @@ function Card({ post }) {
                         <div className="row mx-0" style={{ alignItems: "center", paddingBlock: "0.5rem" }}>
                             <span style={{ fontWeight: "400", fontSize: ".9rem", lineHeight: "1rem" }} className="d-block m-0">
                                 <span>
-                                    <Link href={`/autores/${post.autor[0].url}`}>
-                                        <a href={`/autores/${post.autor[0].url}`} className={`${styles.linkMeta}`}>{post.autor[0].nombre}</a>
+                                    <Link href={`/autores/${post.autor[0].seo_url}`}>
+                                        <a href={`/autores/${post.autor[0].seo_url}`} className={`${styles.linkMeta}`}>{post.autor[0].nombre}</a>
                                     </Link>
                                 </span>
                                 <span>
