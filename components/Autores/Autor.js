@@ -77,7 +77,7 @@ function AutorComponent({ autor }) {
 
         <div className="row" style={{ width: "80%", minHeight: "69.5vh" }} >
             <div className="col px-0 py-4">
-                <h2>Notas de <a href={`${autor.link_personal}`}>{`${autor.nombre}`}</a></h2>
+                <h2>Notas de <a href={`${autor.link_personal}`} rel="noopener noreferrer" target="_blank" >{`${autor.nombre}`}</a></h2>
                 <p>{autor.bio}</p>
                 {
                     autor.posts.map((p, i) => <Card post={p} key={i} />)
